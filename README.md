@@ -1,26 +1,21 @@
 # Le Baliseur, site
 
-Site statique de Le Baliseur (lebaliseur.fr), hébergé sur Cloudflare Pages.
+Site de Le Baliseur (lebaliseur.fr), hébergé sur Cloudflare Workers (fichiers statiques + un petit Worker pour le formulaire).
 
 ## Structure
 
-- `index.html` : page d'accueil
-- `temoignages.html`, `mentions-legales.html`, `confidentialite.html`
-- `assets/` : styles, polices auto-hébergées (Barlow, licence OFL), favicon, script du formulaire
-- `functions/api/contact.js` : envoi du formulaire par Brevo (rien n'est stocké)
-- `_headers`, `robots.txt`
+- `public/` : le site (index, témoignages, mentions légales, confidentialité, `assets/`, `_headers`, `robots.txt`)
+- `src/worker.js` : sert le site et envoie le formulaire par Brevo (rien n'est stocké)
+- `wrangler.jsonc` : configuration Cloudflare
 
-## Déploiement Cloudflare Pages
+## Déploiement
 
-- Framework preset : **None**
-- Build command : *(vide)*
-- Build output directory : `/`
-
+Worker `lebaliseur-site` relié au dépôt GitHub. Build command : aucune. Deploy command : `npx wrangler deploy`.
 Chaque push sur `main` redéploie le site.
 
 ## Formulaire
 
-Dans Cloudflare Pages > Settings > Variables and Secrets :
+Dans le Worker > Settings > Variables and Secrets :
 
 | Variable | Exemple |
 | --- | --- |

@@ -1,7 +1,7 @@
-// Cloudflare Pages Function : POST /api/contact
-// Transmet la demande de diagnostic par e-mail via l'API Brevo. Rien n'est stocké.
+// Worker Cloudflare : sert le site (dossier public/) et traite POST /api/contact.
+// Le formulaire est transmis par e-mail via l'API Brevo. Rien n'est stocké.
 //
-// Variables d'environnement à définir dans Cloudflare Pages (Settings > Variables and Secrets) :
+// Variables à définir dans le Worker (Settings > Variables and Secrets) :
 //   BREVO_API_KEY   clé API Brevo (en "Secret")
 //   MAIL_FROM       adresse d'expédition validée dans Brevo, ex. site@lebaliseur.fr
 //   MAIL_TO         adresse qui reçoit les demandes, ex. chris@lebaliseur.fr
@@ -14,7 +14,18 @@ const nettoyer = (v, max = 300) => String(v || '').replace(/[\r\n\t]+/g, ' ').tr
 const echapper = (s) =>
   s.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
 
-export async function onRequestPost({ request, env }) {
+export default {
+  async fetch(request, env) {
+    const url = new URL(request.url);
+    if (url.pathname === '/api/contact') {
+      if (request.method !== 'POST') return json({ erreur: 'Méthode non autorisée.' }, 405);
+      return traiterContact(request, env);
+    }
+    return env.ASSETS.fetch(request);
+  },
+};
+
+async function traiterContact(request, env) {
   let form;
   try {
     form = await request.formData();
@@ -72,5 +83,3 @@ export async function onRequestPost({ request, env }) {
   }
   return json({ ok: true });
 }
-
-export const onRequest = () => json({ erreur: 'Méthode non autorisée.' }, 405);
