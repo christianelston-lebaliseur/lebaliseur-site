@@ -60,6 +60,8 @@ a:hover { color: var(--ardoise); }
 .nav { display: flex; flex-wrap: wrap; align-items: center; gap: 8px 28px; }
 .nav a:not(.bouton) { text-decoration: none; font-weight: 500; color: var(--ardoise); padding-block: 8px; }
 .nav a[aria-current="page"] { font-weight: 600; box-shadow: inset 0 -3px 0 var(--signal); }
+.nav a.langue { display: inline-flex; align-items: center; gap: 6px; font-weight: 600; }
+.langue svg { border-radius: 2px; box-shadow: 0 0 0 1px rgba(28, 36, 32, 0.2); }
 .nav .bouton { font-size: 18px; padding: 10px 18px; }
 
 /* Héros */
