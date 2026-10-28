@@ -208,3 +208,19 @@ a:hover { color: var(--ardoise); }
 .bandeau-test .conteneur { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 24px; padding-block: 48px; }
 .bandeau-test .titre-2 { margin: 0; font-size: clamp(30px, 3.6vw, 44px); }
 .bandeau-test p { margin: 6px 0 0; font-size: 18px; }
+
+/* Carte de classement */
+.carte-section { display: flex; flex-wrap: wrap; align-items: center; gap: 48px; }
+.carte-texte { flex: 1 1 360px; min-width: 0; display: flex; flex-direction: column; gap: 16px; }
+.carte-texte .titre-2 { margin: 0; }
+.carte-texte p { margin: 0; font-size: 18px; line-height: 1.6; color: var(--gris); }
+.carte { flex: 1 1 420px; min-width: 0; max-width: 560px; }
+.carte-svg { width: 100%; height: auto; font-family: var(--corps); }
+.carte-bascule { display: flex; gap: 10px; flex-wrap: wrap; }
+.carte-bascule .bouton { font-size: 18px; padding: 8px 18px; }
+.carte-bascule .bouton[aria-pressed="true"] { background: var(--ardoise); color: var(--blanc); }
+.carte-texte .carte-resume { font-size: 20px; color: var(--ardoise); }
+.carte-legende { display: flex; flex-wrap: wrap; gap: 8px 18px; margin: 0; padding: 0; list-style: none; font-weight: 600; font-size: 15px; }
+.carte-legende li { display: flex; align-items: center; gap: 8px; }
+.carte-legende span { width: 16px; height: 16px; border-radius: 50%; }
+.carte-texte .mention-demo { align-self: flex-start; }
