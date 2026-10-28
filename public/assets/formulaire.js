@@ -32,7 +32,9 @@
     }
     bouton.disabled = true;
     afficher(t.envoi, '');
-    fetch(form.action, { method: 'POST', body: new FormData(form), headers: { 'Accept': 'application/json' } })
+    var donnees = new FormData(form);
+    try { var sc = sessionStorage.getItem('baliseur-score'); if (sc) donnees.append('score', sc); } catch (err) {}
+    fetch(form.action, { method: 'POST', body: donnees, headers: { 'Accept': 'application/json' } })
       .then(function (r) { return r.json().catch(function () { return {}; }).then(function (d) { return { ok: r.ok, d: d }; }); })
       .then(function (res) {
         if (res.ok) {

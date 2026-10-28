@@ -59,6 +59,7 @@ async function traiterContact(request, env) {
     ['Contact', d.contact],
     ['Site', d.site || '(aucun)'],
     ['Besoin', d.besoin],
+    ['Score auto-diagnostic', /^\d{1,3}$/.test(nettoyer(form.get('score'), 3)) ? nettoyer(form.get('score'), 3) + '/100' : '(non fait)'],
     ['Langue du site', nettoyer(form.get('langue'), 5) === 'en' ? 'anglais' : 'français'],
   ];
   const html = '<h2>Nouvelle demande de diagnostic</h2><table>' +
