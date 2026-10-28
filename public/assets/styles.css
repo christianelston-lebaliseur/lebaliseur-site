@@ -171,6 +171,7 @@ a:hover { color: var(--ardoise); }
 
 /* Auto-diagnostic */
 .autodiag { max-width: 820px; }
+#autodiag { min-height: 1000px; }
 .autodiag-questions { display: flex; flex-direction: column; gap: 16px; }
 .question { margin: 0; border: 0; background: var(--blanc); border-radius: 10px; padding: 24px 28px; display: flex; flex-direction: column; gap: 16px; }
 .question legend { float: left; width: 100%; padding: 0; font-size: 19px; font-weight: 600; line-height: 1.4; }

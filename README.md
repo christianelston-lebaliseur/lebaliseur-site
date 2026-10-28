@@ -31,3 +31,4 @@ Sans ces variables, le formulaire affiche un message invitant à écrire par e-m
 - Retirer `noindex` des pages et ouvrir `robots.txt`, ajouter un sitemap
 - Compléter SIRET, adresse et photo
 - Ajouter Turnstile au formulaire
+- Vérifier le score sur pagespeed.web.dev (attendu : 99–100 dans les 4 catégories) puis l'afficher sur le site
