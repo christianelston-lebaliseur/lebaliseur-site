@@ -9,7 +9,7 @@
       en: ['Have you claimed and verified your Google Business Profile?', 'Without a verified profile, you either don\'t appear on the map or appear with details you don\'t control.', 'Claim and verify your Google Business Profile'] },
     { poids: 10, fr: ['La catégorie principale et les horaires sont-ils exacts, jours fériés compris ?', 'La catégorie décide des recherches où vous apparaissez ; des horaires faux font fuir les clients.', 'Choisir la bonne catégorie et tenir les horaires à jour'],
       en: ['Are your main category and opening hours correct, including bank holidays?', 'Your category decides which searches you appear in, and wrong hours send customers elsewhere.', 'Pick the right category and keep your hours up to date'] },
-    { poids: 10, fr: ['Avez-vous au moins 10 photos de moins de 6 mois sur votre fiche ?', 'Les fiches avec des photos récentes attirent plus de clics et d\'itinéraires.', 'Ajouter des photos récentes de qualité'],
+    { poids: 5, fr: ['Avez-vous au moins 10 photos de moins de 6 mois sur votre fiche ?', 'Les fiches avec des photos récentes attirent plus de clics et d\'itinéraires.', 'Ajouter des photos récentes de qualité'],
       en: ['Do you have at least 10 photos on your profile taken in the last 6 months?', 'Profiles with recent photos get more clicks and direction requests.', 'Add good, recent photos'] },
     { poids: 15, fr: ['Avez-vous reçu au moins un avis Google ces 3 derniers mois ?', 'Des avis récents rassurent les clients et comptent pour Google.', 'Mettre en place une demande d\'avis simple et régulière'],
       en: ['Have you received at least one Google review in the last 3 months?', 'Recent reviews reassure customers and count for Google.', 'Set up a simple, regular way to ask for reviews'] },
@@ -19,8 +19,10 @@
       en: ['Are your name, address and phone number identical everywhere (website, Google, directories, social media)?', 'Details that differ between directories pull your map ranking down.', 'Make your name, address and phone match across directories'] },
     { poids: 15, fr: ['Votre site s\'affiche-t-il vite et se lit-il facilement sur téléphone ?', 'La plupart des recherches locales se font sur téléphone ; un site lent perd le client.', 'Rendre le site rapide et lisible sur mobile'],
       en: ['Does your website load quickly and read easily on a phone?', 'Most local searches happen on a phone, and a slow site loses the customer.', 'Make your website fast and easy to read on mobile'] },
-    { poids: 10, fr: ['Votre site a-t-il une page par service, avec votre ville dans les titres ?', 'Une page claire par service aide Google à vous proposer pour la bonne recherche.', 'Créer une page par service, avec votre ville'],
-      en: ['Does your website have a page for each service, with your town in the titles?', 'A clear page per service helps Google show you for the right search.', 'Create one page per service, mentioning your town'] }
+    { poids: 5, fr: ['Votre site a-t-il une page par service, avec votre ville dans les titres ?', 'Une page claire par service aide Google à vous proposer pour la bonne recherche.', 'Créer une page par service, avec votre ville'],
+      en: ['Does your website have a page for each service, with your town in the titles?', 'A clear page per service helps Google show you for the right search.', 'Create one page per service, mentioning your town'] },
+    { poids: 10, fr: ['Si vous demandez à ChatGPT ou Gemini « meilleur [votre métier] à [votre ville] », votre entreprise est-elle citée ?', 'De plus en plus de clients posent la question à une IA, qui ne cite que deux ou trois noms.', 'Être cité par les IA : fiches Bing et Apple, avis sur plusieurs plateformes, pages claires'],
+      en: ['If you ask ChatGPT or Gemini "best [your trade] in [your town]", is your business named?', 'More and more customers ask an AI, and it only names two or three businesses.', 'Get named by AI tools: Bing and Apple listings, reviews on several platforms, clear pages'] }
   ];
 
   var T = en ? {
