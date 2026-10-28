@@ -59,6 +59,7 @@ async function traiterContact(request, env) {
     ['Contact', d.contact],
     ['Site', d.site || '(aucun)'],
     ['Besoin', d.besoin],
+    ['Langue du site', nettoyer(form.get('langue'), 5) === 'en' ? 'anglais' : 'français'],
   ];
   const html = '<h2>Nouvelle demande de diagnostic</h2><table>' +
     lignes.map(([k, v]) => `<tr><td><strong>${k}</strong></td><td>${echapper(v)}</td></tr>`).join('') +
