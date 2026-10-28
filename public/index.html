@@ -66,12 +66,15 @@
 </div>
 </div>
 <div class="heros-panneau">
+<div class="scene">
+<svg class="montagnes" viewBox="0 0 400 120" preserveAspectRatio="none" aria-hidden="true"><path d="M0,120 L0,58 L45,34 L80,50 L130,12 L175,44 L215,26 L262,60 L310,30 L360,52 L400,40 L400,120 Z" fill="#2F5C49"/><path d="M0,120 L0,82 L55,60 L100,78 L150,48 L205,80 L250,64 L300,88 L350,66 L400,84 L400,120 Z" fill="#1A3529"/></svg>
 <div class="poteau" role="img" aria-label="Panneau de randonnée&nbsp;: votre entreprise, Annecy, altitude 448 m. Diagnostic offert en 48 heures, fiche Google au point en une semaine, un site qui convainc en trois semaines, plus d'appels et de réservations en deux à quatre mois.">
 <div class="poteau-tete"><strong>Votre entreprise</strong><span>Annecy · alt. 448 m</span></div>
 <div class="plaque signal"><b>Diagnostic offert</b><small>48 h</small></div>
 <div class="plaque gauche"><b>Fiche Google au point</b><small>1 sem.</small></div>
 <div class="plaque"><b>Un site qui convainc</b><small>3 sem.</small></div>
 <div class="plaque gauche arrivee"><b>Plus d'appels et de réservations</b><small>2–4 mois</small></div>
+</div>
 </div>
 </div>
 </section>
@@ -105,7 +108,6 @@
 </section>
 
 <section id="methode" class="conteneur section">
-<p class="surtitre">La méthode</p>
 <h2 class="titre-2">Trois étapes, un seul interlocuteur</h2>
 <div class="grille">
 <div class="carte">
@@ -129,7 +131,6 @@
 <section class="fond-blanc">
 <div class="conteneur section carte-section">
 <div class="carte-texte">
-<p class="surtitre">Le diagnostic, en image</p>
 <h2 class="titre-2">Où vous apparaissez, rue par rue</h2>
 <p>Google ne classe pas une entreprise de la même façon partout&nbsp;: tout dépend d'où l'on cherche. Le diagnostic mesure votre position depuis des dizaines de points autour de vous, pour votre recherche principale.</p>
 <p>Chaque pastille indique votre rang dans la carte Google quand quelqu'un cherche depuis cet endroit. Vert&nbsp;: vous êtes dans les trois premiers, donc vu.</p>
@@ -150,9 +151,8 @@
 </div>
 </section>
 
-<section id="offres" class="fond-blanc">
+<section id="offres">
 <div class="conteneur section">
-<p class="surtitre">Offres</p>
 <h2 class="titre-2">Des prix clairs, affichés</h2>
 <div class="grille">
 <div class="offre">
@@ -175,10 +175,9 @@
 </div>
 </section>
 
-<section id="temoignages" class="conteneur section">
+<section id="temoignages" class="fond-blanc"><div class="conteneur section">
 <div class="entete-section">
 <div>
-<p class="surtitre">Témoignages</p>
 <h2 class="titre-2">Ce qu'en disent les entreprises</h2>
 </div>
 <span class="mention-demo">Exemples fictifs pour la démo</span>
@@ -198,15 +197,16 @@
 </figure>
 </div>
 <a class="lien-fleche" href="/temoignages">Tous les témoignages →</a>
+</div>
 </section>
 
 <section id="apropos" class="vert">
 <div class="conteneur section">
 <div class="portrait">[Photo de Chris]</div>
 <div class="apropos-texte">
-<p class="surtitre">À propos</p>
 <h2 class="titre-2">Chris Elston, le baliseur</h2>
-<p>Diplômé en technologies de l'information, j'ai créé des sites web et des applications, et j'en ai mené le marketing. Je travaille avec Google depuis 26 ans, je maîtrise le référencement (SEO) et j'utilise au quotidien les outils d'intelligence artificielle, qui me permettent d'avancer vite sans rogner sur la qualité. Je m'occupe aussi du design visuel, et je connais le monde de l'entreprise comme ses tendances. En parallèle, depuis plus de vingt ans, j'organise le déplacement de voyageurs pour des tour-opérateurs, jusqu'à 10 000 par semaine.</p>
+<p>Diplômé en technologies de l'information, j'ai créé des sites web et des applications, et j'en ai mené le marketing. Je travaille avec Google depuis 26 ans, je maîtrise le référencement (SEO) et j'utilise au quotidien les outils d'intelligence artificielle, qui me permettent d'avancer vite sans rogner sur la qualité. Je m'occupe aussi du design visuel, et je connais le monde de l'entreprise comme ses tendances.</p>
+<p>En parallèle, depuis plus de vingt ans, j'organise le déplacement de voyageurs pour des tour-opérateurs, jusqu'à 10 000 par semaine.</p>
 <p>J'applique la même rigueur à votre visibilité&nbsp;: des étapes claires, des délais tenus, des résultats mesurés. J'habite à Annecy-le-Vieux et je travaille en français comme en anglais.</p>
 <ul class="etiquettes">
 <li>Diplôme en informatique</li>
@@ -225,7 +225,6 @@
 
 <section id="diagnostic" class="conteneur section contact">
 <div class="contact-intro">
-<p class="surtitre" style="margin:0">Diagnostic offert</p>
 <h2 class="titre-2">Où en êtes-vous sur Google&nbsp;?</h2>
 <p>Laissez-moi vos coordonnées&nbsp;: je vous envoie votre diagnostic sous 48 h, sans engagement.</p>
 <p><a href="mailto:chris@lebaliseur.fr"><strong>chris@lebaliseur.fr</strong></a></p>
@@ -245,7 +244,7 @@
 </select>
 </label>
 <label class="piege" aria-hidden="true">Ne pas remplir<input type="text" name="site_web" tabindex="-1" autocomplete="off"></label>
-<label class="consentement large"><input type="checkbox" name="rgpd" value="oui" required>J'accepte que ces informations soient utilisées pour me recontacter au sujet de ma demande. Elles ne sont ni revendues ni conservées au-delà. <a href="/confidentialite">Comment vos données sont traitées</a></label>
+<label class="consentement large"><input type="checkbox" name="rgpd" value="oui" required><span>J'accepte que ces informations soient utilisées pour me recontacter au sujet de ma demande. Elles ne sont ni revendues ni conservées au-delà. <a href="/confidentialite">Comment vos données sont traitées</a></span></label>
 <button class="bouton bouton-sombre large" type="submit">Recevoir mon diagnostic</button>
 <p class="statut large" id="statut" role="status" aria-live="polite"></p>
 </form>
