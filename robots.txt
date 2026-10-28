@@ -1,0 +1,4 @@
+# Site en démonstration : ne pas indexer pour l'instant.
+# Au lancement : remplacer par "Allow: /" et ajouter le sitemap.
+User-agent: *
+Disallow: /
