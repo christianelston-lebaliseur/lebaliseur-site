@@ -275,3 +275,6 @@ a:hover { color: var(--ardoise); }
 .scene .plaque { padding-right: 46px; }
 .scene .plaque.gauche { padding-left: 46px; padding-right: 18px; }
 @media (max-width: 760px) { .heros-panneau { flex-basis: 100%; } .scene .plaque b { font-size: 20px; } }
+
+#offres .grille, #pricing .grille { grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); }
+.offre h3 { line-height: 1.1; min-height: 2.2em; }
