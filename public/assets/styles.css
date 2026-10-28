@@ -260,12 +260,10 @@ a:hover { color: var(--ardoise); }
 
 /* En-tête mobile : logo + bouton sur une ligne, menu défilant dessous */
 @media (max-width: 760px) {
-  .entete .conteneur { position: relative; display: block; padding-block: 14px 6px; }
   .marque span { font-size: 24px; }
   .nav { flex-wrap: nowrap; overflow-x: auto; gap: 22px; margin-top: 8px; padding-bottom: 6px; scrollbar-width: none; }
   .nav::-webkit-scrollbar { display: none; }
   .nav a:not(.bouton) { white-space: nowrap; }
-  .nav .bouton { position: absolute; right: 24px; top: 12px; font-size: 16px; padding: 8px 14px; min-height: 40px; }
   .heros { padding-block: 40px 64px; gap: 40px; }
 }
 .heros-panneau { flex: 0 1 480px; }
@@ -278,3 +276,18 @@ a:hover { color: var(--ardoise); }
 
 #offres .grille, #pricing .grille { grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); }
 .offre h3 { line-height: 1.1; min-height: 2.2em; }
+
+/* En-tête : actions (langue + bouton) à droite, sur toutes les tailles */
+.entete .nav { margin-left: auto; }
+.entete-actions { display: flex; align-items: center; gap: 20px; margin-left: 12px; }
+.entete-actions a.langue { display: inline-flex; align-items: center; gap: 6px; font-weight: 600; text-decoration: none; color: var(--ardoise); }
+.entete-actions .bouton { font-size: 18px; padding: 10px 18px; }
+@media (max-width: 760px) {
+  .entete .conteneur { display: grid; grid-template-columns: auto 1fr auto; align-items: center; gap: 4px 16px; padding-block: 12px 4px; }
+  .marque { grid-row: 1; grid-column: 1 / 3; }
+  .marque span { white-space: nowrap; }
+  .entete-actions { display: contents; }
+  .entete-actions .bouton { grid-row: 1; grid-column: 3; font-size: 16px; padding: 8px 14px; min-height: 40px; white-space: nowrap; }
+  .entete-actions a.langue { grid-row: 2; grid-column: 1; padding-block: 8px; padding-right: 14px; border-right: 1px solid var(--trait); }
+  .entete .nav { grid-row: 2; grid-column: 2 / -1; margin-left: 0; margin-top: 0; }
+}
