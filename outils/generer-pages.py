@@ -210,6 +210,28 @@ SERV = {
    etapes=[("Starting point", "I measure where you stand in the first month: that's the baseline."), ("Every month", "The actions in your plan, done and logged."), ("The report", "A clear summary: what was done, what moved, what's next.")],
    faq=[("What happens if I stop?", "Nothing disappears: your profile, website and accounts stay yours. Only the upkeep stops."), ("Why 3 months minimum?", "Local rankings often take two to four months to move. Any shorter and there's little to measure.")]),
 },
+'lancement': {
+ 'fr': dict(url='/services/pack-lancement', court='Pack Lancement',
+   title="Pack Lancement : site et fiche Google sans rien avancer, à Annecy · Le Baliseur",
+   desc="Vous créez votre entreprise ? Site vitrine, fiche Google et suivi mensuel sans rien payer au départ : 89 € par mois sur 24 mois. Sur dossier, 3 places par trimestre.",
+   h1='Pack Lancement', accroche='Votre entreprise visible dès le premier jour, sans rien avancer.',
+   chapo="Quand on se lance, la trésorerie est serrée et il y a mille choses à faire. Le Pack Lancement vous donne un site, une fiche Google au point et un suivi chaque mois, sans rien payer au départ : une mensualité fixe, et votre budget reste pour votre activité.",
+   prix='0 € au départ', prix_detail="Puis 89 € par mois pendant 24 mois, par prélèvement, à partir de la mise en ligne. Nom de domaine à votre nom et à votre charge (environ 10 à 20 € par an). Sur dossier, 3 places par trimestre. TVA non applicable, art. 293 B du CGI.",
+   inclus=["Le site vitrine jusqu'à 5 pages, rapide et lisible sur téléphone", "Le pack Visibilité Google & IA : fiche Google, Bing, Apple Plans et annuaires", "Le suivi mensuel Essentiel : fiche à jour, petites modifications du site, un bilan chaque mois", "Un rendez-vous de lancement pour clarifier votre offre et vos clients cibles", "Le site vous appartient au terme des 24 mois, ou plus tôt si vous soldez le reste"],
+   pour_qui=["Les entreprises qui viennent de s'immatriculer, ou qui vont le faire", "Basées à Annecy ou en Haute-Savoie", "Avec une offre claire et une idée de leurs clients", "Prêtes à s'engager sur 24 mois"],
+   etapes=[("Candidature", "Vous me présentez votre projet en quelques lignes, via le formulaire du diagnostic."), ("Rencontre", "30 minutes chez vous ou au café : votre offre, vos clients, vos objectifs. Je vous dis honnêtement si le pack vous convient."), ("Signature", "Un contrat simple et un mandat de prélèvement. Rien n'est prélevé avant la mise en ligne."), ("Lancement", "Fiche Google en une semaine, site en trois semaines environ, puis le suivi chaque mois.")],
+   faq=[("Pourquoi une sélection ?", "Parce que je m'engage deux ans à vos côtés et que les places sont limitées. La rencontre sert à vérifier que le site et Google sont bien la bonne priorité pour vous, et pas un investissement trop tôt."), ("Combien cela coûte-t-il au total ?", "2 136 € sur deux ans, tout compris. C'est à peine plus que le site et le suivi Essentiel achetés séparément (2 066 €), mais sans rien avancer."), ("Et si j'arrête avant 24 mois ?", "Vous pouvez solder les mensualités restantes et garder le site. Le contrat précise tout dès le départ.")]),
+ 'en': dict(url='/en/services/starter-pack', court='Starter pack',
+   title='Starter pack: website and Google profile with nothing upfront, Annecy · Le Baliseur',
+   desc='Starting a business? Website, Google profile and monthly support with nothing to pay upfront: €89 a month over 24 months. By application, 3 places per quarter.',
+   h1='Starter pack', accroche='Your business visible from day one, with nothing to pay upfront.',
+   chapo="When you're starting out, cash is tight and there are a thousand things to do. The starter pack gives you a website, a Google profile that's right and monthly support with nothing to pay upfront: one fixed monthly payment, so your budget goes into your business.",
+   prix='€0 upfront', prix_detail='Then €89 a month for 24 months, by direct debit, from the day the site goes live. Domain name in your name and paid by you (about €10–20 a year). By application, 3 places per quarter. VAT not applicable, art. 293 B of the French tax code.',
+   inclus=["A business website of up to 5 pages, fast and easy to read on a phone", "The Google & AI visibility pack: Google profile, Bing, Apple Maps and directories", "Essential monthly support: profile kept up to date, small website changes, a report every month", "A launch meeting to sharpen your offer and your target customers", "The website is yours at the end of the 24 months, or sooner if you settle the balance"],
+   pour_qui=["Businesses that have just registered, or are about to", "Based in Annecy or Haute-Savoie", "With a clear offer and an idea of their customers", "Ready to commit for 24 months"],
+   etapes=[("Apply", "Tell me about your project in a few lines, using the audit form."), ("Meet", "30 minutes at your place or a café: your offer, your customers, your goals. I'll tell you honestly whether the pack suits you."), ("Sign", "A simple contract and a direct debit mandate. Nothing is taken until the site goes live."), ("Launch", "Google profile in a week, website in about three weeks, then monthly support.")],
+   faq=[("Why is there a selection?", "Because I'm committing two years alongside you and places are limited. The meeting checks that a website and Google are the right priority for you, and not money spent too early."), ("How much is it in total?", "€2,136 over two years, everything included. That's only slightly more than buying the website and Essential support separately (€2,066), but with nothing upfront."), ("What if I stop before 24 months?", "You can settle the remaining payments and keep the website. The contract sets everything out from the start.")]),
+},
 }
 
 FAQ = {
@@ -263,10 +285,10 @@ for lang in ('fr', 'en'):
     url = '/services/' if lang == 'fr' else '/en/services/'
     other = '/en/services/' if lang == 'fr' else '/services/'
     cards = ''
-    for k in ('google', 'site', 'social', 'suivi'):
+    for k in ('google', 'site', 'social', 'suivi', 'lancement'):
         d = SERV[k][lang]
         cards += f'<a class="carte-service" href="{d["url"]}"><h2>{d["court"]}</h2><p class="prix-montant">{d["prix"]}</p><p>{esc(d["accroche"])}</p><span class="lien-fleche">{"En savoir plus" if lang=="fr" else "Learn more"} →</span></a>\n'
-    h1 = 'Services' ; intro = ("Quatre façons de vous rendre visible, à combiner selon vos besoins. Tout commence par le diagnostic offert, qui dit honnêtement par où commencer." if lang == 'fr' else "Four ways to make you visible, combined to suit you. Everything starts with the free audit, which tells you honestly where to begin.")
+    h1 = 'Services' ; intro = ("Quatre services à combiner selon vos besoins, et un pack pour ceux qui se lancent. Tout commence par le diagnostic offert, qui dit honnêtement par où commencer." if lang == 'fr' else "Four services to combine as you need, and a pack for those just starting out. Everything starts with the free audit, which tells you honestly where to begin.")
     main = f'<section class="conteneur section">\n<h1 class="titre-1">{h1}</h1>\n<p class="chapo" style="margin:20px 0 40px">{esc(intro)}</p>\n<div class="grille-services">\n{cards}</div>\n</section>'
     title = ('Services de visibilité locale à Annecy : Google, IA, site, réseaux sociaux · Le Baliseur' if lang == 'fr' else 'Local visibility services in Annecy: Google, AI, websites, social media · Le Baliseur')
     desc = ('Fiche Google et IA, site vitrine, réseaux sociaux et suivi mensuel pour les entreprises d’Annecy et de Haute-Savoie. Prix affichés, diagnostic offert.' if lang == 'fr' else 'Google and AI visibility, business websites, social media and monthly support for businesses in Annecy and Haute-Savoie. Clear prices, free audit.')

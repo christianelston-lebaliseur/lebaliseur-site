@@ -478,3 +478,10 @@ a:hover { color: var(--ardoise); }
 .exemple-visuel.exemple-appareils:hover { box-shadow: none; }
 .exemple-appareils img, .exemple-appareils .ecran-tel img { aspect-ratio: auto; object-fit: fill; }
 .exemple-appareils:hover .ecran-portable { box-shadow: 0 0 0 3px var(--signal), 0 18px 30px -20px rgba(28, 36, 32, 0.55); }
+
+/* Pack Lancement */
+.bandeau-lancement { margin-top: 24px; display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 20px 32px; background: var(--blanc); border: 3px dashed var(--sapin); border-radius: 10px; padding: 28px 32px; }
+.lancement-texte { flex: 1 1 420px; min-width: 0; display: flex; flex-direction: column; gap: 8px; }
+.lancement-texte h3 { margin: 0; font-family: var(--cond); font-weight: 700; font-size: 32px; line-height: 1.05; text-transform: uppercase; }
+.lancement-texte p { margin: 0; font-size: 17px; line-height: 1.5; color: var(--gris); }
+.lancement-texte .lancement-badge { font-family: var(--cond); font-weight: 700; font-size: 18px; text-transform: uppercase; letter-spacing: 1px; color: var(--sapin); }
