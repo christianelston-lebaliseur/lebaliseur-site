@@ -13,7 +13,7 @@
 body{margin:0}
 a{color:#21384A}a:hover{color:#2E6E8E}
 </style>
-<style>*,*::before,*::after{box-sizing:border-box} img{max-width:100%;height:auto} html{scroll-behavior:smooth}</style>
+<style>*,*::before,*::after{box-sizing:border-box} img{max-width:100%;height:auto} html{scroll-behavior:smooth} @media (max-width:640px){header nav>a:not(.garder){display:none} header{flex-wrap:nowrap!important}}</style>
 </head>
 <body>
 <div style="background:#1C2420;color:#D9DED8;font-family:system-ui,sans-serif;font-size:14px">
@@ -30,7 +30,7 @@ a{color:#21384A}a:hover{color:#2E6E8E}
     <nav style="display: flex; flex-wrap: wrap; gap: 24px; font-size: 15px; align-items: center">
       <a href="#chambres" style="text-decoration: none">Chambres</a>
       <a href="#alentours" style="text-decoration: none">Alentours</a>
-      <a href="#dispo" style="text-decoration: none; background: #2E6E8E; color: #FFFFFF; padding: 12px 20px; border-radius: 10px; font-weight: 600">Disponibilités</a>
+      <a class="garder" href="#dispo" style="text-decoration: none; background: #2E6E8E; color: #FFFFFF; padding: 12px 20px; border-radius: 10px; font-weight: 600">Disponibilités</a>
       <a href="#top" style="text-decoration: none; font-size: 14px; color: #5B6E7C">FR · EN</a>
     </nav>
   </header>

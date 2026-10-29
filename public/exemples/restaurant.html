@@ -13,7 +13,7 @@
 body{margin:0}
 a{color:#F2EBDD}a:hover{color:#E0A93B}
 </style>
-<style>*,*::before,*::after{box-sizing:border-box} img{max-width:100%;height:auto} html{scroll-behavior:smooth}</style>
+<style>*,*::before,*::after{box-sizing:border-box} img{max-width:100%;height:auto} html{scroll-behavior:smooth} @media (max-width:640px){header nav>a:not(.garder){display:none} header{flex-wrap:nowrap!important}}</style>
 </head>
 <body>
 <div style="background:#1C2420;color:#D9DED8;font-family:system-ui,sans-serif;font-size:14px">
@@ -30,7 +30,7 @@ a{color:#F2EBDD}a:hover{color:#E0A93B}
     <nav style="display: flex; flex-wrap: wrap; gap: 24px; font-size: 15px; align-items: center">
       <a href="#carte" style="text-decoration: none">La carte</a>
       <a href="#infos" style="text-decoration: none">Horaires &amp; accès</a>
-      <a href="#reserver" style="text-decoration: none; background: #E0A93B; color: #1A1714; padding: 12px 20px; border-radius: 4px; font-family: Oswald, sans-serif; letter-spacing: 0.06em; text-transform: uppercase">Réserver</a>
+      <a class="garder" href="#reserver" style="text-decoration: none; background: #E0A93B; color: #1A1714; padding: 12px 20px; border-radius: 4px; font-family: Oswald, sans-serif; letter-spacing: 0.06em; text-transform: uppercase">Réserver</a>
     </nav>
   </header>
 

@@ -385,3 +385,96 @@ a:hover { color: var(--ardoise); }
 .exemple-texte .etiquettes { width: 100%; padding: 4px 0 8px; }
 .exemples-appel { display: flex; flex-direction: column; gap: 24px; align-items: flex-start; }
 .exemples-appel .titre-2 { margin: 0; }
+
+/* ===== Refonte : héros téléphone, vitrine, classement, méthode, menu mobile, pied ===== */
+
+/* Héros : téléphone avec la carte Google */
+.heros-panneau .scene-tel { padding: 36px 24px 0; display: block; }
+.telephone { position: relative; z-index: 3; width: 100%; max-width: 300px; margin: 0 auto 72px; background: #111614; border-radius: 34px; padding: 10px; box-shadow: 0 24px 40px -18px rgba(0, 0, 0, 0.6); }
+.tel-ecran { background: var(--blanc); border-radius: 26px; overflow: hidden; display: flex; flex-direction: column; }
+.tel-recherche { margin: 14px 12px 10px; display: flex; align-items: center; gap: 8px; padding: 10px 14px; border-radius: 999px; background: var(--calcaire); color: var(--gris); font-size: 14px; }
+.tel-carte { width: 100%; height: auto; }
+.tel-resultats { list-style: none; margin: 0; padding: 0 0 8px; }
+.tel-resultats li { display: flex; gap: 10px; align-items: flex-start; padding: 10px 14px; border-top: 1px solid var(--trait); color: var(--gris); font-size: 13px; line-height: 1.3; }
+.tel-resultats li:first-child { border-top: 0; }
+.tel-rang { flex: none; width: 22px; height: 22px; border-radius: 50%; background: var(--trait); color: var(--ardoise); font-weight: 600; font-size: 12px; display: flex; align-items: center; justify-content: center; }
+.tel-info { display: flex; flex-direction: column; gap: 3px; min-width: 0; }
+.tel-info strong { color: var(--ardoise); font-size: 15px; }
+.etoiles { color: #D99A1E; letter-spacing: 1px; }
+.tel-premier { background: #FFF6E3; box-shadow: inset 4px 0 0 var(--signal); }
+.tel-premier .tel-rang { background: var(--signal); }
+.tel-actions { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 6px; }
+.tel-actions span { border: 1px solid var(--sapin); color: var(--sapin); border-radius: 999px; padding: 3px 9px; font-size: 12px; font-weight: 600; }
+.tel-actions span:first-child { background: var(--sapin); color: var(--blanc); }
+.tel-badge { position: absolute; z-index: 4; top: 20px; right: 12px; margin: 0; background: var(--signal); color: var(--ardoise); font-family: var(--cond); font-weight: 700; font-size: 20px; text-transform: uppercase; padding: 8px 14px; border-radius: 6px; transform: rotate(4deg); box-shadow: 0 3px 0 rgba(0, 0, 0, 0.25); }
+
+/* Vitrine des exemples */
+.vitrine-chapo { margin: -24px 0 40px; }
+.vitrine { display: grid; grid-template-columns: repeat(auto-fit, minmax(270px, 1fr)); gap: 40px 32px; }
+.vitrine-item { display: flex; flex-direction: column; gap: 18px; text-decoration: none; color: var(--ardoise); }
+.appareils { position: relative; display: block; padding: 0 30px 30px 0; }
+.ecran-portable { display: block; background: var(--ardoise); border-radius: 10px 10px 4px 4px; padding: 7px 7px 13px; box-shadow: 0 18px 30px -20px rgba(28, 36, 32, 0.55); transition: box-shadow 0.15s; }
+.ecran-portable img { width: 100%; height: auto; border-radius: 3px; }
+.ecran-tel { position: absolute; right: 0; bottom: 0; width: 29%; background: var(--ardoise); border-radius: 14px; padding: 4px; box-shadow: 0 12px 24px -12px rgba(28, 36, 32, 0.6); }
+.ecran-tel img { width: 100%; height: auto; border-radius: 10px; }
+.vitrine-item:hover .ecran-portable { box-shadow: 0 0 0 3px var(--signal), 0 18px 30px -20px rgba(28, 36, 32, 0.55); }
+.vitrine-legende { display: flex; flex-direction: column; gap: 4px; }
+.vitrine-legende strong { font-family: var(--cond); font-weight: 700; font-size: 28px; line-height: 1.05; text-transform: uppercase; }
+.vitrine-legende .lien-fleche { margin-top: 0; color: var(--sapin); }
+@media (prefers-reduced-motion: reduce) { .ecran-portable { transition: none; } }
+
+/* Section sombre : la ligne où les clients s'arrêtent */
+.classement { list-style: none; margin: 36px 0 0; padding: 0; display: flex; flex-direction: column; gap: 8px; max-width: 460px; }
+.classement li { display: flex; align-items: center; gap: 14px; padding: 12px 16px; border-radius: 8px; background: rgba(255, 255, 255, 0.08); color: var(--blanc); font-size: 17px; font-weight: 500; }
+.classement b { flex: none; width: 28px; height: 28px; border-radius: 50%; background: var(--signal); color: var(--ardoise); display: flex; align-items: center; justify-content: center; font-family: var(--cond); font-size: 18px; }
+.classement em { margin-left: auto; font-style: normal; font-weight: 600; color: var(--signal); white-space: nowrap; }
+.classement .coupure { background: none; padding: 6px 0; gap: 12px; color: var(--signal); font-family: var(--cond); font-weight: 700; font-size: 17px; text-transform: uppercase; letter-spacing: 1px; }
+.classement .coupure::before, .classement .coupure::after { content: ""; flex: 1 1 24px; border-top: 2px dashed var(--signal); }
+.classement .coupure span { flex: none; }
+.classement .cache { color: #8E9A93; background: rgba(255, 255, 255, 0.03); }
+.classement .cache b { background: #4A5650; color: #C9D0CB; }
+.classement .cache em { color: #8E9A93; }
+.classement .vous { outline: 2px dashed #6E7B74; outline-offset: -2px; }
+
+/* Méthode : étapes + poteau */
+.methode-grille { display: flex; flex-wrap: wrap; align-items: center; gap: 48px 56px; }
+.methode-texte { flex: 999 1 480px; min-width: 0; }
+.methode-texte .titre-2 { margin-bottom: 32px; }
+.methode-etapes { display: flex; flex-direction: column; gap: 16px; }
+.methode-etapes .carte { flex: none; max-width: none; display: grid; grid-template-columns: 48px 1fr; align-items: start; gap: 6px 20px; padding: 24px; }
+.methode-etapes .numero { grid-row: span 2; }
+.heros-panneau.methode-panneau { flex: 1 1 360px; }
+
+/* Menu mobile */
+.menu-bouton { display: none; align-items: center; gap: 8px; min-height: 44px; padding: 8px 14px; border: 2px solid var(--ardoise); border-radius: 6px; background: transparent; color: var(--ardoise); font-family: var(--cond); font-weight: 700; font-size: 18px; text-transform: uppercase; cursor: pointer; }
+@media (max-width: 1080px) {
+  .entete .conteneur { display: grid; grid-template-columns: 1fr auto auto; align-items: center; gap: 0 12px; padding-block: 12px; }
+  .marque { grid-row: 1; grid-column: 1; }
+  .entete-actions { display: contents; }
+  .entete-actions .bouton { grid-row: 1; grid-column: 2; font-size: 17px; padding: 8px 14px; min-height: 44px; white-space: nowrap; }
+  .menu-bouton { display: inline-flex; grid-row: 1; grid-column: 3; }
+  .entete .nav, .entete-actions a.langue { display: none; }
+  .entete.menu-ouvert .nav { display: flex; grid-row: 2; grid-column: 1 / -1; flex-direction: column; align-items: stretch; gap: 0; margin: 12px 0 0; padding: 0; overflow: visible; border-top: 1px solid var(--trait); }
+  .entete.menu-ouvert .nav a:not(.bouton) { padding: 14px 4px; border-bottom: 1px solid var(--trait); font-size: 18px; }
+  .entete.menu-ouvert .nav a[aria-current="page"] { box-shadow: inset 4px 0 0 var(--signal); padding-left: 14px; }
+  .entete.menu-ouvert .entete-actions a.langue { display: inline-flex; grid-row: 3; grid-column: 1 / -1; justify-self: start; padding: 14px 4px; border-right: 0; }
+}
+@media (max-width: 560px) {
+  .entete-actions .bouton { display: none; }
+  .entete.menu-ouvert .entete-actions .bouton { display: inline-flex; grid-row: 4; grid-column: 1 / -1; margin: 4px 0 8px; }
+}
+
+/* Pied de page */
+.pied .pied-haut { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); align-items: start; gap: 40px; padding-block: 64px 40px; }
+.pied .pied-bas { border-top: 1px solid rgba(255, 255, 255, 0.12); padding-block: 24px; }
+.pied .pied-col { display: flex; flex-direction: column; align-items: flex-start; gap: 10px; font-size: 15px; }
+.pied-col p { margin: 0; line-height: 1.5; }
+.pied-nom { display: flex; align-items: center; gap: 12px; font-family: var(--cond); font-weight: 700; font-size: 26px; text-transform: uppercase; color: var(--blanc); }
+.pied-titre { font-family: var(--cond); font-weight: 700; font-size: 18px; text-transform: uppercase; letter-spacing: 1px; color: var(--blanc); }
+.pied a.bouton-signal { color: var(--ardoise); margin-top: 8px; font-size: 18px; }
+.pied a.bouton-signal:hover { color: var(--ardoise); }
+.etoile-vide { color: var(--trait); }
+.exemple-visuel.exemple-appareils { background: none; border-radius: 0; overflow: visible; box-shadow: none; }
+.exemple-visuel.exemple-appareils:hover { box-shadow: none; }
+.exemple-appareils img, .exemple-appareils .ecran-tel img { aspect-ratio: auto; object-fit: fill; }
+.exemple-appareils:hover .ecran-portable { box-shadow: 0 0 0 3px var(--signal), 0 18px 30px -20px rgba(28, 36, 32, 0.55); }

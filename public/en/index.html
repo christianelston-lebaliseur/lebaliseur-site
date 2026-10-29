@@ -28,7 +28,7 @@
 <svg width="30" height="40" viewBox="0 0 120 160" aria-hidden="true"><rect x="52" y="10" width="14" height="146" fill="#1C2420"/><path d="M28 22 H100 L116 38 L100 54 H28 Z" fill="#F2B23A"/><path d="M92 66 H20 L4 82 L20 98 H92 Z" fill="#24493A"/></svg>
 <span>Le Baliseur</span>
 </a>
-<nav class="nav" aria-label="Main navigation">
+<nav class="nav" id="menu-principal" aria-label="Main navigation">
 <a href="#method">How it works</a>
 <a href="/en/services/">Services</a>
 <a href="/en/examples/">Examples</a>
@@ -40,6 +40,7 @@
 <a class="langue" href="/" lang="fr" hreflang="fr" aria-label="FR, version française"><svg width="24" height="16" viewBox="0 0 3 2" aria-hidden="true"><rect width="1" height="2" fill="#0055A4"/><rect x="1" width="1" height="2" fill="#FFFFFF"/><rect x="2" width="1" height="2" fill="#EF4135"/></svg><span>FR</span></a>
 <a class="bouton bouton-signal" href="#audit">Free audit</a>
 </div>
+<button class="menu-bouton" type="button" aria-expanded="false" aria-controls="menu-principal" data-ouvrir="Menu" data-fermer="Close"><svg width="22" height="22" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 6h18M3 12h18M3 18h18" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/></svg><span>Menu</span></button>
 </div>
 </header>
 
@@ -47,28 +48,61 @@
 
 <section class="conteneur heros">
 <div class="heros-texte">
-<p class="surtitre" style="margin:0">Local visibility · Annecy &amp; Haute-Savoie</p>
+<p class="surtitre" style="margin:0">Websites, Google &amp; social media · Annecy &amp; Haute-Savoie</p>
 <h1 class="titre-1">Marking the trail to your customers.</h1>
 <p class="accroche">Your customers are searching for you. They're finding your competitors.</p>
-<p class="chapo">When someone searches "restaurant Annecy" on Google, or asks ChatGPT where to find a plumber, only a handful of businesses get named. I help you become one of them: your Google profile, your website, your reviews, and ongoing support so it lasts.</p>
+<p class="chapo">When someone searches "restaurant Annecy" on Google, or asks ChatGPT where to find a plumber, only a handful of businesses get named. I make you one of them: a website that makes people call, a Google profile that’s right, reviews and social media that stay active, and ongoing support so it lasts.</p>
 <div class="origine">
 <p><strong>Why "Le Baliseur"?</strong> In the Alps, a <em lang="fr">baliseur</em> is the person who paints the trail markers that keep hikers on the right path. In French, a <em lang="fr">balise</em> is also an HTML tag, the building block of every website. Clear markers, online and on the map, leading customers to your door: that's the job.</p>
 </div>
 <div class="heros-actions">
 <a class="bouton bouton-sombre" href="#audit">Get my free audit</a>
-<a class="bouton bouton-contour" href="#method">How it works</a>
+<a class="bouton bouton-contour" href="/en/examples/">See website examples</a>
 </div>
 </div>
 <div class="heros-panneau">
-<div class="scene">
+<div class="scene scene-tel">
 <svg class="montagnes" viewBox="0 0 400 120" preserveAspectRatio="none" aria-hidden="true"><path d="M0,120 L0,58 L45,34 L80,50 L130,12 L175,44 L215,26 L262,60 L310,30 L360,52 L400,40 L400,120 Z" fill="#2F5C49"/><path d="M0,120 L0,82 L55,60 L100,78 L150,48 L205,80 L250,64 L300,88 L350,66 L400,84 L400,120 Z" fill="#1A3529"/></svg>
-<div class="poteau" role="img" aria-label="Trail signpost: your business, Annecy, altitude 448 m. Free audit in 72 hours, Google profile sorted in one week, a website that convinces in three weeks, more calls and bookings in two to four months.">
-<div class="poteau-tete"><strong>Your business</strong><span>Annecy · alt. 448 m</span></div>
-<div class="plaque signal"><b>Free audit</b><small>72 h</small></div>
-<div class="plaque gauche"><b>Google profile sorted</b><small>1 wk</small></div>
-<div class="plaque"><b>A site that convinces</b><small>3 wks</small></div>
-<div class="plaque gauche arrivee"><b>More calls and bookings</b><small>2–4 months</small></div>
+<div class="telephone" role="img" aria-label="Illustration: a search for "restaurant annecy" on the Google map, with your business in first place, ahead of two competitors.">
+<div class="tel-ecran">
+<div class="tel-recherche"><svg width="16" height="16" viewBox="0 0 24 24" aria-hidden="true"><circle cx="10.5" cy="10.5" r="6.5" fill="none" stroke="currentColor" stroke-width="2.4"/><path d="M15.5 15.5 L21 21" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/></svg><span>restaurant annecy</span></div>
+<svg class="tel-carte" viewBox="0 0 300 150" aria-hidden="true"><rect width="300" height="150" fill="#E6EBE4"/><path d="M170 0 C150 30 175 55 160 80 C145 105 175 130 165 150 L230 150 C240 120 215 100 228 72 C240 45 215 25 225 0 Z" fill="#B9D3DE"/><path d="M0 46 H300 M0 112 H300 M70 0 V150 M120 0 L110 150 M260 0 V150" stroke="#FFFFFF" stroke-width="5"/><path d="M0 82 C60 76 100 96 150 88" stroke="#FFFFFF" stroke-width="3" fill="none"/><g fill="#9AA59F"><circle cx="40" cy="30" r="6"/><circle cx="250" cy="95" r="6"/><circle cx="95" cy="128" r="6"/><circle cx="280" cy="30" r="6"/></g><path d="M128 72 c0 -11 8 -19 18 -19 s18 8 18 19 c0 14 -18 30 -18 30 s-18 -16 -18 -30 z" fill="#F2B23A" stroke="#1C2420" stroke-width="2.5"/><circle cx="146" cy="72" r="6" fill="#1C2420"/></svg>
+<ol class="tel-resultats">
+<li class="tel-premier"><span class="tel-rang">1</span><span class="tel-info"><strong>Your business</strong><span class="tel-note"><span class="etoiles" aria-hidden="true">★★★★★</span> 4.9 · Open</span><span class="tel-actions"><span>Directions</span><span>Call</span><span>Website</span></span></span></li>
+<li><span class="tel-rang">2</span><span class="tel-info"><strong>The place across the street</strong><span class="tel-note"><span class="etoiles" aria-hidden="true">★★★★<span class="etoile-vide">★</span></span> 4.3</span></span></li>
+<li><span class="tel-rang">3</span><span class="tel-info"><strong>A national chain</strong><span class="tel-note"><span class="etoiles" aria-hidden="true">★★★★<span class="etoile-vide">★</span></span> 4.1</span></span></li>
+</ol>
 </div>
+</div>
+<p class="tel-badge" aria-hidden="true">No.&nbsp;1 on the map</p>
+</div>
+</div>
+</div>
+</section>
+
+<section id="examples" class="fond-blanc">
+<div class="conteneur section">
+<div class="entete-section">
+<div>
+<p class="surtitre">Website examples</p>
+<h2 class="titre-2">Websites that make people call</h2>
+</div>
+<a class="bouton bouton-contour" href="/en/examples/">See all examples</a>
+</div>
+<p class="chapo vitrine-chapo">Designed for phones first, fast, and built to be clearly understood by Google and AI tools. Three examples for local businesses:</p>
+<div class="vitrine">
+<a class="vitrine-item" href="/exemples/coach-de-vie">
+<span class="appareils" aria-hidden="true"><span class="ecran-portable"><img src="/assets/exemples/apercu-coach-de-vie.webp" width="1000" height="625" alt="" loading="lazy"></span><span class="ecran-tel"><img src="/assets/exemples/apercu-coach-de-vie-mobile.webp" width="300" height="600" alt="" loading="lazy"></span></span>
+<span class="vitrine-legende"><strong>Life coach</strong><span class="lien-fleche">View the example →</span></span>
+</a>
+<a class="vitrine-item" href="/exemples/restaurant">
+<span class="appareils" aria-hidden="true"><span class="ecran-portable"><img src="/assets/exemples/apercu-restaurant.webp" width="1000" height="625" alt="" loading="lazy"></span><span class="ecran-tel"><img src="/assets/exemples/apercu-restaurant-mobile.webp" width="300" height="600" alt="" loading="lazy"></span></span>
+<span class="vitrine-legende"><strong>Restaurant</strong><span class="lien-fleche">View the example →</span></span>
+</a>
+<a class="vitrine-item" href="/exemples/chambres-hotes">
+<span class="appareils" aria-hidden="true"><span class="ecran-portable"><img src="/assets/exemples/apercu-chambres-hotes.webp" width="1000" height="625" alt="" loading="lazy"></span><span class="ecran-tel"><img src="/assets/exemples/apercu-chambres-hotes-mobile.webp" width="300" height="600" alt="" loading="lazy"></span></span>
+<span class="vitrine-legende"><strong>B&amp;B</strong><span class="lien-fleche">View the example →</span></span>
+</a>
 </div>
 </div>
 </section>
@@ -77,6 +111,7 @@
 <div class="conteneur">
 <div class="colonne">
 <h2 class="titre-2">On Google, the top three take almost everything.</h2>
+<ol class="classement" aria-label="Illustration: the top three results get seen, the rest far less."><li class="vu"><b>1</b><span>The place across the street</span><em>★ 4.8</em></li><li class="vu"><b>2</b><span>A national chain</span><em>★ 4.4</em></li><li class="vu"><b>3</b><span>A competitor</span><em>★ 4.6</em></li><li class="coupure"><span>Most customers stop here</span></li><li class="cache vous"><b>4</b><span>Your business</span><em>★ 4.7</em></li><li class="cache"><b>5</b><span>…</span><em></em></li><li class="cache"><b>6</b><span>…</span><em></em></li></ol>
 </div>
 <div class="colonne">
 <p>For local searches, Google shows a map with three businesses. Most customers stop there. The others exist, but nobody sees them.</p>
@@ -89,52 +124,6 @@
 <li>Dated website</li>
 </ul>
 </div>
-</div>
-</section>
-
-<section class="bandeau-test">
-<div class="conteneur">
-<div>
-<h2 class="titre-2">How visible are you on Google?</h2>
-<p>Take the self-check: nine questions, two minutes, a score out of 100.</p>
-</div>
-<a class="bouton bouton-sombre" href="/en/self-check">Take the test</a>
-</div>
-</section>
-
-<section id="method" class="conteneur section">
-<h2 class="titre-2">Three steps, one person to deal with</h2>
-<div class="grille">
-<div class="carte">
-<span class="numero" aria-hidden="true">1</span>
-<h3>The audit <span class="offert">· free</span></h3>
-<p>I compare your presence on Google and in AI answers and on social media with three direct competitors. You get the problems I find and three quick wins, with a mock-up when it helps.</p>
-</div>
-<div class="carte">
-<span class="numero" aria-hidden="true">2</span>
-<h3>The plan</h3>
-<p>I come and present a clear plan and one price. No website if that isn't your problem: we start with what pays off fastest.</p>
-</div>
-<div class="carte">
-<span class="numero" aria-hidden="true">3</span>
-<h3>The follow-up</h3>
-<p>Posts, reviews, updates, and a monthly check on your calls, direction requests and visits. Results are measured, and we look at them together.</p>
-</div>
-</div>
-</section>
-
-<section id="local" class="local">
-<div class="conteneur section local-grille">
-<div class="local-intro">
-<h2 class="titre-2">I come and see you</h2>
-<p>A remote agency sees your business through a screen. I come in person: I see your shopfront, your customers, your street. That's how the right decisions get made for your business.</p>
-</div>
-<ul class="liste-balise local-points">
-<li><strong>A meeting at your place</strong>, or the café next door, to go through the audit. At no cost.</li>
-<li><strong>Decisions made together</strong>, face to face, not in a quote sent by email.</li>
-<li><strong>I know Annecy</strong>, its neighbourhoods and its seasons: the summer rush, winter in the resorts, the Christmas markets.</li>
-<li><strong>One person to deal with</strong>, someone you might bump into in town.</li>
-</ul>
 </div>
 </section>
 
@@ -158,6 +147,67 @@
 <p class="mention-demo">Fictional example, for illustration</p>
 </div>
 <div class="carte" id="carte-classement"></div>
+</div>
+</section>
+
+<section class="bandeau-test">
+<div class="conteneur">
+<div>
+<h2 class="titre-2">How visible are you on Google?</h2>
+<p>Take the self-check: nine questions, two minutes, a score out of 100.</p>
+</div>
+<a class="bouton bouton-sombre" href="/en/self-check">Take the test</a>
+</div>
+</section>
+
+<section id="method" class="conteneur section">
+<div class="methode-grille">
+<div class="methode-texte">
+<h2 class="titre-2">Three steps, one person to deal with</h2>
+<div class="methode-etapes">
+<div class="carte">
+<span class="numero" aria-hidden="true">1</span>
+<h3>The audit <span class="offert">· free</span></h3>
+<p>I compare your presence on Google and in AI answers and on social media with three direct competitors. You get the problems I find and three quick wins, with a mock-up when it helps.</p>
+</div>
+<div class="carte">
+<span class="numero" aria-hidden="true">2</span>
+<h3>The plan</h3>
+<p>I come and present a clear plan and one price. No website if that isn't your problem: we start with what pays off fastest.</p>
+</div>
+<div class="carte">
+<span class="numero" aria-hidden="true">3</span>
+<h3>The follow-up</h3>
+<p>Posts, reviews, updates, and a monthly check on your calls, direction requests and visits. Results are measured, and we look at them together.</p>
+</div>
+</div>
+</div>
+<div class="heros-panneau methode-panneau">
+<div class="scene">
+<svg class="montagnes" viewBox="0 0 400 120" preserveAspectRatio="none" aria-hidden="true"><path d="M0,120 L0,58 L45,34 L80,50 L130,12 L175,44 L215,26 L262,60 L310,30 L360,52 L400,40 L400,120 Z" fill="#2F5C49"/><path d="M0,120 L0,82 L55,60 L100,78 L150,48 L205,80 L250,64 L300,88 L350,66 L400,84 L400,120 Z" fill="#1A3529"/></svg>
+<div class="poteau" role="img" aria-label="Trail signpost: your business, Annecy, altitude 448 m. Free audit in 72 hours, Google profile sorted in one week, a website that convinces in three weeks, more calls and bookings in two to four months.">
+<div class="poteau-tete"><strong>Your business</strong><span>Annecy · alt. 448 m</span></div>
+<div class="plaque signal"><b>Free audit</b><small>72 h</small></div>
+<div class="plaque gauche"><b>Google profile sorted</b><small>1 wk</small></div>
+<div class="plaque"><b>A site that convinces</b><small>3 wks</small></div>
+<div class="plaque gauche arrivee"><b>More calls and bookings</b><small>2–4 months</small></div>
+</div>
+</div>
+</div>
+</section>
+
+<section id="local" class="local">
+<div class="conteneur section local-grille">
+<div class="local-intro">
+<h2 class="titre-2">I come and see you</h2>
+<p>A remote agency sees your business through a screen. I come in person: I see your shopfront, your customers, your street. That's how the right decisions get made for your business.</p>
+</div>
+<ul class="liste-balise local-points">
+<li><strong>A meeting at your place</strong>, or the café next door, to go through the audit. At no cost.</li>
+<li><strong>Decisions made together</strong>, face to face, not in a quote sent by email.</li>
+<li><strong>I know Annecy</strong>, its neighbourhoods and its seasons: the summer rush, winter in the resorts, the Christmas markets.</li>
+<li><strong>One person to deal with</strong>, someone you might bump into in town.</li>
+</ul>
 </div>
 </section>
 
@@ -277,7 +327,24 @@
 </main>
 
 <footer class="pied">
-<div class="conteneur">
+<div class="conteneur pied-haut">
+<div class="pied-col pied-presentation">
+<p class="pied-nom"><svg width="24" height="32" viewBox="0 0 120 160" aria-hidden="true"><rect x="52" y="10" width="14" height="146" fill="#EEF0EC"/><path d="M28 22 H100 L116 38 L100 54 H28 Z" fill="#F2B23A"/><path d="M92 66 H20 L4 82 L20 98 H92 Z" fill="#6FA287"/></svg><span>Le Baliseur</span></p>
+<p>Websites, Google visibility and social media for businesses in Annecy and Haute-Savoie.</p>
+</div>
+<nav class="pied-col" aria-label="Site map">
+<p class="pied-titre">The site</p>
+<a href="/en/services/">Services</a><a href="/en/examples/">Examples</a><a href="/en/#method">How it works</a><a href="/en/#about">About</a><a href="/en/faq">FAQ</a><a href="/en/self-check">Self-check</a>
+</nav>
+<div class="pied-col">
+<p class="pied-titre">Contact</p>
+<a href="mailto:chris@lebaliseur.fr">chris@lebaliseur.fr</a>
+<p>Annecy-le-Vieux · I travel across Haute-Savoie</p>
+<p>English · Français</p>
+<a class="bouton bouton-signal" href="/en/#audit">Free audit</a>
+</div>
+</div>
+<div class="conteneur pied-bas">
 <div class="pied-marque">
 <svg width="24" height="32" viewBox="0 0 120 160" aria-hidden="true"><rect x="52" y="10" width="14" height="146" fill="#EEF0EC"/><path d="M28 22 H100 L116 38 L100 54 H28 Z" fill="#F2B23A"/><path d="M92 66 H20 L4 82 L20 98 H92 Z" fill="#6FA287"/></svg>
 <span>Le Baliseur · Chris Elston, sole trader (EI) · SIRET [to come]</span>
@@ -292,5 +359,6 @@
 
 <script src="/assets/formulaire.js" defer></script>
 <script src="/assets/carte.js" defer></script>
+<script src="/assets/menu.js" defer></script>
 </body>
 </html>

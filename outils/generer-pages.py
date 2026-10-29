@@ -315,11 +315,13 @@ EXEMPLES = {
 }
 for lang, E in EXEMPLES.items():
     rows = ''
-    for slug, photo, pos, sur, h2, txt, feats in E['items']:
+    for k, (slug, photo, pos, sur, h2, txt, feats) in enumerate(E['items']):
         lis = ''.join(f'<li>{esc(f)}</li>' for f in feats)
+        lazy = ' loading="lazy"' if k else ''
         rows += (f'<article class="exemple">\n'
-                 f'<a class="exemple-visuel" href="/exemples/{slug}" tabindex="-1" aria-hidden="true"><span class="exemple-barre"><i></i><i></i><i></i></span>'
-                 f'<img src="/assets/exemples/{photo}.jpg" alt="" loading="lazy" style="object-position:{pos}"></a>\n'
+                 f'<a class="exemple-visuel exemple-appareils" href="/exemples/{slug}" tabindex="-1" aria-hidden="true"><span class="appareils">'
+                 f'<span class="ecran-portable"><img src="/assets/exemples/apercu-{slug}.webp" width="1000" height="625" alt=""{lazy}></span>'
+                 f'<span class="ecran-tel"><img src="/assets/exemples/apercu-{slug}-mobile.webp" width="300" height="600" alt=""{lazy}></span></span></a>\n'
                  f'<div class="exemple-texte">\n<p class="surtitre">{esc(sur)}</p>\n<h2 class="titre-3">{esc(h2)}</h2>\n<p>{esc(txt)}</p>\n'
                  f'<ul class="etiquettes">{lis}</ul>\n'
                  f'<a class="bouton bouton-sombre" href="/exemples/{slug}">{esc(E["bouton"])} →</a>\n</div>\n</article>\n')

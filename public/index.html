@@ -42,7 +42,7 @@
 <svg width="30" height="40" viewBox="0 0 120 160" aria-hidden="true"><rect x="52" y="10" width="14" height="146" fill="#1C2420"/><path d="M28 22 H100 L116 38 L100 54 H28 Z" fill="#F2B23A"/><path d="M92 66 H20 L4 82 L20 98 H92 Z" fill="#24493A"/></svg>
 <span>Le Baliseur</span>
 </a>
-<nav class="nav" aria-label="Navigation principale">
+<nav class="nav" id="menu-principal" aria-label="Navigation principale">
 <a href="#methode">La méthode</a>
 <a href="/services/">Services</a>
 <a href="/exemples/">Exemples</a>
@@ -54,6 +54,7 @@
 <a class="langue" href="/en/" lang="en" hreflang="en" aria-label="EN, English version"><svg width="24" height="16" viewBox="0 0 60 30" preserveAspectRatio="none" aria-hidden="true"><clipPath id="uk-clip"><path d="M30,15 h30 v15 z v15 h-30 z h-30 v-15 z v-15 h30 z"/></clipPath><path d="M0,0 v30 h60 v-30 z" fill="#012169"/><path d="M0,0 L60,30 M60,0 L0,30" stroke="#fff" stroke-width="6"/><path d="M0,0 L60,30 M60,0 L0,30" clip-path="url(#uk-clip)" stroke="#C8102E" stroke-width="4"/><path d="M30,0 v30 M0,15 h60" stroke="#fff" stroke-width="10"/><path d="M30,0 v30 M0,15 h60" stroke="#C8102E" stroke-width="6"/></svg><span>EN</span></a>
 <a class="bouton bouton-signal" href="#diagnostic">Diagnostic offert</a>
 </div>
+<button class="menu-bouton" type="button" aria-expanded="false" aria-controls="menu-principal" data-ouvrir="Menu" data-fermer="Fermer"><svg width="22" height="22" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 6h18M3 12h18M3 18h18" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/></svg><span>Menu</span></button>
 </div>
 </header>
 
@@ -61,25 +62,58 @@
 
 <section class="conteneur heros">
 <div class="heros-texte">
-<p class="surtitre" style="margin:0">Visibilité locale · Annecy &amp; Haute-Savoie</p>
+<p class="surtitre" style="margin:0">Sites, Google &amp; réseaux sociaux · Annecy &amp; Haute-Savoie</p>
 <h1 class="titre-1">Baliser le chemin vers vos clients.</h1>
 <p class="accroche">Vos clients vous cherchent. Ils trouvent vos concurrents.</p>
-<p class="chapo">Quand on cherche «&nbsp;restaurant Annecy&nbsp;» sur Google, ou qu'on demande à ChatGPT où trouver un plombier, seules quelques entreprises sont citées. Je vous aide à en faire partie&nbsp;: fiche Google, site, avis, et un suivi pour que ça dure.</p>
+<p class="chapo">Quand on cherche «&nbsp;restaurant Annecy&nbsp;» sur Google, ou qu'on demande à ChatGPT où trouver un plombier, seules quelques entreprises sont citées. Je fais de vous l'une d'elles&nbsp;: un site qui donne envie d'appeler, une fiche Google au point, des avis et des réseaux qui vivent, et un suivi pour que ça dure.</p>
 <div class="heros-actions">
 <a class="bouton bouton-sombre" href="#diagnostic">Demander mon diagnostic offert</a>
-<a class="bouton bouton-contour" href="#methode">Voir la méthode</a>
+<a class="bouton bouton-contour" href="/exemples/">Voir des exemples de sites</a>
 </div>
 </div>
 <div class="heros-panneau">
-<div class="scene">
+<div class="scene scene-tel">
 <svg class="montagnes" viewBox="0 0 400 120" preserveAspectRatio="none" aria-hidden="true"><path d="M0,120 L0,58 L45,34 L80,50 L130,12 L175,44 L215,26 L262,60 L310,30 L360,52 L400,40 L400,120 Z" fill="#2F5C49"/><path d="M0,120 L0,82 L55,60 L100,78 L150,48 L205,80 L250,64 L300,88 L350,66 L400,84 L400,120 Z" fill="#1A3529"/></svg>
-<div class="poteau" role="img" aria-label="Panneau de randonnée&nbsp;: votre entreprise, Annecy, altitude 448 m. Diagnostic offert en 72 heures, fiche Google au point en une semaine, un site qui convainc en trois semaines, plus d'appels et de réservations en deux à quatre mois.">
-<div class="poteau-tete"><strong>Votre entreprise</strong><span>Annecy · alt. 448 m</span></div>
-<div class="plaque signal"><b>Diagnostic offert</b><small>72 h</small></div>
-<div class="plaque gauche"><b>Fiche Google au point</b><small>1 sem.</small></div>
-<div class="plaque"><b>Un site qui convainc</b><small>3 sem.</small></div>
-<div class="plaque gauche arrivee"><b>Plus d'appels et de réservations</b><small>2–4 mois</small></div>
+<div class="telephone" role="img" aria-label="Illustration&nbsp;: une recherche «&nbsp;restaurant annecy&nbsp;» sur la carte Google, avec votre entreprise en première position, devant deux concurrents.">
+<div class="tel-ecran">
+<div class="tel-recherche"><svg width="16" height="16" viewBox="0 0 24 24" aria-hidden="true"><circle cx="10.5" cy="10.5" r="6.5" fill="none" stroke="currentColor" stroke-width="2.4"/><path d="M15.5 15.5 L21 21" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/></svg><span>restaurant annecy</span></div>
+<svg class="tel-carte" viewBox="0 0 300 150" aria-hidden="true"><rect width="300" height="150" fill="#E6EBE4"/><path d="M170 0 C150 30 175 55 160 80 C145 105 175 130 165 150 L230 150 C240 120 215 100 228 72 C240 45 215 25 225 0 Z" fill="#B9D3DE"/><path d="M0 46 H300 M0 112 H300 M70 0 V150 M120 0 L110 150 M260 0 V150" stroke="#FFFFFF" stroke-width="5"/><path d="M0 82 C60 76 100 96 150 88" stroke="#FFFFFF" stroke-width="3" fill="none"/><g fill="#9AA59F"><circle cx="40" cy="30" r="6"/><circle cx="250" cy="95" r="6"/><circle cx="95" cy="128" r="6"/><circle cx="280" cy="30" r="6"/></g><path d="M128 72 c0 -11 8 -19 18 -19 s18 8 18 19 c0 14 -18 30 -18 30 s-18 -16 -18 -30 z" fill="#F2B23A" stroke="#1C2420" stroke-width="2.5"/><circle cx="146" cy="72" r="6" fill="#1C2420"/></svg>
+<ol class="tel-resultats">
+<li class="tel-premier"><span class="tel-rang">1</span><span class="tel-info"><strong>Votre entreprise</strong><span class="tel-note"><span class="etoiles" aria-hidden="true">★★★★★</span> 4,9 · Ouvert</span><span class="tel-actions"><span>Itinéraire</span><span>Appeler</span><span>Site web</span></span></span></li>
+<li><span class="tel-rang">2</span><span class="tel-info"><strong>Le voisin d’en face</strong><span class="tel-note"><span class="etoiles" aria-hidden="true">★★★★<span class="etoile-vide">★</span></span> 4,3</span></span></li>
+<li><span class="tel-rang">3</span><span class="tel-info"><strong>Une enseigne nationale</strong><span class="tel-note"><span class="etoiles" aria-hidden="true">★★★★<span class="etoile-vide">★</span></span> 4,1</span></span></li>
+</ol>
 </div>
+</div>
+<p class="tel-badge" aria-hidden="true">N°&nbsp;1 sur la carte</p>
+</div>
+</div>
+</div>
+</section>
+
+<section id="exemples" class="fond-blanc">
+<div class="conteneur section">
+<div class="entete-section">
+<div>
+<p class="surtitre">Exemples de sites</p>
+<h2 class="titre-2">Des sites qui donnent envie d'appeler</h2>
+</div>
+<a class="bouton bouton-contour" href="/exemples/">Voir tous les exemples</a>
+</div>
+<p class="chapo vitrine-chapo">Pensés d'abord pour le téléphone, rapides, et construits pour être bien compris par Google et les IA. Trois exemples pour des entreprises d'ici&nbsp;:</p>
+<div class="vitrine">
+<a class="vitrine-item" href="/exemples/coach-de-vie">
+<span class="appareils" aria-hidden="true"><span class="ecran-portable"><img src="/assets/exemples/apercu-coach-de-vie.webp" width="1000" height="625" alt="" loading="lazy"></span><span class="ecran-tel"><img src="/assets/exemples/apercu-coach-de-vie-mobile.webp" width="300" height="600" alt="" loading="lazy"></span></span>
+<span class="vitrine-legende"><strong>Coach de vie</strong><span class="lien-fleche">Voir l'exemple →</span></span>
+</a>
+<a class="vitrine-item" href="/exemples/restaurant">
+<span class="appareils" aria-hidden="true"><span class="ecran-portable"><img src="/assets/exemples/apercu-restaurant.webp" width="1000" height="625" alt="" loading="lazy"></span><span class="ecran-tel"><img src="/assets/exemples/apercu-restaurant-mobile.webp" width="300" height="600" alt="" loading="lazy"></span></span>
+<span class="vitrine-legende"><strong>Restaurant</strong><span class="lien-fleche">Voir l'exemple →</span></span>
+</a>
+<a class="vitrine-item" href="/exemples/chambres-hotes">
+<span class="appareils" aria-hidden="true"><span class="ecran-portable"><img src="/assets/exemples/apercu-chambres-hotes.webp" width="1000" height="625" alt="" loading="lazy"></span><span class="ecran-tel"><img src="/assets/exemples/apercu-chambres-hotes-mobile.webp" width="300" height="600" alt="" loading="lazy"></span></span>
+<span class="vitrine-legende"><strong>Chambres d'hôtes</strong><span class="lien-fleche">Voir l'exemple →</span></span>
+</a>
 </div>
 </div>
 </section>
@@ -88,6 +122,7 @@
 <div class="conteneur">
 <div class="colonne">
 <h2 class="titre-2">Sur Google, les trois premiers prennent presque tout.</h2>
+<ol class="classement" aria-label="Illustration&nbsp;: les trois premiers résultats sont vus, les suivants beaucoup moins."><li class="vu"><b>1</b><span>Le voisin d’en face</span><em>★ 4,8</em></li><li class="vu"><b>2</b><span>Une enseigne nationale</span><em>★ 4,4</em></li><li class="vu"><b>3</b><span>Un concurrent</span><em>★ 4,6</em></li><li class="coupure"><span>La plupart des clients s'arrêtent ici</span></li><li class="cache vous"><b>4</b><span>Votre entreprise</span><em>★ 4,7</em></li><li class="cache"><b>5</b><span>…</span><em></em></li><li class="cache"><b>6</b><span>…</span><em></em></li></ol>
 </div>
 <div class="colonne">
 <p>Dans les recherches locales, Google affiche une carte avec trois entreprises. La plupart des clients s'arrêtent là. Les autres existent, mais on ne les voit pas.</p>
@@ -100,52 +135,6 @@
 <li>Site daté</li>
 </ul>
 </div>
-</div>
-</section>
-
-<section class="bandeau-test">
-<div class="conteneur">
-<div>
-<h2 class="titre-2">Êtes-vous visible sur Google&nbsp;?</h2>
-<p>Faites le test&nbsp;: neuf questions, deux minutes, un score sur 100.</p>
-</div>
-<a class="bouton bouton-sombre" href="/auto-diagnostic">Faire le test</a>
-</div>
-</section>
-
-<section id="methode" class="conteneur section">
-<h2 class="titre-2">Trois étapes, un seul interlocuteur</h2>
-<div class="grille">
-<div class="carte">
-<span class="numero" aria-hidden="true">1</span>
-<h3>Le diagnostic <span class="offert">· offert</span></h3>
-<p>Je compare votre présence sur Google et dans les réponses des IA et sur les réseaux sociaux à celle de trois concurrents directs. Vous recevez les problèmes repérés et trois actions rapides, avec une maquette quand c'est utile.</p>
-</div>
-<div class="carte">
-<span class="numero" aria-hidden="true">2</span>
-<h3>Le plan</h3>
-<p>Je viens vous présenter un plan clair et un prix unique. Pas de site si ce n'est pas votre problème&nbsp;: on commence par ce qui rapporte le plus vite.</p>
-</div>
-<div class="carte">
-<span class="numero" aria-hidden="true">3</span>
-<h3>Le suivi</h3>
-<p>Publications, avis, mises à jour et un point chaque mois sur vos appels, itinéraires et visites. Les résultats se mesurent, on les regarde ensemble.</p>
-</div>
-</div>
-</section>
-
-<section id="local" class="local">
-<div class="conteneur section local-grille">
-<div class="local-intro">
-<h2 class="titre-2">Je viens vous voir</h2>
-<p>Une agence à distance voit votre entreprise à travers un écran. Moi, je viens sur place&nbsp;: je vois votre vitrine, vos clients, votre rue. C'est comme ça qu'on prend les bonnes décisions pour votre entreprise.</p>
-</div>
-<ul class="liste-balise local-points">
-<li><strong>Un rendez-vous chez vous</strong>, ou au café d'à côté, pour présenter le diagnostic. Sans frais.</li>
-<li><strong>Les décisions se prennent ensemble</strong>, face à face, pas dans un devis envoyé par e-mail.</li>
-<li><strong>Je connais Annecy</strong>, ses quartiers et ses saisons&nbsp;: le rush de l'été, l'hiver des stations, les marchés de Noël.</li>
-<li><strong>Un seul interlocuteur</strong>, que vous pouvez croiser en ville.</li>
-</ul>
 </div>
 </section>
 
@@ -169,6 +158,67 @@
 <p class="mention-demo">Exemple fictif, à titre d'illustration</p>
 </div>
 <div class="carte" id="carte-classement"></div>
+</div>
+</section>
+
+<section class="bandeau-test">
+<div class="conteneur">
+<div>
+<h2 class="titre-2">Êtes-vous visible sur Google&nbsp;?</h2>
+<p>Faites le test&nbsp;: neuf questions, deux minutes, un score sur 100.</p>
+</div>
+<a class="bouton bouton-sombre" href="/auto-diagnostic">Faire le test</a>
+</div>
+</section>
+
+<section id="methode" class="conteneur section">
+<div class="methode-grille">
+<div class="methode-texte">
+<h2 class="titre-2">Trois étapes, un seul interlocuteur</h2>
+<div class="methode-etapes">
+<div class="carte">
+<span class="numero" aria-hidden="true">1</span>
+<h3>Le diagnostic <span class="offert">· offert</span></h3>
+<p>Je compare votre présence sur Google et dans les réponses des IA et sur les réseaux sociaux à celle de trois concurrents directs. Vous recevez les problèmes repérés et trois actions rapides, avec une maquette quand c'est utile.</p>
+</div>
+<div class="carte">
+<span class="numero" aria-hidden="true">2</span>
+<h3>Le plan</h3>
+<p>Je viens vous présenter un plan clair et un prix unique. Pas de site si ce n'est pas votre problème&nbsp;: on commence par ce qui rapporte le plus vite.</p>
+</div>
+<div class="carte">
+<span class="numero" aria-hidden="true">3</span>
+<h3>Le suivi</h3>
+<p>Publications, avis, mises à jour et un point chaque mois sur vos appels, itinéraires et visites. Les résultats se mesurent, on les regarde ensemble.</p>
+</div>
+</div>
+</div>
+<div class="heros-panneau methode-panneau">
+<div class="scene">
+<svg class="montagnes" viewBox="0 0 400 120" preserveAspectRatio="none" aria-hidden="true"><path d="M0,120 L0,58 L45,34 L80,50 L130,12 L175,44 L215,26 L262,60 L310,30 L360,52 L400,40 L400,120 Z" fill="#2F5C49"/><path d="M0,120 L0,82 L55,60 L100,78 L150,48 L205,80 L250,64 L300,88 L350,66 L400,84 L400,120 Z" fill="#1A3529"/></svg>
+<div class="poteau" role="img" aria-label="Panneau de randonnée&nbsp;: votre entreprise, Annecy, altitude 448 m. Diagnostic offert en 72 heures, fiche Google au point en une semaine, un site qui convainc en trois semaines, plus d'appels et de réservations en deux à quatre mois.">
+<div class="poteau-tete"><strong>Votre entreprise</strong><span>Annecy · alt. 448 m</span></div>
+<div class="plaque signal"><b>Diagnostic offert</b><small>72 h</small></div>
+<div class="plaque gauche"><b>Fiche Google au point</b><small>1 sem.</small></div>
+<div class="plaque"><b>Un site qui convainc</b><small>3 sem.</small></div>
+<div class="plaque gauche arrivee"><b>Plus d'appels et de réservations</b><small>2–4 mois</small></div>
+</div>
+</div>
+</div>
+</section>
+
+<section id="local" class="local">
+<div class="conteneur section local-grille">
+<div class="local-intro">
+<h2 class="titre-2">Je viens vous voir</h2>
+<p>Une agence à distance voit votre entreprise à travers un écran. Moi, je viens sur place&nbsp;: je vois votre vitrine, vos clients, votre rue. C'est comme ça qu'on prend les bonnes décisions pour votre entreprise.</p>
+</div>
+<ul class="liste-balise local-points">
+<li><strong>Un rendez-vous chez vous</strong>, ou au café d'à côté, pour présenter le diagnostic. Sans frais.</li>
+<li><strong>Les décisions se prennent ensemble</strong>, face à face, pas dans un devis envoyé par e-mail.</li>
+<li><strong>Je connais Annecy</strong>, ses quartiers et ses saisons&nbsp;: le rush de l'été, l'hiver des stations, les marchés de Noël.</li>
+<li><strong>Un seul interlocuteur</strong>, que vous pouvez croiser en ville.</li>
+</ul>
 </div>
 </section>
 
@@ -287,7 +337,24 @@
 </main>
 
 <footer class="pied">
-<div class="conteneur">
+<div class="conteneur pied-haut">
+<div class="pied-col pied-presentation">
+<p class="pied-nom"><svg width="24" height="32" viewBox="0 0 120 160" aria-hidden="true"><rect x="52" y="10" width="14" height="146" fill="#EEF0EC"/><path d="M28 22 H100 L116 38 L100 54 H28 Z" fill="#F2B23A"/><path d="M92 66 H20 L4 82 L20 98 H92 Z" fill="#6FA287"/></svg><span>Le Baliseur</span></p>
+<p>Sites, visibilité Google et réseaux sociaux pour les entreprises d'Annecy et de Haute-Savoie.</p>
+</div>
+<nav class="pied-col" aria-label="Plan du site">
+<p class="pied-titre">Le site</p>
+<a href="/services/">Services</a><a href="/exemples/">Exemples</a><a href="/#methode">La méthode</a><a href="/#apropos">À propos</a><a href="/faq">FAQ</a><a href="/auto-diagnostic">Auto-diagnostic</a>
+</nav>
+<div class="pied-col">
+<p class="pied-titre">Contact</p>
+<a href="mailto:chris@lebaliseur.fr">chris@lebaliseur.fr</a>
+<p>Annecy-le-Vieux · je me déplace dans toute la Haute-Savoie</p>
+<p>Français · English</p>
+<a class="bouton bouton-signal" href="/#diagnostic">Diagnostic offert</a>
+</div>
+</div>
+<div class="conteneur pied-bas">
 <div class="pied-marque">
 <svg width="24" height="32" viewBox="0 0 120 160" aria-hidden="true"><rect x="52" y="10" width="14" height="146" fill="#EEF0EC"/><path d="M28 22 H100 L116 38 L100 54 H28 Z" fill="#F2B23A"/><path d="M92 66 H20 L4 82 L20 98 H92 Z" fill="#6FA287"/></svg>
 <span>Le Baliseur · Chris Elston, entrepreneur individuel · SIRET [à venir]</span>
@@ -302,5 +369,6 @@
 
 <script src="/assets/formulaire.js" defer></script>
 <script src="/assets/carte.js" defer></script>
+<script src="/assets/menu.js" defer></script>
 </body>
 </html>

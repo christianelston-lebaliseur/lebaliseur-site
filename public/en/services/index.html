@@ -48,7 +48,7 @@
 <svg width="30" height="40" viewBox="0 0 120 160" aria-hidden="true"><rect x="52" y="10" width="14" height="146" fill="#1C2420"/><path d="M28 22 H100 L116 38 L100 54 H28 Z" fill="#F2B23A"/><path d="M92 66 H20 L4 82 L20 98 H92 Z" fill="#24493A"/></svg>
 <span>Le Baliseur</span>
 </a>
-<nav class="nav" aria-label="Main navigation">
+<nav class="nav" id="menu-principal" aria-label="Main navigation">
 <a href="/en/#method">How it works</a>
 <a href="/en/services/" aria-current="page">Services</a>
 <a href="/en/examples/">Examples</a>
@@ -60,6 +60,7 @@
 <a class="langue" href="/services/" lang="fr" hreflang="fr" aria-label="FR, version française"><svg width="24" height="16" viewBox="0 0 3 2" aria-hidden="true"><rect width="1" height="2" fill="#0055A4"/><rect x="1" width="1" height="2" fill="#FFFFFF"/><rect x="2" width="1" height="2" fill="#EF4135"/></svg><span>FR</span></a>
 <a class="bouton bouton-signal" href="/en/#audit">Free audit</a>
 </div>
+<button class="menu-bouton" type="button" aria-expanded="false" aria-controls="menu-principal" data-ouvrir="Menu" data-fermer="Close"><svg width="22" height="22" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 6h18M3 12h18M3 18h18" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/></svg><span>Menu</span></button>
 </div>
 </header>
 
@@ -79,7 +80,24 @@
 
 
 <footer class="pied">
-<div class="conteneur">
+<div class="conteneur pied-haut">
+<div class="pied-col pied-presentation">
+<p class="pied-nom"><svg width="24" height="32" viewBox="0 0 120 160" aria-hidden="true"><rect x="52" y="10" width="14" height="146" fill="#EEF0EC"/><path d="M28 22 H100 L116 38 L100 54 H28 Z" fill="#F2B23A"/><path d="M92 66 H20 L4 82 L20 98 H92 Z" fill="#6FA287"/></svg><span>Le Baliseur</span></p>
+<p>Websites, Google visibility and social media for businesses in Annecy and Haute-Savoie.</p>
+</div>
+<nav class="pied-col" aria-label="Site map">
+<p class="pied-titre">The site</p>
+<a href="/en/services/">Services</a><a href="/en/examples/">Examples</a><a href="/en/#method">How it works</a><a href="/en/#about">About</a><a href="/en/faq">FAQ</a><a href="/en/self-check">Self-check</a>
+</nav>
+<div class="pied-col">
+<p class="pied-titre">Contact</p>
+<a href="mailto:chris@lebaliseur.fr">chris@lebaliseur.fr</a>
+<p>Annecy-le-Vieux · I travel across Haute-Savoie</p>
+<p>English · Français</p>
+<a class="bouton bouton-signal" href="/en/#audit">Free audit</a>
+</div>
+</div>
+<div class="conteneur pied-bas">
 <div class="pied-marque">
 <svg width="24" height="32" viewBox="0 0 120 160" aria-hidden="true"><rect x="52" y="10" width="14" height="146" fill="#EEF0EC"/><path d="M28 22 H100 L116 38 L100 54 H28 Z" fill="#F2B23A"/><path d="M92 66 H20 L4 82 L20 98 H92 Z" fill="#6FA287"/></svg>
 <span>Le Baliseur · Chris Elston, sole trader (EI) · SIRET [to come]</span>
@@ -92,5 +110,6 @@
 </div>
 </footer>
 
+<script src="/assets/menu.js" defer></script>
 </body>
 </html>

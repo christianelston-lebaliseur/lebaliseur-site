@@ -84,7 +84,7 @@
 <svg width="30" height="40" viewBox="0 0 120 160" aria-hidden="true"><rect x="52" y="10" width="14" height="146" fill="#1C2420"/><path d="M28 22 H100 L116 38 L100 54 H28 Z" fill="#F2B23A"/><path d="M92 66 H20 L4 82 L20 98 H92 Z" fill="#24493A"/></svg>
 <span>Le Baliseur</span>
 </a>
-<nav class="nav" aria-label="Navigation principale">
+<nav class="nav" id="menu-principal" aria-label="Navigation principale">
 <a href="/#methode">La méthode</a>
 <a href="/services/" aria-current="page">Services</a>
 <a href="/exemples/">Exemples</a>
@@ -96,6 +96,7 @@
 <a class="langue" href="/en/services/google-ai-visibility" lang="en" hreflang="en" aria-label="EN, English version"><svg width="24" height="16" viewBox="0 0 60 30" preserveAspectRatio="none" aria-hidden="true"><clipPath id="uk-clip"><path d="M30,15 h30 v15 z v15 h-30 z h-30 v-15 z v-15 h30 z"/></clipPath><path d="M0,0 v30 h60 v-30 z" fill="#012169"/><path d="M0,0 L60,30 M60,0 L0,30" stroke="#fff" stroke-width="6"/><path d="M0,0 L60,30 M60,0 L0,30" clip-path="url(#uk-clip)" stroke="#C8102E" stroke-width="4"/><path d="M30,0 v30 M0,15 h60" stroke="#fff" stroke-width="10"/><path d="M30,0 v30 M0,15 h60" stroke="#C8102E" stroke-width="6"/></svg><span>EN</span></a>
 <a class="bouton bouton-signal" href="/#diagnostic">Diagnostic offert</a>
 </div>
+<button class="menu-bouton" type="button" aria-expanded="false" aria-controls="menu-principal" data-ouvrir="Menu" data-fermer="Fermer"><svg width="22" height="22" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 6h18M3 12h18M3 18h18" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/></svg><span>Menu</span></button>
 </div>
 </header>
 
@@ -158,7 +159,24 @@
 
 
 <footer class="pied">
-<div class="conteneur">
+<div class="conteneur pied-haut">
+<div class="pied-col pied-presentation">
+<p class="pied-nom"><svg width="24" height="32" viewBox="0 0 120 160" aria-hidden="true"><rect x="52" y="10" width="14" height="146" fill="#EEF0EC"/><path d="M28 22 H100 L116 38 L100 54 H28 Z" fill="#F2B23A"/><path d="M92 66 H20 L4 82 L20 98 H92 Z" fill="#6FA287"/></svg><span>Le Baliseur</span></p>
+<p>Sites, visibilité Google et réseaux sociaux pour les entreprises d'Annecy et de Haute-Savoie.</p>
+</div>
+<nav class="pied-col" aria-label="Plan du site">
+<p class="pied-titre">Le site</p>
+<a href="/services/">Services</a><a href="/exemples/">Exemples</a><a href="/#methode">La méthode</a><a href="/#apropos">À propos</a><a href="/faq">FAQ</a><a href="/auto-diagnostic">Auto-diagnostic</a>
+</nav>
+<div class="pied-col">
+<p class="pied-titre">Contact</p>
+<a href="mailto:chris@lebaliseur.fr">chris@lebaliseur.fr</a>
+<p>Annecy-le-Vieux · je me déplace dans toute la Haute-Savoie</p>
+<p>Français · English</p>
+<a class="bouton bouton-signal" href="/#diagnostic">Diagnostic offert</a>
+</div>
+</div>
+<div class="conteneur pied-bas">
 <div class="pied-marque">
 <svg width="24" height="32" viewBox="0 0 120 160" aria-hidden="true"><rect x="52" y="10" width="14" height="146" fill="#EEF0EC"/><path d="M28 22 H100 L116 38 L100 54 H28 Z" fill="#F2B23A"/><path d="M92 66 H20 L4 82 L20 98 H92 Z" fill="#6FA287"/></svg>
 <span>Le Baliseur · Chris Elston, entrepreneur individuel · SIRET [à venir]</span>
@@ -171,5 +189,6 @@
 </div>
 </footer>
 
+<script src="/assets/menu.js" defer></script>
 </body>
 </html>
