@@ -290,4 +290,45 @@ for lang in ('fr', 'en'):
     made.append(page(lang, url, other, title, desc, main, schema, current=url))
 
 
+# page Exemples (les maquettes elles-mêmes sont dans public/exemples/*.html)
+EXEMPLES = {
+'fr': dict(url='/exemples/', other='/en/examples/', h1='Exemples',
+  intro="Trois sites imaginés pour des entreprises d'ici, pour voir à quoi pourrait ressembler le vôtre. Les entreprises sont fictives, les photos libres de droits.",
+  bouton="Voir l'exemple", appel_titre='Envie du même pour votre entreprise ?', appel_texte="Tout commence par le diagnostic offert : je regarde votre présence actuelle et je vous dis honnêtement si un site est la priorité.", appel_bouton='Demander mon diagnostic offert', appel_lien='/#diagnostic',
+  title="Exemples de sites : coach, restaurant, chambres d'hôtes · Le Baliseur, Annecy",
+  desc="Trois exemples de sites vitrines réalisés par Le Baliseur pour des entreprises d'Annecy : coach de vie, restaurant et chambres d'hôtes.",
+  items=[
+   ('coach-de-vie', 'coach-portrait', 'center 25%', 'Bien-être et accompagnement', 'Coach de vie', "Un site calme qui rassure et donne envie de prendre contact : l'approche en trois étapes, des prix clairs et un appel découverte à réserver.", ['Appel découverte en un clic', 'Prix affichés', 'Avis Google mis en avant', 'Formulaire de contact']),
+   ('restaurant', 'resto-salle', 'center 45%', 'Restauration', 'Restaurant', "La carte du moment, les horaires et l'accès en un coup d'œil, et la réservation sans passer par une plateforme.", ['Carte facile à mettre à jour', 'Réservation en ligne', "Horaires et plan d'accès", 'Pensé pour le téléphone']),
+   ('chambres-hotes', 'bnb-lac', 'center 60%', 'Hébergement', "Chambres d'hôtes", "Des photos qui donnent envie, chaque chambre présentée avec son prix, et la réservation en direct, sans commission.", ['Réservation directe, sans frais', 'Une fiche par chambre', 'Les bonnes adresses du coin', 'Version anglaise possible']),
+  ]),
+'en': dict(url='/en/examples/', other='/exemples/', h1='Examples',
+  intro="Three websites imagined for local businesses, to show what yours could look like. The businesses are fictional and the photos are royalty-free.",
+  bouton='View the example (in French)', appel_titre='Want the same for your business?', appel_texte="It all starts with the free audit: I look at where you stand today and tell you honestly whether a website is the priority.", appel_bouton='Get my free audit', appel_lien='/en/#audit',
+  title='Website examples: life coach, restaurant, B&B · Le Baliseur, Annecy',
+  desc='Three example business websites by Le Baliseur for Annecy businesses: a life coach, a restaurant and a B&B.',
+  items=[
+   ('coach-de-vie', 'coach-portrait', 'center 25%', 'Wellbeing and coaching', 'Life coach', 'A calm site that reassures and makes people want to get in touch: a three-step approach, clear prices and a discovery call to book.', ['Discovery call in one click', 'Prices shown', 'Google reviews highlighted', 'Contact form']),
+   ('restaurant', 'resto-salle', 'center 45%', 'Food and drink', 'Restaurant', 'The current menu, opening hours and directions at a glance, and table booking without a third-party platform.', ['Menu that is easy to update', 'Online booking', 'Hours and map', 'Built for phones']),
+   ('chambres-hotes', 'bnb-lac', 'center 60%', 'Accommodation', 'B&B', 'Photos that make people want to stay, each room with its price, and direct booking with no commission.', ['Direct booking, no fees', 'A card for every room', 'Local tips', 'English version available']),
+  ]),
+}
+for lang, E in EXEMPLES.items():
+    rows = ''
+    for slug, photo, pos, sur, h2, txt, feats in E['items']:
+        lis = ''.join(f'<li>{esc(f)}</li>' for f in feats)
+        rows += (f'<article class="exemple">\n'
+                 f'<a class="exemple-visuel" href="/exemples/{slug}" tabindex="-1" aria-hidden="true"><span class="exemple-barre"><i></i><i></i><i></i></span>'
+                 f'<img src="/assets/exemples/{photo}.jpg" alt="" loading="lazy" style="object-position:{pos}"></a>\n'
+                 f'<div class="exemple-texte">\n<p class="surtitre">{esc(sur)}</p>\n<h2 class="titre-3">{esc(h2)}</h2>\n<p>{esc(txt)}</p>\n'
+                 f'<ul class="etiquettes">{lis}</ul>\n'
+                 f'<a class="bouton bouton-sombre" href="/exemples/{slug}">{esc(E["bouton"])} →</a>\n</div>\n</article>\n')
+    main = (f'<section class="conteneur section">\n<h1 class="titre-1">{E["h1"]}</h1>\n'
+            f'<p class="chapo" style="margin:20px 0 56px">{esc(E["intro"])}</p>\n<div class="exemples">\n{rows}</div>\n</section>\n'
+            f'<section class="fond-blanc section">\n<div class="conteneur exemples-appel">\n<h2 class="titre-2">{esc(E["appel_titre"])}</h2>\n'
+            f'<p class="chapo">{esc(E["appel_texte"])}</p>\n<a class="bouton bouton-signal" href="{E["appel_lien"]}">{E["appel_bouton"]}</a>\n</div>\n</section>')
+    home = ('Accueil', '/') if lang == 'fr' else ('Home', '/en/')
+    made.append(page(lang, E['url'], E['other'], E['title'], E['desc'], main, [fil(lang, [home, (E['h1'], E['url'])])], current=E['url']))
+
+
 print('\n'.join(made))
