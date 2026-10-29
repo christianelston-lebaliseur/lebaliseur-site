@@ -4,7 +4,7 @@ Site de Le Baliseur (lebaliseur.fr), hébergé sur Cloudflare Workers (fichiers 
 
 ## Structure
 
-- `public/` : le site (index, auto-diagnostic, mentions légales, confidentialité, version anglaise dans `en/`, `assets/`, `_headers`, `robots.txt`)
+- `public/` : le site (index, pages services dans `services/`, FAQ, auto-diagnostic, mentions légales, confidentialité, version anglaise dans `en/`, `assets/`, `_headers`, `robots.txt`)
 - `src/worker.js` : sert le site et envoie le formulaire par Brevo (rien n'est stocké)
 - `wrangler.jsonc` : configuration Cloudflare
 
@@ -31,7 +31,9 @@ Quand un prospect laisse un e-mail, il reçoit automatiquement un accusé de ré
 
 - Témoignages fictifs retirés (offre « 5 premiers clients » à la place). Remettre une page Témoignages dès 3 vrais avis ; signaler « client fondateur » sur ceux ayant eu la remise
 - Témoignages : jamais de remise en échange d'un avis Google (interdit par les règles Google), seulement un témoignage sur ce site
-- Retirer `noindex` des pages et ouvrir `robots.txt`, ajouter un sitemap
+- Retirer `noindex` des pages et ouvrir `robots.txt` (ajouter `Sitemap: https://lebaliseur.fr/sitemap.xml`) ; `sitemap.xml` est prêt
+- Déclarer le site dans Google Search Console et Bing Webmaster Tools ; créer la fiche Google du Baliseur (zone desservie, adresse masquée), Bing Places et Apple Business Connect
+- Contenu après lancement : une page par secteur (restaurants, hébergements, artisans, santé) puis un guide par mois ; jamais de pages par ville copiées-collées
 - Compléter SIRET et adresse ; remplacer la photo LinkedIn (250 px) par une photo nette plus grande
 - Ajouter Turnstile au formulaire (indispensable avec l'accusé de réception : évite qu'un robot fasse envoyer des e-mails à des inconnus)
 - Vérifier le score sur pagespeed.web.dev (attendu : 99–100 dans les 4 catégories) puis l'afficher sur le site
