@@ -25,11 +25,13 @@ Dans le Worker > Settings > Variables and Secrets :
 
 Sans ces variables, le formulaire affiche un message invitant à écrire par e-mail.
 
+Quand un prospect laisse un e-mail, il reçoit automatiquement un accusé de réception (FR ou EN selon la page), envoyé depuis `MAIL_FROM`, réponse vers `MAIL_TO`. Rien n'est envoyé s'il ne laisse qu'un téléphone.
+
 ## Avant le lancement public
 
 - Témoignages fictifs retirés (offre « 5 premiers clients » à la place). Remettre une page Témoignages dès 3 vrais avis ; signaler « client fondateur » sur ceux ayant eu la remise
 - Témoignages : jamais de remise en échange d'un avis Google (interdit par les règles Google), seulement un témoignage sur ce site
 - Retirer `noindex` des pages et ouvrir `robots.txt`, ajouter un sitemap
 - Compléter SIRET, adresse et photo
-- Ajouter Turnstile au formulaire
+- Ajouter Turnstile au formulaire (indispensable avec l'accusé de réception : évite qu'un robot fasse envoyer des e-mails à des inconnus)
 - Vérifier le score sur pagespeed.web.dev (attendu : 99–100 dans les 4 catégories) puis l'afficher sur le site

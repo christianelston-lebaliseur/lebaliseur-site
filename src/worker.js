@@ -83,5 +83,47 @@ async function traiterContact(request, env) {
   if (!reponse.ok) {
     return json({ erreur: "L'envoi n'a pas abouti. Écrivez-moi directement à chris@lebaliseur.fr." }, 502);
   }
+
+  // Accusé de réception au prospect (si un e-mail a été donné). Un échec ici ne bloque pas la demande.
+  if (contactEstEmail) {
+    const en = nettoyer(form.get('langue'), 5) === 'en';
+    try {
+      await fetch('https://api.brevo.com/v3/smtp/email', {
+        method: 'POST',
+        headers: { 'api-key': env.BREVO_API_KEY, 'Content-Type': 'application/json', 'Accept': 'application/json' },
+        body: JSON.stringify({
+          sender: { name: 'Chris Elston · Le Baliseur', email: env.MAIL_FROM },
+          to: [{ email: d.contact, name: d.nom }],
+          replyTo: { email: env.MAIL_TO, name: 'Chris Elston' },
+          subject: en ? 'Your free audit request: received' : 'Votre demande de diagnostic : bien reçue',
+          htmlContent: accuseReception(d, en),
+          textContent: accuseReception(d, en, true),
+        }),
+      });
+    } catch {}
+  }
   return json({ ok: true });
+}
+
+function accuseReception(d, en, texte = false) {
+  const nom = texte ? d.nom : echapper(d.nom);
+  const entreprise = texte ? d.entreprise : echapper(d.entreprise);
+  const test = en ? 'https://lebaliseur.fr/en/self-check' : 'https://lebaliseur.fr/auto-diagnostic';
+  const p = en ? [
+    `Hello ${nom},`,
+    `Thank you for your request. I'm now looking at how ${entreprise} shows up on Google and in AI answers, and I'll send you your free audit within 72 hours.`,
+    `If you haven't done it yet, the online self-check takes two minutes: ${test}`,
+    'Any questions? Just reply to this email.',
+  ] : [
+    `Bonjour ${nom},`,
+    `Merci pour votre demande. Je regarde la présence de ${entreprise} sur Google et dans les réponses des IA, et je vous envoie votre diagnostic offert sous 72 h.`,
+    `Si vous ne l'avez pas encore fait, l'auto-diagnostic en ligne prend deux minutes : ${test}`,
+    'Une question ? Répondez simplement à ce message.',
+  ];
+  const signature = ['Chris Elston', en ? 'Le Baliseur · Annecy' : 'Le Baliseur · Annecy', 'lebaliseur.fr'];
+  if (texte) return p.join('\n\n') + '\n\n' + signature.join('\n');
+  const lien = (s) => s.replace(test, `<a href="${test}">${test.replace('https://', '')}</a>`);
+  return '<div style="font-family:Arial,sans-serif;font-size:15px;line-height:1.6;color:#1C2420;max-width:560px">' +
+    p.map((x) => `<p>${lien(x)}</p>`).join('') +
+    `<p style="margin-top:24px;border-top:3px solid #F2B23A;padding-top:12px"><strong>${signature[0]}</strong><br>${signature[1]}<br><a href="https://lebaliseur.fr" style="color:#24493A">${signature[2]}</a></p></div>`;
 }
