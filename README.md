@@ -37,3 +37,4 @@ Quand un prospect laisse un e-mail, il reçoit automatiquement un accusé de ré
 - Compléter SIRET et adresse ; remplacer la photo LinkedIn (250 px) par une photo nette plus grande
 - Ajouter Turnstile au formulaire (indispensable avec l'accusé de réception : évite qu'un robot fasse envoyer des e-mails à des inconnus)
 - Vérifier le score sur pagespeed.web.dev (attendu : 99–100 dans les 4 catégories) puis l'afficher sur le site
+- `outils/generer-pages.py` : génère les pages services et la FAQ (FR/EN) ; modifier les textes ici puis relancer
