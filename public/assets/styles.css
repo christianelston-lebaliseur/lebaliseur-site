@@ -291,3 +291,16 @@ a:hover { color: var(--ardoise); }
   .entete-actions a.langue { grid-row: 2; grid-column: 1; padding-block: 8px; padding-right: 14px; border-right: 1px solid var(--trait); }
   .entete .nav { grid-row: 2; grid-column: 2 / -1; margin-left: 0; margin-top: 0; }
 }
+
+/* Premiers clients */
+.fondateurs { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 24px; }
+.offre-fondateur { background: var(--signal); border-radius: 10px; padding: 32px; display: flex; flex-direction: column; gap: 14px; align-items: flex-start; }
+.offre-fondateur h3, .cas-en-cours h3 { margin: 0; font-family: var(--cond); font-weight: 700; font-size: 34px; line-height: 1.05; text-transform: uppercase; }
+.offre-fondateur p, .cas-en-cours p { margin: 0; font-size: 17px; line-height: 1.6; }
+.offre-badge, .cas-statut { font-family: var(--cond); font-weight: 700; font-size: 16px; text-transform: uppercase; letter-spacing: 1px; }
+.offre-fondateur .places { font-size: 16px; }
+.cas-en-cours { background: var(--calcaire); border-radius: 10px; padding: 32px; display: flex; flex-direction: column; gap: 14px; border: 2px dashed var(--bord-champ); }
+.cas-en-cours .cas-statut { color: var(--sapin); }
+.cas-en-cours p:not(.cas-statut) { color: var(--gris); }
+.cas-en-cours .etiquettes li { color: var(--ardoise); }
+.contact-intro .promesse { background: var(--blanc); border-left: 0; border-radius: 8px; padding: 14px 16px; color: var(--ardoise); }
