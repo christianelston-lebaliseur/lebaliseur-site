@@ -9,12 +9,12 @@
   var t = en ? {
     manque: 'Please fill in your name, business and a way to contact you, and tick the box.',
     envoi: 'Sending…',
-    ok: "Thank you! Your request has been sent. I'll reply within 48 hours.",
+    ok: "Thank you! Your request has been sent. I'll reply within 72 hours.",
     echec: "Sending didn't work. Please email me at chris@lebaliseur.fr."
   } : {
     manque: 'Merci de remplir votre nom, votre entreprise, un moyen de contact et de cocher la case.',
     envoi: 'Envoi en cours…',
-    ok: 'Merci ! Votre demande est bien partie. Je vous réponds sous 48 h.',
+    ok: 'Merci ! Votre demande est bien partie. Je vous réponds sous 72 h.',
     echec: "L'envoi n'a pas abouti. Écrivez-moi directement à chris@lebaliseur.fr."
   };
 
