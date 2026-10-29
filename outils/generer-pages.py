@@ -143,7 +143,7 @@ SERV = {
    extra='<p class="note-service">En option&nbsp;: logo et identité visuelle, 250&nbsp;€.</p>',
    faq=[("Le site m'appartient-il ?", "Oui. Le nom de domaine est enregistré à votre nom, et vous gardez le site même si vous arrêtez le suivi."), ("Pourquoi une version anglaise ?", "Annecy accueille beaucoup de touristes, d'expatriés et de frontaliers. Une version anglaise les rassure et leur évite de réserver ailleurs.")]),
  'en': dict(url='/en/services/website', court='Business website',
-   title='Business website design in Annecy, fast and bilingual · Le Baliseur',
+   title='English-speaking web designer in Annecy: fast, bilingual business websites · Le Baliseur',
    desc='A fast business website that reads well on a phone and is built for Google and AI tools, in English and French. From €890, Google profile included. Annecy and Haute-Savoie.',
    h1='Business website', accroche='A site that convinces people, and that Google understands.',
    chapo="A good website isn't there to impress. It answers the customer's questions quickly (what, where, how much, how to book) and makes them want to call you. It loads instantly on a phone and is built to be read well by Google and AI tools.",
