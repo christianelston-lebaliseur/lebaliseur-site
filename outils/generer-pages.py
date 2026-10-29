@@ -19,10 +19,12 @@ def nav_fix(body, lang, other_url, current):
     # menu : ajoute Services et FAQ, met la page courante en évidence, bascule de langue vers l'équivalent
     if lang == 'fr':
         body = body.replace('<a href="/#offres">Offres</a>', '<a href="/services/">Services</a>')
-        body = body.replace('<a href="/#apropos">À propos</a>', '<a href="/#apropos">À propos</a>\n<a href="/faq">FAQ</a>')
+        if '>FAQ</a>' not in body:
+            body = body.replace('<a href="/#apropos">À propos</a>', '<a href="/#apropos">À propos</a>\n<a href="/faq">FAQ</a>')
     else:
         body = body.replace('<a href="/en/#pricing">Pricing</a>', '<a href="/en/services/">Services</a>')
-        body = body.replace('<a href="/en/#about">About</a>', '<a href="/en/#about">About</a>\n<a href="/en/faq">FAQ</a>')
+        if '>FAQ</a>' not in body:
+            body = body.replace('<a href="/en/#about">About</a>', '<a href="/en/#about">About</a>\n<a href="/en/faq">FAQ</a>')
     body = re.sub(r'(<a class="langue" href=")[^"]+(")', lambda m: m.group(1) + other_url + m.group(2), body)
     if current:
         body = body.replace(f'<a href="{current}">', f'<a href="{current}" aria-current="page">', 1)
