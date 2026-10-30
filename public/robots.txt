@@ -1,4 +1,7 @@
-# Site en démonstration : ne pas indexer pour l'instant.
-# Au lancement : remplacer par "Allow: /" et ajouter le sitemap.
 User-agent: *
-Disallow: /
+Allow: /
+Disallow: /exemples/chambres-hotes
+Disallow: /exemples/coach-de-vie
+Disallow: /exemples/restaurant
+
+Sitemap: https://lebaliseur.fr/sitemap.xml

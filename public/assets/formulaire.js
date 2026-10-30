@@ -45,6 +45,9 @@
         }
       })
       .catch(function () { afficher(t.echec, 'erreur'); })
-      .finally(function () { bouton.disabled = false; });
+      .finally(function () {
+        bouton.disabled = false;
+        try { if (window.turnstile) window.turnstile.reset(); } catch (err) {}
+      });
   });
 })();

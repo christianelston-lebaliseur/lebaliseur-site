@@ -5,6 +5,13 @@
 //   BREVO_API_KEY   clé API Brevo (en "Secret")
 //   MAIL_FROM       adresse d'expédition validée dans Brevo, ex. site@lebaliseur.fr
 //   MAIL_TO         adresse qui reçoit les demandes, ex. chris@lebaliseur.fr
+//   TURNSTILE_SITE_KEY  clé publique Turnstile (anti-robots) : le widget s'affiche sur le formulaire dès qu'elle existe
+//   TURNSTILE_SECRET    clé secrète Turnstile (en "Secret") : la vérification se fait dès qu'elle existe
+//
+// Adresse officielle : toutes les autres adresses (www, lebaliseur.com) redirigent vers https://lebaliseur.fr.
+
+const DOMAINE = 'lebaliseur.fr';
+const AUTRES_DOMAINES = ['www.lebaliseur.fr', 'lebaliseur.com', 'www.lebaliseur.com'];
 
 const json = (data, status = 200) =>
   new Response(JSON.stringify(data), { status, headers: { 'Content-Type': 'application/json; charset=utf-8' } });
@@ -17,11 +24,39 @@ const echapper = (s) =>
 export default {
   async fetch(request, env) {
     const url = new URL(request.url);
+    if (AUTRES_DOMAINES.includes(url.hostname)) {
+      url.hostname = DOMAINE;
+      url.protocol = 'https:';
+      return Response.redirect(url.toString(), 301);
+    }
     if (url.pathname === '/api/contact') {
       if (request.method !== 'POST') return json({ erreur: 'Méthode non autorisée.' }, 405);
       return traiterContact(request, env);
     }
-    return env.ASSETS.fetch(request);
+    let reponse = await env.ASSETS.fetch(request);
+    // Adresses de test (workers.dev) : jamais indexées, pour éviter un doublon du site.
+    if (url.hostname.endsWith('.workers.dev')) {
+      reponse = new Response(reponse.body, reponse);
+      reponse.headers.set('X-Robots-Tag', 'noindex');
+    }
+    // Anti-robots sur le formulaire, si la clé Turnstile est configurée.
+    const type = reponse.headers.get('Content-Type') || '';
+    if (env.TURNSTILE_SITE_KEY && type.includes('text/html')) {
+      const cle = echapper(String(env.TURNSTILE_SITE_KEY));
+      reponse = new HTMLRewriter()
+        .on('form#form-diagnostic button[type="submit"]', {
+          element(el) {
+            el.before(`<div class="cf-turnstile large" data-sitekey="${cle}" data-language="auto"></div>`, { html: true });
+          },
+        })
+        .on('head', {
+          element(el) {
+            el.append('<script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>', { html: true });
+          },
+        })
+        .transform(reponse);
+    }
+    return reponse;
   },
 };
 
@@ -35,6 +70,26 @@ async function traiterContact(request, env) {
 
   // Champ piège anti-robots : rempli = robot, on fait semblant d'accepter.
   if (nettoyer(form.get('site_web'))) return json({ ok: true });
+
+  // Vérification Turnstile (si la clé secrète est configurée).
+  if (env.TURNSTILE_SECRET) {
+    const jeton = String(form.get('cf-turnstile-response') || '');
+    let valide = false;
+    if (jeton) {
+      try {
+        const corps = new FormData();
+        corps.append('secret', env.TURNSTILE_SECRET);
+        corps.append('response', jeton);
+        const ip = request.headers.get('CF-Connecting-IP');
+        if (ip) corps.append('remoteip', ip);
+        const r = await fetch('https://challenges.cloudflare.com/turnstile/v0/siteverify', { method: 'POST', body: corps });
+        valide = (await r.json()).success === true;
+      } catch {}
+    }
+    if (!valide) {
+      return json({ erreur: 'La vérification anti-robots a échoué. Rechargez la page et réessayez, ou écrivez-moi à chris@lebaliseur.fr.' }, 400);
+    }
+  }
 
   const d = {
     nom: nettoyer(form.get('nom'), 120),

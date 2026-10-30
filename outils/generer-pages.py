@@ -41,7 +41,7 @@ def page(lang, url, other, title, desc, main, schema, current=None):
            f'<link rel="alternate" hreflang="en" href="{SITE}{en_url}">\n')
     ld = ''.join(f'<script type="application/ld+json">\n{json.dumps(x, ensure_ascii=False, indent=1)}\n</script>\n' for x in schema)
     out = (head + f'<title>{title}</title>\n<meta name="description" content="{html.escape(desc, quote=True)}">\n'
-           '<meta name="robots" content="noindex, nofollow">\n' + pre + alt + ld + '</head>\n'
+           + pre + alt + ld + '</head>\n'
            + nav_fix(body, lang, other, current) + '<main id="contenu">\n' + main + '\n</main>\n' + foot_fix(foot, other))
     p = os.path.join(ROOT, url.strip('/'))
     p = p + '.html' if not url.endswith('/') else os.path.join(p, 'index.html')
