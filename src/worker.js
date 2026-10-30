@@ -5,12 +5,14 @@
 //   BREVO_API_KEY   clé API Brevo (en "Secret")
 //   MAIL_FROM       adresse d'expédition validée dans Brevo, ex. site@lebaliseur.fr
 //   MAIL_TO         adresse qui reçoit les demandes, ex. chris@lebaliseur.fr
-//   TURNSTILE_SITE_KEY  clé publique Turnstile (anti-robots) : le widget s'affiche sur le formulaire dès qu'elle existe
 //   TURNSTILE_SECRET    clé secrète Turnstile (en "Secret") : la vérification se fait dès qu'elle existe
+//   TURNSTILE_SITE_KEY  facultatif : remplace la clé publique ci-dessous
 //
 // Adresse officielle : toutes les autres adresses (www, lebaliseur.com) redirigent vers https://lebaliseur.fr.
 
 const DOMAINE = 'lebaliseur.fr';
+// Clé publique du widget Turnstile « Le Baliseur formulaire » (publique par nature : elle apparaît dans la page).
+const CLE_PUBLIQUE_TURNSTILE = '0x4AAAAAAFs0x_cTD2DB_uTU';
 const AUTRES_DOMAINES = ['www.lebaliseur.fr', 'lebaliseur.com', 'www.lebaliseur.com'];
 
 const json = (data, status = 200) =>
@@ -41,8 +43,8 @@ export default {
     }
     // Anti-robots sur le formulaire, si la clé Turnstile est configurée.
     const type = reponse.headers.get('Content-Type') || '';
-    if (env.TURNSTILE_SITE_KEY && type.includes('text/html')) {
-      const cle = echapper(String(env.TURNSTILE_SITE_KEY));
+    if (url.hostname === DOMAINE && type.includes('text/html')) {
+      const cle = echapper(String(env.TURNSTILE_SITE_KEY || CLE_PUBLIQUE_TURNSTILE));
       reponse = new HTMLRewriter()
         .on('form#form-diagnostic button[type="submit"]', {
           element(el) {
