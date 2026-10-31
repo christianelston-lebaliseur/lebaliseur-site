@@ -111,7 +111,7 @@ SERV = {
 'google': {
  'fr': dict(url='/services/fiche-google-ia', court='Visibilité Google & IA',
    title='Fiche Google et visibilité dans les IA à Annecy · Le Baliseur',
-   desc="Fiche Google complète, Bing et Apple Plans, annuaires harmonisés : soyez trouvé sur la carte Google et cité par ChatGPT et Gemini. 290 €, à Annecy et en Haute-Savoie.",
+   desc="Fiche Google complète, Bing et Apple Plans, annuaires harmonisés : soyez sur la carte Google et cité par ChatGPT et Gemini. 290 €, Annecy et Haute-Savoie.",
    h1='Visibilité Google & IA', accroche='Être sur la carte quand on vous cherche, et cité quand on demande à une IA.',
    chapo="Pour la plupart des commerces et indépendants, la fiche Google compte plus que le site. C'est elle qui apparaît sur la carte, avec vos horaires, vos photos et vos avis. Les IA comme ChatGPT, Gemini ou le mode IA de Google s'appuient sur les mêmes informations pour choisir qui citer.",
    prix='290 €', prix_detail="Prix unique, une seule fois. Prêt en une semaine environ. TVA non applicable, art. 293 B du CGI.",
@@ -121,7 +121,7 @@ SERV = {
    faq=[("Faut-il un site pour être sur Google ?", "Non. Une fiche Google bien tenue suffit souvent pour commencer. Le site devient utile pour convaincre et pour les recherches plus détaillées."), ("Pouvez-vous garantir la première place ?", "Non, et personne ne peut le promettre honnêtement. Je travaille sur les signaux que Google et les IA utilisent : une fiche complète, des informations cohérentes, des avis récents.")]),
  'en': dict(url='/en/services/google-ai-visibility', court='Google & AI visibility',
    title='Google Business Profile and AI visibility in Annecy · Le Baliseur',
-   desc='A complete Google profile, Bing and Apple Maps listings and consistent directories: be found on the Google map and named by ChatGPT and Gemini. €290, in Annecy and Haute-Savoie.',
+   desc='A complete Google profile, Bing and Apple Maps listings and consistent directories: be found on the map and named by ChatGPT and Gemini. €290, Annecy area.',
    h1='Google & AI visibility', accroche='On the map when people search for you, and named when they ask an AI.',
    chapo="For most shops and independents, the Google profile matters more than the website. It's what appears on the map, with your hours, photos and reviews. AI tools such as ChatGPT, Gemini and Google's AI Mode rely on the same information to decide who to name.",
    prix='€290', prix_detail='One-off price. Ready in about a week. VAT not applicable, art. 293 B of the French tax code.',
@@ -132,7 +132,7 @@ SERV = {
 },
 'site': {
  'fr': dict(url='/services/site-vitrine', court='Site vitrine',
-   title='Création de site vitrine à Annecy, rapide et bilingue · Le Baliseur',
+   title='Création de site vitrine à Annecy, bilingue · Le Baliseur',
    desc="Un site vitrine rapide, lisible sur téléphone, pensé pour Google et les IA, en français et en anglais. Dès 890 €, fiche Google incluse. Annecy et Haute-Savoie.",
    h1='Site vitrine', accroche='Un site qui convainc, et que Google comprend.',
    chapo="Un bon site ne cherche pas à impressionner : il répond vite aux questions du client (quoi, où, combien, comment réserver) et lui donne envie de vous appeler. Il se charge en un instant sur téléphone, et il est construit pour être bien lu par Google et par les IA.",
@@ -143,8 +143,8 @@ SERV = {
    extra='<p class="note-service">En option&nbsp;: logo et identité visuelle, 250&nbsp;€.</p>',
    faq=[("Le site m'appartient-il ?", "Oui. Le nom de domaine est enregistré à votre nom, et vous gardez le site même si vous arrêtez le suivi."), ("Pourquoi une version anglaise ?", "Annecy accueille beaucoup de touristes, d'expatriés et de frontaliers. Une version anglaise les rassure et leur évite de réserver ailleurs.")]),
  'en': dict(url='/en/services/website', court='Business website',
-   title='English-speaking web designer in Annecy: fast, bilingual business websites · Le Baliseur',
-   desc='A fast business website that reads well on a phone and is built for Google and AI tools, in English and French. From €890, Google profile included. Annecy and Haute-Savoie.',
+   title='English-speaking web designer in Annecy · Le Baliseur',
+   desc='A fast business website that reads well on a phone, built for Google and AI tools, in English and French. From €890, Google profile included.',
    h1='Business website', accroche='A site that convinces people, and that Google understands.',
    chapo="A good website isn't there to impress. It answers the customer's questions quickly (what, where, how much, how to book) and makes them want to call you. It loads instantly on a phone and is built to be read well by Google and AI tools.",
    prix='from €890', prix_detail='Up to €1,490 depending on pages and features. English version +€300. Google & AI pack included. Ready in about three weeks.',
@@ -156,8 +156,8 @@ SERV = {
 },
 'social': {
  'fr': dict(url='/services/reseaux-sociaux', court='Réseaux sociaux',
-   title='Réseaux sociaux pour entreprises à Annecy : profils et contenus · Le Baliseur',
-   desc="Facebook, Instagram et LinkedIn remis au point, modèles à vos couleurs, et un kit de publications mensuel prêt à poster en français et en anglais. 250 €, kit dès 99 €/mois.",
+   title='Réseaux sociaux pour entreprises à Annecy · Le Baliseur',
+   desc="Facebook, Instagram et LinkedIn remis au point, modèles à vos couleurs et publications mensuelles prêtes à poster. 250 €, kit dès 99 €/mois.",
    h1='Réseaux sociaux', accroche='Des profils soignés, et de quoi publier sans y passer vos soirées.',
    chapo="Vos clients regardent souvent vos réseaux avant de venir, surtout pour un restaurant, un hébergement ou un commerce. Et vos avis Facebook comptent aussi pour les IA. Je remets vos profils au point, puis je vous prépare chaque mois des publications prêtes à poster. Vous gardez la main sur les réponses à vos clients.",
    prix='250 €', prix_detail="Remise au point des profils, une seule fois. Kit de publications mensuel en option, dès 99 € par mois.",
@@ -166,7 +166,7 @@ SERV = {
    etapes=[("Diagnostic offert", "Je vérifie vos profils en même temps que votre présence sur Google."), ("Remise au point", "Profils, visuels et modèles, en une semaine environ."), ("Kit mensuel (option)", "Chaque mois, vos publications prêtes, que vous postez ou que je programme.")],
    faq=[("Répondez-vous aux messages et aux commentaires ?", "Non : vous êtes mieux placé que moi pour répondre à vos clients. Je prépare le contenu, et vous gardez la relation."), ("Faut-il être sur tous les réseaux ?", "Non. Mieux vaut un ou deux réseaux bien tenus que quatre à l'abandon. Le diagnostic dit lesquels comptent pour votre activité.")]),
  'en': dict(url='/en/services/social-media', court='Social media',
-   title='Social media for businesses in Annecy: profiles and content · Le Baliseur',
+   title='Social media for businesses in Annecy · Le Baliseur',
    desc='Facebook, Instagram and LinkedIn sorted, templates in your colours, and a monthly content kit ready to post in English and French. €250, kit from €99/month.',
    h1='Social media', accroche='Polished profiles, and posts ready to go without losing your evenings.',
    chapo="Customers often check your social media before they come, especially for a restaurant, a holiday let or a shop. Your Facebook reviews count for AI tools too. I sort out your profiles, then prepare posts each month that are ready to publish. You stay in charge of replying to your customers.",
@@ -179,7 +179,7 @@ SERV = {
 'suivi': {
  'fr': dict(url='/services/suivi-mensuel', court='Suivi mensuel',
    title='Suivi mensuel de visibilité Google et IA à Annecy · Le Baliseur',
-   desc="Fiche Google entretenue, avis, publications, classement local et réponses des IA suivis chaque mois. Essentiel 49 €, Visibilité 129 €, Croissance 249 € par mois.",
+   desc="Fiche Google, avis, publications, classement local et réponses des IA suivis chaque mois. Essentiel 49 €, Visibilité 129 €, Croissance 249 € par mois.",
    h1='Suivi mensuel', accroche='La visibilité, ça s’entretient. Je m’en occupe chaque mois.',
    chapo="Une fiche Google qu'on ne touche plus finit par reculer : horaires oubliés, photos datées, avis sans réponse. Le suivi mensuel garde votre présence à jour, mesure vos progrès sur la carte et dans les réponses des IA, et vous dit chaque mois ce qui a changé.",
    prix='dès 49 €/mois', prix_detail="Essentiel sans engagement. Visibilité et Croissance : 3 mois minimum, puis mois par mois.",
@@ -212,8 +212,8 @@ SERV = {
 },
 'lancement': {
  'fr': dict(url='/services/pack-lancement', court='Pack Lancement',
-   title="Pack Lancement : site et fiche Google sans rien avancer, à Annecy · Le Baliseur",
-   desc="Vous créez votre entreprise ? Site vitrine, fiche Google et suivi mensuel sans rien payer au départ : 89 € par mois sur 24 mois. Sur dossier, 3 places par trimestre.",
+   title="Pack Lancement : site et fiche Google sans avance · Le Baliseur",
+   desc="Vous créez votre entreprise ? Site vitrine, fiche Google et suivi sans rien payer au départ : 89 €/mois sur 24 mois. Sur dossier, 3 places par trimestre.",
    h1='Pack Lancement', accroche='Votre entreprise visible dès le premier jour, sans rien avancer.',
    chapo="Quand on se lance, la trésorerie est serrée et il y a mille choses à faire. Le Pack Lancement vous donne un site, une fiche Google au point et un suivi chaque mois, sans rien payer au départ : une mensualité fixe, et votre budget reste pour votre activité.",
    prix='0 € au départ', prix_detail="Puis 89 € par mois pendant 24 mois, par prélèvement, à partir de la mise en ligne. Nom de domaine à votre nom et à votre charge (environ 10 à 20 € par an). Sur dossier, 3 places par trimestre. TVA non applicable, art. 293 B du CGI.",
@@ -222,7 +222,7 @@ SERV = {
    etapes=[("Candidature", "Vous me présentez votre projet en quelques lignes, via le formulaire du diagnostic."), ("Rencontre", "30 minutes chez vous ou au café : votre offre, vos clients, vos objectifs. Je vous dis honnêtement si le pack vous convient."), ("Signature", "Un contrat simple et un mandat de prélèvement. Rien n'est prélevé avant la mise en ligne."), ("Lancement", "Fiche Google en une semaine, site en trois semaines environ, puis le suivi chaque mois.")],
    faq=[("Pourquoi une sélection ?", "Parce que je m'engage deux ans à vos côtés et que les places sont limitées. La rencontre sert à vérifier que le site et Google sont bien la bonne priorité pour vous, et pas un investissement trop tôt."), ("Combien cela coûte-t-il au total ?", "2 136 € sur deux ans, tout compris. C'est à peine plus que le site et le suivi Essentiel achetés séparément (2 066 €), mais sans rien avancer."), ("Et si j'arrête avant 24 mois ?", "Vous pouvez solder les mensualités restantes et garder le site. Le contrat précise tout dès le départ.")]),
  'en': dict(url='/en/services/starter-pack', court='Starter pack',
-   title='Starter pack: website and Google profile with nothing upfront, Annecy · Le Baliseur',
+   title='Starter pack: website & Google profile, €0 upfront · Le Baliseur',
    desc='Starting a business? Website, Google profile and monthly support with nothing to pay upfront: €89 a month over 24 months. By application, 3 places per quarter.',
    h1='Starter pack', accroche='Your business visible from day one, with nothing to pay upfront.',
    chapo="When you're starting out, cash is tight and there are a thousand things to do. The starter pack gives you a website, a Google profile that's right and monthly support with nothing to pay upfront: one fixed monthly payment, so your budget goes into your business.",
@@ -290,7 +290,7 @@ for lang in ('fr', 'en'):
         cards += f'<a class="carte-service" href="{d["url"]}"><h2>{d["court"]}</h2><p class="prix-montant">{d["prix"]}</p><p>{esc(d["accroche"])}</p><span class="lien-fleche">{"En savoir plus" if lang=="fr" else "Learn more"} →</span></a>\n'
     h1 = 'Services' ; intro = ("Quatre services à combiner selon vos besoins, et un pack pour ceux qui se lancent. Tout commence par le diagnostic offert, qui dit honnêtement par où commencer." if lang == 'fr' else "Four services to combine as you need, and a pack for those just starting out. Everything starts with the free audit, which tells you honestly where to begin.")
     main = f'<section class="conteneur section">\n<h1 class="titre-1">{h1}</h1>\n<p class="chapo" style="margin:20px 0 40px">{esc(intro)}</p>\n<div class="grille-services">\n{cards}</div>\n</section>'
-    title = ('Services de visibilité locale à Annecy : Google, IA, site, réseaux sociaux · Le Baliseur' if lang == 'fr' else 'Local visibility services in Annecy: Google, AI, websites, social media · Le Baliseur')
+    title = ('Services de visibilité locale à Annecy · Le Baliseur' if lang == 'fr' else 'Local visibility services in Annecy · Le Baliseur')
     desc = ('Fiche Google et IA, site vitrine, réseaux sociaux et suivi mensuel pour les entreprises d’Annecy et de Haute-Savoie. Prix affichés, diagnostic offert.' if lang == 'fr' else 'Google and AI visibility, business websites, social media and monthly support for businesses in Annecy and Haute-Savoie. Clear prices, free audit.')
     home = ('Accueil', '/') if lang == 'fr' else ('Home', '/en/')
     made.append(page(lang, url, other, title, desc, main, [fil(lang, [home, ('Services', url)])], current=url))
@@ -317,7 +317,7 @@ EXEMPLES = {
 'fr': dict(url='/exemples/', other='/en/examples/', h1='Exemples',
   intro="Trois sites imaginés pour des entreprises d'ici, pour voir à quoi pourrait ressembler le vôtre. Les entreprises sont fictives, les photos libres de droits.",
   bouton="Voir l'exemple", appel_titre='Envie du même pour votre entreprise ?', appel_texte="Tout commence par le diagnostic offert : je regarde votre présence actuelle et je vous dis honnêtement si un site est la priorité.", appel_bouton='Demander mon diagnostic offert', appel_lien='/#diagnostic',
-  title="Exemples de sites : coach, restaurant, chambres d'hôtes · Le Baliseur, Annecy",
+  title="Exemples de sites vitrines à Annecy · Le Baliseur",
   desc="Trois exemples de sites vitrines réalisés par Le Baliseur pour des entreprises d'Annecy : coach de vie, restaurant et chambres d'hôtes.",
   items=[
    ('coach-de-vie', 'coach-portrait', 'center 25%', 'Bien-être et accompagnement', 'Coach de vie', "Un site calme qui rassure et donne envie de prendre contact : l'approche en trois étapes, des prix clairs et un appel découverte à réserver.", ['Appel découverte en un clic', 'Prix affichés', 'Avis Google mis en avant', 'Formulaire de contact']),
@@ -327,7 +327,7 @@ EXEMPLES = {
 'en': dict(url='/en/examples/', other='/exemples/', h1='Examples',
   intro="Three websites imagined for local businesses, to show what yours could look like. The businesses are fictional and the photos are royalty-free.",
   bouton='View the example (in French)', appel_titre='Want the same for your business?', appel_texte="It all starts with the free audit: I look at where you stand today and tell you honestly whether a website is the priority.", appel_bouton='Get my free audit', appel_lien='/en/#audit',
-  title='Website examples: life coach, restaurant, B&B · Le Baliseur, Annecy',
+  title='Website examples for Annecy businesses · Le Baliseur',
   desc='Three example business websites by Le Baliseur for Annecy businesses: a life coach, a restaurant and a B&B.',
   items=[
    ('coach-de-vie', 'coach-portrait', 'center 25%', 'Wellbeing and coaching', 'Life coach', 'A calm site that reassures and makes people want to get in touch: a three-step approach, clear prices and a discovery call to book.', ['Discovery call in one click', 'Prices shown', 'Google reviews highlighted', 'Contact form']),
