@@ -244,7 +244,7 @@ FAQ = {
  ("Le site et la fiche m'appartiennent-ils ?", "Oui. Le nom de domaine est à votre nom, et vous restez propriétaire de votre fiche Google et de vos comptes. Je n'interviens qu'en tant que gestionnaire."),
  ("Que se passe-t-il si j'arrête le suivi mensuel ?", "Tout reste en place et à vous. La formule Essentiel est sans engagement ; Visibilité et Croissance demandent 3 mois minimum, parce que le classement local met du temps à bouger."),
  ("Travaillez-vous en anglais ?", "Oui, en français comme en anglais, et je peux faire la version anglaise de votre site pour vos clients touristes, expatriés ou frontaliers."),
- ("Quelle zone couvrez-vous ?", "Annecy et la Haute-Savoie. Je viens vous voir sur place pour présenter le diagnostic et décider ensemble, face à face ; le suivi peut ensuite se faire à distance si vous préférez."),
+ ("Quelle zone couvrez-vous ?", "Annecy et la Haute-Savoie en priorité : je viens vous voir sur place pour présenter le diagnostic et décider ensemble, face à face. Je travaille aussi à distance avec des entreprises partout en France et en Europe, par visioconférence et par téléphone, en français ou en anglais."),
  ("Vos prix incluent-ils la TVA ?", "Le Baliseur est une micro-entreprise : la TVA n'est pas applicable (art. 293 B du CGI). Le prix affiché est le prix que vous payez."),
  ("Demandez-vous des avis Google en échange d'une remise ?", "Non, c'est interdit par les règles de Google. L'offre des cinq premiers clients porte sur un témoignage publié sur ce site, signalé comme celui d'un client fondateur."),
 ],
@@ -257,7 +257,7 @@ FAQ = {
  ("Do the website and profile belong to me?", "Yes. The domain is in your name, and you remain the owner of your Google profile and accounts. I only act as a manager."),
  ("What happens if I stop the monthly support?", "Everything stays in place and stays yours. Essential has no commitment; Visibility and Growth have a 3-month minimum, because local rankings take time to move."),
  ("Do you work in English?", "Yes, in English and French, and I can create the English version of your site for tourist, expat or cross-border customers."),
- ("Which area do you cover?", "Annecy and Haute-Savoie. I come and see you in person to go through the audit and decide together, face to face; the follow-up can then be done remotely if you prefer."),
+ ("Which area do you cover?", "Annecy and Haute-Savoie first: I come and see you in person to go through the audit and decide together, face to face. I also work remotely with businesses across Europe and the UK, by video call and phone, in English or French."),
  ("Do your prices include VAT?", "Le Baliseur is a French micro-enterprise, so VAT is not applicable (art. 293 B of the French tax code). The price shown is the price you pay."),
  ("Do you ask for Google reviews in exchange for a discount?", "No, that's against Google's rules. The first-five-clients offer is for a testimonial published on this site, marked as coming from a founding client."),
 ],
@@ -296,7 +296,7 @@ SERV_PLUS = {
   faq=[
     ("Faut-il prendre tous les services ?", "Non. Le diagnostic dit honnêtement ce qui rapportera le plus vite. Beaucoup d'entreprises commencent par la seule fiche Google, et n'ajoutent un site que si c'est utile."),
     ("Combien de temps avant de voir des résultats ?", "Une fiche Google complète change souvent les choses en quelques semaines. Le classement sur la carte met en général deux à quatre mois à progresser nettement."),
-    ("Travaillez-vous en dehors d'Annecy ?", "Oui, dans toute la Haute-Savoie. Je me déplace pour vous rencontrer, puis nous avançons à votre rythme, par téléphone ou en rendez-vous."),
+    ("Travaillez-vous en dehors d'Annecy ?", "Oui. Je me déplace dans toute la Haute-Savoie pour vous rencontrer, et je travaille aussi à distance avec des entreprises partout en France et en Europe, par visioconférence et par téléphone."),
   ]),
 'en': dict(
   h_start='Where to start?',
@@ -313,7 +313,7 @@ SERV_PLUS = {
   faq=[
     ("Do I need every service?", "No. The audit tells you honestly what will bring results fastest. Many businesses start with the Google profile alone, and only add a website if it helps."),
     ("How long before I see results?", "A complete Google profile often makes a difference within a few weeks. Map rankings usually take two to four months to improve clearly."),
-    ("Do you work outside Annecy?", "Yes, across Haute-Savoie. I come to meet you, then we move at your pace, by phone or in person."),
+    ("Do you work outside Annecy?", "Yes. I travel across Haute-Savoie to meet you, and I also work remotely with businesses across Europe and the UK, by video call and phone, in English or French."),
   ]),
 }
 
