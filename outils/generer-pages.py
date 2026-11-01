@@ -40,7 +40,7 @@ def page(lang, url, other, title, desc, main, schema, current=None):
            f'<link rel="alternate" hreflang="fr" href="{SITE}{fr_url}">\n'
            f'<link rel="alternate" hreflang="en" href="{SITE}{en_url}">\n')
     ld = ''.join(f'<script type="application/ld+json">\n{json.dumps(x, ensure_ascii=False, indent=1)}\n</script>\n' for x in schema)
-    out = (head + f'<title>{title}</title>\n<meta name="description" content="{html.escape(desc, quote=True)}">\n'
+    out = (head + f'<title>{html.escape(title, quote=False)}</title>\n<meta name="description" content="{html.escape(desc, quote=True)}">\n'
            + pre + alt + ld + '</head>\n'
            + nav_fix(body, lang, other, current) + '<main id="contenu">\n' + main + '\n</main>\n' + foot_fix(foot, other))
     p = os.path.join(ROOT, url.strip('/'))
@@ -280,6 +280,43 @@ for k, v in SERV.items():
                   fil(lang, [home, sl, (d['court'], d['url'])])]
         made.append(page(lang, d['url'], other, d['title'], d['desc'], service_main(lang, d), schema, current=sl[1]))
 
+SERV_PLUS = {
+'fr': dict(
+  h_start='Par où commencer ?',
+  start_intro="Trois situations reviennent souvent. Le diagnostic offert confirme laquelle est la vôtre.",
+  situations=[
+    ("On ne vous trouve pas sur Google.", "Commencez par la fiche Google et la visibilité dans les IA (290 €) : c'est elle qui apporte les appels et les demandes d'itinéraire dans les recherches locales. Le site vient ensuite, s'il manque vraiment."),
+    ("On vous trouve, mais votre site ne convainc pas.", "Le site vitrine (dès 890 €, fiche Google incluse) est pensé pour transformer les visites en appels et en réservations, d'abord sur téléphone."),
+    ("Vous créez votre entreprise.", "Le Pack Lancement réunit site, fiche Google et suivi, sans rien avancer : 89 € par mois sur 24 mois, sur dossier."),
+  ],
+  start_outro="Ensuite, le suivi mensuel (dès 49 € par mois) entretient votre fiche, répond aux avis avec vous et mesure les résultats. Les réseaux sociaux s'ajoutent quand ils comptent vraiment pour votre activité.",
+  h_always='Ce qui ne change jamais',
+  always=["Tout est à votre nom : domaine, site, fiche Google et comptes.", "Les prix sont affichés, sans frais cachés ni engagement long.", "Un seul interlocuteur, en français et en anglais.", "Des résultats mesurés chaque mois : appels, itinéraires, visites, position sur Google et réponses des IA."],
+  h_faq='Questions fréquentes',
+  faq=[
+    ("Faut-il prendre tous les services ?", "Non. Le diagnostic dit honnêtement ce qui rapportera le plus vite. Beaucoup d'entreprises commencent par la seule fiche Google, et n'ajoutent un site que si c'est utile."),
+    ("Combien de temps avant de voir des résultats ?", "Une fiche Google complète change souvent les choses en quelques semaines. Le classement sur la carte met en général deux à quatre mois à progresser nettement."),
+    ("Travaillez-vous en dehors d'Annecy ?", "Oui, dans toute la Haute-Savoie. Je me déplace pour vous rencontrer, puis nous avançons à votre rythme, par téléphone ou en rendez-vous."),
+  ]),
+'en': dict(
+  h_start='Where to start?',
+  start_intro="Three situations come up again and again. The free audit confirms which one is yours.",
+  situations=[
+    ("People can't find you on Google.", "Start with the Google profile and AI visibility (€290): it is what brings calls and direction requests from local searches. The website comes next, if you really need one."),
+    ("People find you, but your website doesn't convince them.", "The business website (from €890, Google profile included) is built to turn visits into calls and bookings, on phones first."),
+    ("You're starting a business.", "The starter pack brings together a website, Google profile and support with nothing upfront: €89 a month over 24 months, by application."),
+  ],
+  start_outro="After that, monthly support (from €49 a month) keeps your profile up to date, helps you answer reviews and measures results. Social media is added when it really matters for your business.",
+  h_always='What never changes',
+  always=["Everything is in your name: domain, website, Google profile and accounts.", "Prices are shown upfront, with no hidden fees and no long contracts.", "One contact, in English and French.", "Results measured every month: calls, directions, visits, Google ranking and AI answers."],
+  h_faq='Common questions',
+  faq=[
+    ("Do I need every service?", "No. The audit tells you honestly what will bring results fastest. Many businesses start with the Google profile alone, and only add a website if it helps."),
+    ("How long before I see results?", "A complete Google profile often makes a difference within a few weeks. Map rankings usually take two to four months to improve clearly."),
+    ("Do you work outside Annecy?", "Yes, across Haute-Savoie. I come to meet you, then we move at your pace, by phone or in person."),
+  ]),
+}
+
 # pages index des services
 for lang in ('fr', 'en'):
     url = '/services/' if lang == 'fr' else '/en/services/'
@@ -289,7 +326,15 @@ for lang in ('fr', 'en'):
         d = SERV[k][lang]
         cards += f'<a class="carte-service" href="{d["url"]}"><h2>{d["court"]}</h2><p class="prix-montant">{d["prix"]}</p><p>{esc(d["accroche"])}</p><span class="lien-fleche">{"En savoir plus" if lang=="fr" else "Learn more"} →</span></a>\n'
     h1 = 'Services' ; intro = ("Quatre services à combiner selon vos besoins, et un pack pour ceux qui se lancent. Tout commence par le diagnostic offert, qui dit honnêtement par où commencer." if lang == 'fr' else "Four services to combine as you need, and a pack for those just starting out. Everything starts with the free audit, which tells you honestly where to begin.")
-    main = f'<section class="conteneur section">\n<h1 class="titre-1">{h1}</h1>\n<p class="chapo" style="margin:20px 0 40px">{esc(intro)}</p>\n<div class="grille-services">\n{cards}</div>\n</section>'
+    X = SERV_PLUS[lang]
+    situations = ''.join(f'<li><strong>{esc(a)}</strong> {esc(b)}</li>' for a, b in X['situations'])
+    qa = ''.join(f'<details class="qr"><summary>{esc(q)}</summary><p>{esc(a)}</p></details>\n' for q, a in X['faq'])
+    main = (f'<section class="conteneur section">\n<h1 class="titre-1">{h1}</h1>\n<p class="chapo" style="margin:20px 0 40px">{esc(intro)}</p>\n<div class="grille-services">\n{cards}</div>\n</section>\n'
+            f'<section class="fond-blanc section"><div class="conteneur" style="max-width:900px;display:flex;flex-direction:column;gap:20px">\n'
+            f'<h2 class="titre-2">{esc(X["h_start"])}</h2>\n<p class="chapo" style="margin:0">{esc(X["start_intro"])}</p>\n<ul class="liste-balise">{situations}</ul>\n<p>{esc(X["start_outro"])}</p>\n'
+            f'<h2 class="titre-2" style="margin-top:24px">{esc(X["h_always"])}</h2>\n{ul(X["always"])}\n'
+            f'<h2 class="titre-2" style="margin-top:24px">{esc(X["h_faq"])}</h2>\n<div class="qrs">\n{qa}</div>\n'
+            f'</div></section>')
     title = ('Services de visibilité locale à Annecy · Le Baliseur' if lang == 'fr' else 'Local visibility services in Annecy · Le Baliseur')
     desc = ('Fiche Google et IA, site vitrine, réseaux sociaux et suivi mensuel pour les entreprises d’Annecy et de Haute-Savoie. Prix affichés, diagnostic offert.' if lang == 'fr' else 'Google and AI visibility, business websites, social media and monthly support for businesses in Annecy and Haute-Savoie. Clear prices, free audit.')
     home = ('Accueil', '/') if lang == 'fr' else ('Home', '/en/')
@@ -335,6 +380,12 @@ EXEMPLES = {
    ('chambres-hotes', 'bnb-lac', 'center 60%', 'Accommodation', 'B&B', 'Photos that make people want to stay, each room with its price, and direct booking with no commission.', ['Direct booking, no fees', 'A card for every room', 'Local tips', 'English version available']),
   ]),
 }
+EX_PLUS = {
+'fr': dict(h_inclus="Ce que comprend chaque site", inclus=["Pensé d'abord pour le téléphone, et rapide (objectif : 90/100 et plus sur PageSpeed)", "Bouton d'appel, itinéraire et lien de réservation sur chaque page", "Une page par service, avec vos prix", "Les informations que lisent Google et les IA, pour qu'ils comprennent votre activité", "Mentions légales et page confidentialité", "Une version anglaise si vos clients en ont besoin", "Votre fiche Google complétée en même temps"],
+  h_etapes="Comment se passe la création", etapes=[("Diagnostic offert", "Sous 72 h : votre présence actuelle face à trois concurrents, et ce qu'un site doit changer."), ("Maquette et contenus", "Je rédige les textes avec vous et vous montre le site sur votre téléphone avant la mise en ligne."), ("Mise en ligne", "En trois semaines environ, avec la fiche Google, Search Console et Bing configurés.")]),
+'en': dict(h_inclus="What every website includes", inclus=["Built for phones first, and fast (target: 90/100 or more on PageSpeed)", "Call button, directions and booking link on every page", "A page for each service, with your prices", "The information Google and AI tools read, so they understand your business", "Legal notice and privacy page", "An English version if your customers need one", "Your Google profile completed at the same time"],
+  h_etapes="How the build works", etapes=[("Free audit", "Within 72 hours: where you stand against three competitors, and what a website needs to change."), ("Design and content", "I write the text with you and show you the site on your phone before it goes live."), ("Launch", "In about three weeks, with your Google profile, Search Console and Bing set up.")]),
+}
 for lang, E in EXEMPLES.items():
     rows = ''
     for k, (slug, photo, pos, sur, h2, txt, feats) in enumerate(E['items']):
@@ -349,6 +400,9 @@ for lang, E in EXEMPLES.items():
                  f'<a class="bouton bouton-sombre" href="/exemples/{slug}">{esc(E["bouton"])} →</a>\n</div>\n</article>\n')
     main = (f'<section class="conteneur section">\n<h1 class="titre-1">{E["h1"]}</h1>\n'
             f'<p class="chapo" style="margin:20px 0 56px">{esc(E["intro"])}</p>\n<div class="exemples">\n{rows}</div>\n</section>\n'
+            f'<section class="conteneur section" style="display:flex;flex-direction:column;gap:20px;max-width:1100px">\n'
+            f'<h2 class="titre-2">{esc(EX_PLUS[lang]["h_inclus"])}</h2>\n{ul(EX_PLUS[lang]["inclus"])}\n'
+            f'<h2 class="titre-2" style="margin-top:24px">{esc(EX_PLUS[lang]["h_etapes"])}</h2>\n{etapes(EX_PLUS[lang]["etapes"])}\n</section>\n'
             f'<section class="fond-blanc section">\n<div class="conteneur exemples-appel">\n<h2 class="titre-2">{esc(E["appel_titre"])}</h2>\n'
             f'<p class="chapo">{esc(E["appel_texte"])}</p>\n<a class="bouton bouton-signal" href="{E["appel_lien"]}">{E["appel_bouton"]}</a>\n</div>\n</section>')
     home = ('Accueil', '/') if lang == 'fr' else ('Home', '/en/')
