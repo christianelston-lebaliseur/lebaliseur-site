@@ -35,7 +35,7 @@ Quand un prospect laisse un e-mail, il reçoit automatiquement un accusé de ré
 - FAIT (30/10/2026) : site ouvert aux moteurs, `robots.txt` avec sitemap ; seuls les trois sites de démonstration dans `exemples/` restent non indexés
 - Déclarer le site dans Google Search Console et Bing Webmaster Tools ; créer la fiche Google du Baliseur (zone desservie, adresse masquée), Bing Places et Apple Business Connect
 - Contenu après lancement : une page par secteur (restaurants, hébergements, artisans, santé) puis un guide par mois ; jamais de pages par ville copiées-collées
-- Adresse ajoutée ; compléter le SIRET dans les mentions légales ; remplacer la photo LinkedIn (250 px) par une photo nette plus grande
+- Adresse ajoutée ; SIREN ajouté (881 403 604) ; ajouter le SIRET complet (14 chiffres) quand l'avis de situation INSEE arrive ; remplacer la photo LinkedIn (250 px) par une photo nette plus grande
 - Turnstile : widget « Le Baliseur formulaire » créé (clé publique dans `src/worker.js`) ; ajouter `TURNSTILE_SECRET` dans le Worker pour activer la vérification
 - Vérifier le score sur pagespeed.web.dev (attendu : 99–100 dans les 4 catégories) puis l'afficher sur le site
 - `outils/generer-pages.py` : génère les pages services et la FAQ (FR/EN) ; modifier les textes ici puis relancer
