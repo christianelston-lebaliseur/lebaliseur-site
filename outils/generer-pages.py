@@ -132,26 +132,26 @@ SERV = {
 },
 'site': {
  'fr': dict(url='/services/site-vitrine', court='Site vitrine',
-   title='Création de site vitrine à Annecy, bilingue · Le Baliseur',
-   desc="Un site vitrine rapide, lisible sur téléphone, pensé pour Google et les IA, en français et en anglais. Dès 890 €, fiche Google incluse. Annecy et Haute-Savoie.",
+   title='Création de site internet à Annecy : web design et SEO · Le Baliseur',
+   desc="Agence web à Annecy : création de site internet rapide, lisible sur téléphone, pensé pour Google et les IA, en français et en anglais. Dès 890 €, fiche Google incluse.",
    h1='Site vitrine', accroche='Un site qui convainc, et que Google comprend.',
    chapo="Un bon site ne cherche pas à impressionner : il répond vite aux questions du client (quoi, où, combien, comment réserver) et lui donne envie de vous appeler. Il se charge en un instant sur téléphone, et il est construit pour être bien lu par Google et par les IA.",
    prix='dès 890 €', prix_detail="Jusqu'à 1 490 € selon le nombre de pages et les fonctions. Version anglaise +300 €. Fiche Google & IA incluse. Prêt en trois semaines environ.",
    inclus=["Jusqu'à 5 pages à 890 € (accueil, services, à propos, contact…), davantage jusqu'à 1 490 €", "Textes rédigés ou retravaillés avec vous, photos mises en valeur", "Rapide et lisible sur téléphone, testé sur l'outil de qualité de Google", "Données structurées pour que Google et les IA comprennent qui vous êtes, où et à quel prix", "Formulaire de contact ou lien de réservation, sans cookies publicitaires", "Le pack Visibilité Google & IA (290 €) inclus", "Nom de domaine et comptes à votre nom : le site vous appartient"],
    pour_qui=["Les entreprises sans site, ou avec un site daté ou lent", "Les hébergements qui veulent plus de réservations en direct", "Les commerces qui veulent afficher leurs prix, menus ou horaires clairement", "Les activités qui reçoivent des clients étrangers (option anglaise)"],
    etapes=[("Diagnostic offert", "Je regarde si le site est vraiment votre problème. Parfois, la fiche Google suffit."), ("Maquette", "Vous voyez le site avant qu'il soit construit, et on l'ajuste ensemble."), ("Construction", "Textes, photos, pages et réglages pour Google, en trois semaines environ."), ("Mise en ligne", "Vérifications, mise en ligne sur votre nom de domaine, et prise en main.")],
-   extra='<p class="note-service">En option&nbsp;: logo et identité visuelle, 250&nbsp;€.</p>',
+   extra='<h2 class="titre-3">Web design à Annecy, pensé pour être trouvé</h2>\n<p class="chapo" style="max-width:72ch">Création de site internet à Annecy et en Haute-Savoie&nbsp;: un web design sobre et à votre image, construit dès le départ pour le référencement local (SEO) et pour être bien compris par les IA. Le travail d’une agence web, avec un seul interlocuteur qui vient vous voir.</p>\n<p class="note-service">En option&nbsp;: logo et identité visuelle, 250&nbsp;€.</p>',
    faq=[("Le site m'appartient-il ?", "Oui. Le nom de domaine est enregistré à votre nom, et vous gardez le site même si vous arrêtez le suivi."), ("Pourquoi une version anglaise ?", "Annecy accueille beaucoup de touristes, d'expatriés et de frontaliers. Une version anglaise les rassure et leur évite de réserver ailleurs.")]),
  'en': dict(url='/en/services/website', court='Business website',
-   title='English-speaking web designer in Annecy · Le Baliseur',
-   desc='A fast business website that reads well on a phone, built for Google and AI tools, in English and French. From €890, Google profile included.',
+   title='Web design in Annecy, English-speaking web designer · Le Baliseur',
+   desc='Web agency in Annecy: fast business websites that read well on a phone, built for Google and AI tools, in English and French. From €890, Google profile included.',
    h1='Business website', accroche='A site that convinces people, and that Google understands.',
    chapo="A good website isn't there to impress. It answers the customer's questions quickly (what, where, how much, how to book) and makes them want to call you. It loads instantly on a phone and is built to be read well by Google and AI tools.",
    prix='from €890', prix_detail='Up to €1,490 depending on pages and features. English version +€300. Google & AI pack included. Ready in about three weeks.',
    inclus=["Up to 5 pages at €890 (home, services, about, contact…), more up to €1,490", "Copy written or reworked with you, photos shown at their best", "Fast and easy to read on a phone, checked with Google's quality test", "Structured data so Google and AI tools understand who you are, where and at what price", "Contact form or booking link, with no advertising cookies", "The Google & AI visibility pack (€290) included", "Domain and accounts in your name: the site belongs to you"],
    pour_qui=["Businesses with no website, or a dated or slow one", "Holiday lets that want more direct bookings", "Shops that want to show prices, menus or hours clearly", "Businesses with international customers (English option)"],
    etapes=[("Free audit", "I check whether the website really is your problem. Sometimes the Google profile is enough."), ("Mock-up", "You see the site before it's built, and we adjust it together."), ("Build", "Copy, photos, pages and Google settings, in about three weeks."), ("Launch", "Checks, launch on your own domain, and a walkthrough.")],
-   extra='<p class="note-service">Optional: logo and visual identity, €250.</p>',
+   extra='<h2 class="titre-3">Web design in Annecy, built to be found</h2>\n<p class="chapo" style="max-width:72ch">Website design for businesses in Annecy and Haute-Savoie: clean web design in your style, built from day one for local SEO and for AI tools to understand. The work of a web agency, with one contact who comes to see you, in English or French.</p>\n<p class="note-service">Optional: logo and visual identity, €250.</p>',
    faq=[("Does the website belong to me?", "Yes. The domain is registered in your name, and you keep the site even if you stop the monthly support."), ("Why an English version?", "Annecy welcomes many tourists, expats and cross-border commuters. An English version reassures them and stops them booking elsewhere.")]),
 },
 'social': {
@@ -236,6 +236,7 @@ SERV = {
 
 FAQ = {
 'fr': [
+ ("Le Baliseur est-il une agence web à Annecy ?", "Oui. Le Baliseur est une agence web basée à Annecy-le-Vieux, avec un seul interlocuteur, Chris Elston : création de site internet et web design, fiche Google, référencement local (SEO) et visibilité dans les IA, pour les entreprises d'Annecy et de Haute-Savoie. Je viens vous rencontrer sur place, et les prix sont affichés."),
  ("Le diagnostic est-il vraiment gratuit ?", "Oui. Je compare votre présence sur Google et dans les réponses des IA à celle de trois concurrents, et je vous envoie le résultat sous 72 h. Sans engagement : si vous ne donnez pas suite, vous gardez le diagnostic."),
  ("Ai-je besoin d'un site internet ?", "Pas toujours. Pour beaucoup de commerces et d'indépendants, une fiche Google complète rapporte plus vite qu'un site. Le diagnostic vous dit honnêtement par où commencer."),
  ("Combien de temps avant de voir des résultats ?", "La fiche Google est remise au point en une semaine environ, et les premiers effets se voient souvent dans les semaines qui suivent. Le classement sur la carte met en général deux à quatre mois à progresser nettement."),
@@ -249,6 +250,7 @@ FAQ = {
  ("Demandez-vous des avis Google en échange d'une remise ?", "Non, c'est interdit par les règles de Google. L'offre des cinq premiers clients porte sur un témoignage publié sur ce site, signalé comme celui d'un client fondateur."),
 ],
 'en': [
+ ("Is Le Baliseur a web agency in Annecy?", "Yes. Le Baliseur is a web agency based in Annecy-le-Vieux, with a single contact, Chris Elston: web design and websites, Google Business Profile, local SEO and AI visibility for businesses in Annecy and Haute-Savoie, in English and French. I come and meet you in person, and prices are shown upfront."),
  ("Is the audit really free?", "Yes. I compare your presence on Google and in AI answers with three competitors, and send you the results within 72 hours. No obligation: if you don't go further, you keep the audit."),
  ("Do I need a website?", "Not always. For many shops and independents, a complete Google profile pays off faster than a website. The audit tells you honestly where to start."),
  ("How long before I see results?", "Your Google profile is sorted in about a week, and the first effects often show in the following weeks. Map rankings usually take two to four months to improve clearly."),

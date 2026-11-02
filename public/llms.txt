@@ -1,13 +1,13 @@
 # Le Baliseur
 
-> Le Baliseur aide les petites entreprises d'Annecy et de Haute-Savoie à être trouvées par leurs clients : sur Google (fiche et carte), dans les réponses des IA (ChatGPT, Gemini, mode IA de Google) et sur les réseaux sociaux. Un seul interlocuteur, Chris Elston, en français et en anglais. Prix affichés, diagnostic offert sous 72 h.
+> Le Baliseur est une agence web à Annecy : création de site internet, web design, référencement local (SEO) et visibilité dans les IA. Elle aide les petites entreprises d'Annecy et de Haute-Savoie à être trouvées par leurs clients : sur Google (fiche et carte), dans les réponses des IA (ChatGPT, Gemini, mode IA de Google) et sur les réseaux sociaux. Un seul interlocuteur, Chris Elston, en français et en anglais. Prix affichés, diagnostic offert sous 72 h.
 
-Le Baliseur helps small businesses in Annecy and Haute-Savoie (France) get found by customers on Google, in AI assistants' answers and on social media. One contact, Chris Elston, working in French and English.
+Le Baliseur is a web agency in Annecy (France): web design and websites, local SEO and AI visibility. It helps small businesses in Annecy and Haute-Savoie get found by customers on Google, in AI assistants' answers and on social media. One contact, Chris Elston, working in French and English.
 
 ## Services
 
 - [Fiche Google et visibilité dans les IA](https://lebaliseur.fr/services/fiche-google-ia): fiche Google complète, Bing et Apple Plans, annuaires harmonisés. 290 €.
-- [Site vitrine](https://lebaliseur.fr/services/site-vitrine): site rapide, pensé pour le téléphone, Google et les IA, en français et en anglais. Dès 890 €, fiche Google incluse.
+- [Création de site internet et web design](https://lebaliseur.fr/services/site-vitrine): site vitrine rapide, pensé pour le téléphone, Google et les IA, en français et en anglais. Dès 890 €, fiche Google incluse.
 - [Réseaux sociaux](https://lebaliseur.fr/services/reseaux-sociaux): Facebook, Instagram et LinkedIn remis au point, publications mensuelles. 250 €, kit dès 99 €/mois.
 - [Suivi mensuel](https://lebaliseur.fr/services/suivi-mensuel): fiche Google, avis, publications, classement local et réponses des IA suivis chaque mois. Dès 49 €/mois.
 - [Pack Lancement](https://lebaliseur.fr/services/pack-lancement): pour les entreprises qui démarrent, site, fiche Google et suivi sans rien payer au départ (89 €/mois sur 24 mois, sur dossier).
