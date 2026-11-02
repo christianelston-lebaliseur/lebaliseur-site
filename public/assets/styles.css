@@ -485,3 +485,84 @@ a:hover { color: var(--ardoise); }
 .lancement-texte h3 { margin: 0; font-family: var(--cond); font-weight: 700; font-size: 32px; line-height: 1.05; text-transform: uppercase; }
 .lancement-texte p { margin: 0; font-size: 17px; line-height: 1.5; color: var(--gris); }
 .lancement-texte .lancement-badge { font-family: var(--cond); font-weight: 700; font-size: 18px; text-transform: uppercase; letter-spacing: 1px; color: var(--sapin); }
+
+/* ===== Rafraîchissement (nov. 2026) ===== */
+
+::selection { background: var(--signal); color: var(--ardoise); }
+
+/* 1. Capitales réservées au logo, au titre principal et aux titres de section */
+.bouton, .menu-bouton, .lien-fleche { text-transform: none; letter-spacing: 0; }
+.carte h3, .offre h3, .offre-fondateur h3, .cas-en-cours h3, .lancement-texte h3,
+.vitrine-legende strong, .carte-service h2, .formule h3, .etapes strong, .titre-3,
+.legal h2, .jauge-niveau, .temoignage figcaption strong, .pied-titre {
+  text-transform: none; letter-spacing: 0;
+}
+.pied-titre { font-size: 20px; }
+
+/* 2. Le jaune signale une seule chose : le test gratuit (et le motif du balisage) */
+.entete-actions .bouton-signal { background: var(--ardoise); color: var(--blanc); }
+.entete-actions .bouton-signal:hover { background: #2E3A34; color: var(--blanc); }
+.numero, .etapes li::before { background: var(--sapin); color: var(--blanc); }
+.liste-balise li::before, .etiquettes li::before { background: var(--sapin); }
+.sombre .etiquettes li::before, .vert .etiquettes li::before,
+.sombre .liste-balise li::before, .vert .liste-balise li::before { background: var(--signal); }
+#offres .offre.vedette, #pricing .offre.vedette { background: var(--blanc); border: 2px solid var(--ardoise); }
+.offre-fondateur { background: var(--calcaire); border: 2px solid var(--ardoise); }
+
+/* 3. Le test gratuit, directement sous le héros */
+.heros { padding-bottom: 56px; }
+.bandeau-test { background: var(--calcaire); }
+.bandeau-test .conteneur { display: block; padding-block: 0 88px; }
+.test-panneau { background: var(--blanc); border-radius: 14px; padding: 36px 40px; display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.05fr); align-items: center; gap: 28px 56px; box-shadow: 0 1px 0 var(--trait), 0 28px 48px -36px rgba(28, 36, 32, 0.45); }
+.test-texte .titre-2 { margin: 0; font-size: clamp(30px, 3.2vw, 42px); }
+.bandeau-test .test-texte p { margin: 12px 0 0; font-size: 17px; line-height: 1.55; color: var(--gris); max-width: 52ch; }
+.test-form { display: grid; grid-template-columns: 1.5fr 1fr; gap: 16px; align-items: end; }
+.test-form .bouton { grid-column: 1 / -1; justify-self: start; min-height: 52px; padding-inline: 28px; }
+.champ input:hover, .champ select:hover { border-color: var(--gris); }
+@media (max-width: 900px) { .test-panneau { grid-template-columns: 1fr; padding: 28px 24px; } }
+@media (max-width: 520px) { .test-form { grid-template-columns: 1fr; } .test-form .bouton { justify-self: stretch; } .bandeau-test .conteneur { padding-bottom: 64px; } }
+
+/* 5. Plus de pointillés : traits pleins */
+.cas-en-cours { border: 1px solid var(--trait); }
+.bandeau-lancement { border: 2px solid var(--sapin); }
+.mention-demo { border-style: solid; }
+
+/* 6. Cartes de prix : trois points cochés, prix alignés */
+.offre-points { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 10px; }
+.offre-points li { position: relative; padding-left: 26px; font-size: 16px; line-height: 1.45; color: var(--ardoise); }
+.offre-points li::before { content: ""; position: absolute; left: 4px; top: 3px; width: 6px; height: 11px; border-right: 2.5px solid var(--sapin); border-bottom: 2.5px solid var(--sapin); transform: rotate(40deg); }
+.offre p.offre-note { font-size: 14px; line-height: 1.45; }
+.offre h3 { min-height: 0; }
+#offres .grille, #pricing .grille { grid-template-rows: auto; }
+@supports (grid-template-rows: subgrid) {
+  #offres .offre, #pricing .offre { display: grid; grid-row: span 5; grid-template-rows: subgrid; gap: 14px; align-content: start; }
+  #offres .offre .lien-fleche, #pricing .offre .lien-fleche { align-self: end; }
+}
+
+/* 8. « Je viens vous voir » passe en clair : moins de bandes sombres */
+.local { background: var(--blanc); color: var(--ardoise); }
+.local-intro p, .local-points li { color: var(--gris); }
+.local-points strong { color: var(--ardoise); }
+
+/* Portrait : rectangle plus grand, sans anneau */
+.portrait { flex: 0 0 260px; max-width: 260px; aspect-ratio: 4 / 5; border-radius: 12px; box-shadow: 0 24px 40px -28px rgba(0, 0, 0, 0.6); }
+@media (max-width: 760px) { .portrait { flex-basis: 200px; max-width: 200px; } }
+
+/* 9. Mobile : surtitre sur une ligne, bouton remonté, barre du test en bas */
+@media (max-width: 640px) {
+  .surtitre-long { display: none; }
+  .heros-texte .chapo { order: 1; }
+  .heros-actions .bouton { flex: 1 1 100%; }
+}
+.barre-test { display: none; }
+@media (max-width: 760px) {
+  .barre-test { display: block; position: fixed; z-index: 30; left: 0; right: 0; bottom: 0; padding: 10px 16px calc(10px + env(safe-area-inset-bottom)); background: rgba(238, 240, 236, 0.97); border-top: 1px solid var(--trait); transform: translateY(110%); transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1); }
+  .barre-test.visible { transform: none; }
+  .barre-test .bouton { width: 100%; }
+}
+@media (prefers-reduced-motion: reduce) { .barre-test { transition: none; } }
+@supports (grid-template-rows: subgrid) {
+  #offres .offre .offre-points, #pricing .offre .offre-points { grid-row: 3; }
+  #offres .offre .offre-note, #pricing .offre .offre-note { grid-row: 4; }
+  #offres .offre .lien-fleche, #pricing .offre .lien-fleche { grid-row: 5; }
+}

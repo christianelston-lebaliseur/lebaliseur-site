@@ -47,7 +47,7 @@
 
 <section class="conteneur heros">
 <div class="heros-texte">
-<h1 style="margin:0"><span class="surtitre" style="display:block;margin:0">Websites, Google &amp; social media · Annecy &amp; Haute-Savoie</span>
+<h1 style="margin:0"><span class="surtitre" style="display:block;margin:0"><span class="surtitre-long">Websites, Google &amp; social media · </span>Annecy &amp; Haute-Savoie</span>
 <span class="titre-1" style="display:block">Marking the trail to your customers.</span></h1>
 <p class="accroche">Your customers are searching for you. They're finding your competitors.</p>
 <p class="chapo">When someone searches "restaurant Annecy" on Google, or asks ChatGPT where to find a plumber, only a handful of businesses get named. I make you one of them: a website that makes people call, a Google profile that’s right, reviews and social media that stay active, and ongoing support so it lasts.</p>
@@ -55,7 +55,7 @@
 <p><strong>Why "Le Baliseur"?</strong> In the Alps, a <em lang="fr">baliseur</em> is the person who paints the trail markers that keep hikers on the right path. In French, a <em lang="fr">balise</em> is also an HTML tag, the building block of every website. Clear markers, online and on the map, leading customers to your door: that's the job.</p>
 </div>
 <div class="heros-actions">
-<a class="bouton bouton-sombre" href="/en/self-check">Check my visibility for free</a>
+<a class="bouton bouton-signal" href="/en/self-check">Take the free test</a>
 <a class="bouton bouton-contour" href="/en/examples/">See website examples</a>
 </div>
 </div>
@@ -79,13 +79,19 @@
 </div>
 </section>
 
-<section class="bandeau-test">
+<section class="bandeau-test" aria-labelledby="test-titre">
 <div class="conteneur">
-<div>
-<h2 class="titre-2">How visible are you on Google and in AI answers?</h2>
+<div class="test-panneau">
+<div class="test-texte">
+<h2 class="titre-2" id="test-titre">How visible are you on Google and in AI answers?</h2>
 <p>Check yourself for free: your Google profile and map position, your website, and what AI assistants answer when people search for what you do. About a minute, a score out of 100 and your three priorities.</p>
 </div>
-<a class="bouton bouton-sombre" href="/en/self-check">Take the free test</a>
+<form class="test-form" action="/en/self-check" method="get">
+<label class="champ">Business name<input type="text" name="business" autocomplete="organization" required maxlength="120"></label>
+<label class="champ">Town<input type="text" name="city" value="Annecy" maxlength="80"></label>
+<button class="bouton bouton-signal" type="submit">Run the free test</button>
+</form>
+</div>
 </div>
 </section>
 
@@ -217,25 +223,26 @@
 <div class="offre">
 <h3>Google &amp; AI visibility</h3>
 <p class="prix">€290</p>
-<p>A complete, optimised Google Business Profile, Bing and Apple Maps listings, photos, categories, and the same details across every directory Google and AI tools check.</p>
+<ul class="offre-points"><li>Complete, optimised Google Business Profile</li><li>Bing and Apple Maps listings</li><li>Same details across every directory</li></ul>
 <a class="lien-fleche" href="/en/services/google-ai-visibility">Learn more →</a>
 </div>
 <div class="offre vedette">
 <h3>Business website</h3>
 <p class="prix">from €890</p>
-<p>A fast site that reads well on a phone, is built for Google and is easy for AI tools to understand. The Google &amp; AI visibility pack is included.</p>
+<ul class="offre-points"><li>Fast and easy to read on a phone</li><li>Built for Google and AI tools</li><li>Google &amp; AI visibility pack included</li></ul>
 <a class="lien-fleche" href="/en/services/website">Learn more →</a>
 </div>
 <div class="offre">
 <h3>Social media</h3>
 <p class="prix">€250</p>
-<p>Facebook, Instagram and LinkedIn sorted, with post templates in your colours. Optional monthly content kit, ready to post in English and French, from €99/month.</p>
+<ul class="offre-points"><li>Facebook, Instagram and LinkedIn sorted</li><li>Post templates in your colours</li><li>Optional EN/FR monthly content kit from €99/month</li></ul>
 <a class="lien-fleche" href="/en/services/social-media">Learn more →</a>
 </div>
 <div class="offre">
 <h3>Monthly support</h3>
 <p class="prix">from €49<span>/month</span></p>
-<p>Essential €49, Visibility €129, Growth €249 a month. Three-month minimum on Visibility and Growth.</p>
+<ul class="offre-points"><li>Essential: €49/month</li><li>Visibility: €129/month</li><li>Growth: €249/month</li></ul>
+<p class="offre-note">Three-month minimum on Visibility and Growth.</p>
 <a class="lien-fleche" href="/en/services/monthly-support">Learn more →</a>
 </div>
 </div>
@@ -332,6 +339,7 @@
 </form>
 </section>
 
+<div class="barre-test" aria-hidden="true"><a class="bouton bouton-signal" href="/en/self-check" tabindex="-1">Take the free test</a></div>
 </main>
 
 <footer class="pied">
@@ -342,7 +350,7 @@
 </div>
 <nav class="pied-col" aria-label="Site map">
 <p class="pied-titre">The site</p>
-<a href="/en/services/">Services</a><a href="/en/examples/">Examples</a><a href="/en/#method">How it works</a><a href="/en/#about">About</a><a href="/en/faq">FAQ</a><a href="/en/self-check">Self-check</a>
+<a href="/en/services/">Services</a><a href="/en/examples/">Examples</a><a href="/en/#method">How it works</a><a href="/en/#about">About</a><a href="/en/faq">FAQ</a><a href="/en/self-check">Free test</a>
 </nav>
 <div class="pied-col">
 <p class="pied-titre">Contact</p>
