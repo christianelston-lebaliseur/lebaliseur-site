@@ -168,12 +168,12 @@ function accuseReception(d, en, texte = false) {
   const test = en ? 'https://lebaliseur.fr/en/self-check' : 'https://lebaliseur.fr/auto-diagnostic';
   const p = en ? [
     `Hello ${nom},`,
-    `Thank you for your request. I'm now looking at how ${entreprise} shows up on Google and in AI answers, and I'll send you your free audit within 72 hours.`,
+    `Thank you for your request. I'm now looking at how ${entreprise} shows up on Google and in AI answers, and I'll send you your free audit within 24 hours.`,
     `If you haven't done it yet, the online self-check takes two minutes: ${test}`,
     'Any questions? Just reply to this email.',
   ] : [
     `Bonjour ${nom},`,
-    `Merci pour votre demande. Je regarde la présence de ${entreprise} sur Google et dans les réponses des IA, et je vous envoie votre diagnostic offert sous 72 h.`,
+    `Merci pour votre demande. Je regarde la présence de ${entreprise} sur Google et dans les réponses des IA, et je vous envoie votre diagnostic offert sous 24 h.`,
     `Si vous ne l'avez pas encore fait, l'auto-diagnostic en ligne prend deux minutes : ${test}`,
     'Une question ? Répondez simplement à ce message.',
   ];

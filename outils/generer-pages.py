@@ -237,7 +237,7 @@ SERV = {
 FAQ = {
 'fr': [
  ("Le Baliseur est-il une agence web à Annecy ?", "Oui. Le Baliseur est une agence web basée à Annecy-le-Vieux, avec un seul interlocuteur, Chris Elston : création de site internet et web design, fiche Google, référencement local (SEO) et visibilité dans les IA, pour les entreprises d'Annecy et de Haute-Savoie. Je viens vous rencontrer sur place, et les prix sont affichés."),
- ("Le diagnostic est-il vraiment gratuit ?", "Oui. Je compare votre présence sur Google et dans les réponses des IA à celle de trois concurrents, et je vous envoie le résultat sous 72 h. Sans engagement : si vous ne donnez pas suite, vous gardez le diagnostic."),
+ ("Le diagnostic est-il vraiment gratuit ?", "Oui. Je compare votre présence sur Google et dans les réponses des IA à celle de trois concurrents, et je vous envoie le résultat sous 24 h. Sans engagement : si vous ne donnez pas suite, vous gardez le diagnostic."),
  ("Ai-je besoin d'un site internet ?", "Pas toujours. Pour beaucoup de commerces et d'indépendants, une fiche Google complète rapporte plus vite qu'un site. Le diagnostic vous dit honnêtement par où commencer."),
  ("Combien de temps avant de voir des résultats ?", "La fiche Google est remise au point en une semaine environ, et les premiers effets se voient souvent dans les semaines qui suivent. Le classement sur la carte met en général deux à quatre mois à progresser nettement."),
  ("Pouvez-vous garantir la première place sur Google ?", "Non. Personne ne peut le garantir honnêtement, et méfiez-vous de ceux qui le promettent. Je travaille sur ce que Google et les IA prennent en compte, et je mesure les progrès chaque mois."),
@@ -251,7 +251,7 @@ FAQ = {
 ],
 'en': [
  ("Is Le Baliseur a web agency in Annecy?", "Yes. Le Baliseur is a web agency based in Annecy-le-Vieux, with a single contact, Chris Elston: web design and websites, Google Business Profile, local SEO and AI visibility for businesses in Annecy and Haute-Savoie, in English and French. I come and meet you in person, and prices are shown upfront."),
- ("Is the audit really free?", "Yes. I compare your presence on Google and in AI answers with three competitors, and send you the results within 72 hours. No obligation: if you don't go further, you keep the audit."),
+ ("Is the audit really free?", "Yes. I compare your presence on Google and in AI answers with three competitors, and send you the results within 24 hours. No obligation: if you don't go further, you keep the audit."),
  ("Do I need a website?", "Not always. For many shops and independents, a complete Google profile pays off faster than a website. The audit tells you honestly where to start."),
  ("How long before I see results?", "Your Google profile is sorted in about a week, and the first effects often show in the following weeks. Map rankings usually take two to four months to improve clearly."),
  ("Can you guarantee first place on Google?", "No. Nobody can honestly guarantee it, so be wary of anyone who does. I work on what Google and AI tools take into account, and measure progress every month."),
@@ -384,9 +384,9 @@ EXEMPLES = {
 }
 EX_PLUS = {
 'fr': dict(h_inclus="Ce que comprend chaque site", inclus=["Pensé d'abord pour le téléphone, et rapide (objectif : 90/100 et plus sur PageSpeed)", "Bouton d'appel, itinéraire et lien de réservation sur chaque page", "Une page par service, avec vos prix", "Les informations que lisent Google et les IA, pour qu'ils comprennent votre activité", "Mentions légales et page confidentialité", "Une version anglaise si vos clients en ont besoin", "Votre fiche Google complétée en même temps"],
-  h_etapes="Comment se passe la création", etapes=[("Diagnostic offert", "Sous 72 h : votre présence actuelle face à trois concurrents, et ce qu'un site doit changer."), ("Maquette et contenus", "Je rédige les textes avec vous et vous montre le site sur votre téléphone avant la mise en ligne."), ("Mise en ligne", "En 1 à 3 semaines selon votre projet, avec la fiche Google, Search Console et Bing configurés.")]),
+  h_etapes="Comment se passe la création", etapes=[("Diagnostic offert", "Sous 24 h : votre présence actuelle face à trois concurrents, et ce qu'un site doit changer."), ("Maquette et contenus", "Je rédige les textes avec vous et vous montre le site sur votre téléphone avant la mise en ligne."), ("Mise en ligne", "En 1 à 3 semaines selon votre projet, avec la fiche Google, Search Console et Bing configurés.")]),
 'en': dict(h_inclus="What every website includes", inclus=["Built for phones first, and fast (target: 90/100 or more on PageSpeed)", "Call button, directions and booking link on every page", "A page for each service, with your prices", "The information Google and AI tools read, so they understand your business", "Legal notice and privacy page", "An English version if your customers need one", "Your Google profile completed at the same time"],
-  h_etapes="How the build works", etapes=[("Free audit", "Within 72 hours: where you stand against three competitors, and what a website needs to change."), ("Design and content", "I write the text with you and show you the site on your phone before it goes live."), ("Launch", "In 1 to 3 weeks, depending on your project, with your Google profile, Search Console and Bing set up.")]),
+  h_etapes="How the build works", etapes=[("Free audit", "Within 24 hours: where you stand against three competitors, and what a website needs to change."), ("Design and content", "I write the text with you and show you the site on your phone before it goes live."), ("Launch", "In 1 to 3 weeks, depending on your project, with your Google profile, Search Console and Bing set up.")]),
 }
 for lang, E in EXEMPLES.items():
     rows = ''
