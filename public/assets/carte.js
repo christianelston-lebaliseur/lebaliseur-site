@@ -28,10 +28,10 @@
     return Math.max(1, Math.round(r));
   }
   function teinte(r) {
-    if (r <= 3) return ['#24493A', '#FFFFFF'];
-    if (r <= 10) return ['#F2B23A', '#1C2420'];
-    if (r <= 20) return ['#E8894A', '#1C2420'];
-    return ['#B3261E', '#FFFFFF'];
+    if (r <= 3) return ['#1E7A5A', '#FFFFFF'];
+    if (r <= 10) return ['#F2B23A', '#0E1A26'];
+    if (r <= 20) return ['#E8873A', '#0E1A26'];
+    return ['#A23B30', '#FFFFFF'];
   }
 
   function el(nom, attrs, parent) {
@@ -63,12 +63,12 @@
     }
   }
   // l'entreprise : anneau autour du point central
-  el('circle', { cx: MARGE + centre * PAS, cy: MARGE + centre * PAS, r: 29, fill: 'none', stroke: '#1C2420', 'stroke-width': 4 }, svg);
+  el('circle', { cx: MARGE + centre * PAS, cy: MARGE + centre * PAS, r: 29, fill: 'none', stroke: '#0E1A26', 'stroke-width': 4 }, svg);
   villes.forEach(function (v) {
-    var t = el('text', { x: v[1], y: v[2], 'text-anchor': v[3], fill: '#3E4A44', 'font-size': 14, 'font-weight': 600, stroke: '#E4E8E1', 'stroke-width': 5, 'paint-order': 'stroke', 'stroke-linejoin': 'round' }, svg);
+    var t = el('text', { x: v[1], y: v[2], 'text-anchor': v[3], fill: '#3E4954', 'font-size': 14, 'font-weight': 600, stroke: '#E4E8E1', 'stroke-width': 5, 'paint-order': 'stroke', 'stroke-linejoin': 'round' }, svg);
     t.textContent = v[0];
   });
-  var ici = el('text', { x: MARGE + centre * PAS, y: MARGE + centre * PAS - 35, 'text-anchor': 'middle', fill: '#1C2420', 'font-size': 14, 'font-weight': 700, stroke: '#E4E8E1', 'stroke-width': 5, 'paint-order': 'stroke' }, svg);
+  var ici = el('text', { x: MARGE + centre * PAS, y: MARGE + centre * PAS - 35, 'text-anchor': 'middle', fill: '#0E1A26', 'font-size': 14, 'font-weight': 700, stroke: '#E4E8E1', 'stroke-width': 5, 'paint-order': 'stroke' }, svg);
   ici.textContent = en ? 'Your business' : 'Votre entreprise';
 
   hote.appendChild(svg);
