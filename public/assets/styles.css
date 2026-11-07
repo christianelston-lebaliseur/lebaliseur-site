@@ -1,25 +1,31 @@
 /* Le Baliseur — feuille de styles */
 
-@font-face { font-family: "Barlow"; font-weight: 400; font-display: swap; src: url("fonts/barlow-latin-400-normal.woff2") format("woff2"); }
-@font-face { font-family: "Barlow"; font-weight: 500; font-display: swap; src: url("fonts/barlow-latin-500-normal.woff2") format("woff2"); }
-@font-face { font-family: "Barlow"; font-weight: 600; font-display: swap; src: url("fonts/barlow-latin-600-normal.woff2") format("woff2"); }
-@font-face { font-family: "Barlow Condensed"; font-weight: 600; font-display: swap; src: url("fonts/barlow-condensed-latin-600-normal.woff2") format("woff2"); }
-@font-face { font-family: "Barlow Condensed"; font-weight: 700; font-display: swap; src: url("fonts/barlow-condensed-latin-700-normal.woff2") format("woff2"); }
+@font-face { font-family: "Bricolage Grotesque"; font-weight: 700; font-display: swap; src: url("fonts/bricolage-grotesque-latin-700-normal.woff2") format("woff2"); }
+@font-face { font-family: "Bricolage Grotesque"; font-weight: 800; font-display: swap; src: url("fonts/bricolage-grotesque-latin-800-normal.woff2") format("woff2"); }
+@font-face { font-family: "Inter"; font-weight: 400; font-display: swap; src: url("fonts/inter-latin-400-normal.woff2") format("woff2"); }
+@font-face { font-family: "Inter"; font-weight: 500; font-display: swap; src: url("fonts/inter-latin-500-normal.woff2") format("woff2"); }
+@font-face { font-family: "Inter"; font-weight: 600; font-display: swap; src: url("fonts/inter-latin-600-normal.woff2") format("woff2"); }
+@font-face { font-family: "JetBrains Mono"; font-weight: 500; font-display: swap; src: url("fonts/jetbrains-mono-latin-500-normal.woff2") format("woff2"); }
 
+/* Palette « Le sentier » (nov. 2026) : bleu nuit, rouge balise, neige. Les anciens noms de variables sont gardés. */
 :root {
-  --signal: #F2B23A;
-  --sapin: #24493A;
-  --sapin-clair: #3A6352;
-  --ardoise: #1C2420;
-  --calcaire: #EEF0EC;
-  --gris: #3E4A44;
-  --trait: #D3D8D2;
-  --bord-champ: #A9B2AC;
+  --signal: #C8322B;        /* rouge balise : appels à l'action */
+  --rouge-fonce: #9E241E;   /* rouge pour le texte sur fond clair */
+  --rose: #E8C3B0;          /* détails sur fond sombre */
+  --sapin: #24405A;         /* bleu lac : liens, numéros, puces */
+  --sapin-clair: #3B5873;
+  --ardoise: #0E1A26;       /* bleu nuit : texte et fonds sombres */
+  --nuit-2: #16293A;
+  --calcaire: #F4F2ED;      /* neige */
+  --gris: #3E4954;
+  --trait: #DAD6CC;
+  --bord-champ: #A9A59B;
   --blanc: #FFFFFF;
-  --sur-sombre: #D9DED8;
-  --sur-vert: #E4EAE5;
-  --cond: "Barlow Condensed", "Arial Narrow", sans-serif;
-  --corps: "Barlow", system-ui, sans-serif;
+  --sur-sombre: #B9C5D0;
+  --sur-vert: #D2DBE3;
+  --cond: "Bricolage Grotesque", "Arial Narrow", sans-serif;
+  --corps: "Inter", system-ui, sans-serif;
+  --mono: "JetBrains Mono", ui-monospace, monospace;
 }
 
 *, *::before, *::after { box-sizing: border-box; }
@@ -567,3 +573,123 @@ a:hover { color: var(--ardoise); }
   #offres .offre .lien-fleche, #pricing .offre .lien-fleche { grid-row: 5; }
 }
 @media (max-width: 640px) { .heros .surtitre { font-size: 15px; letter-spacing: 1.5px; white-space: nowrap; } }
+
+/* ===== Refonte « Le sentier » (nov. 2026) : bleu nuit, rouge balise, photo du lac ===== */
+
+::selection { background: var(--signal); color: var(--blanc); }
+.lien-evitement { background: var(--signal); color: var(--blanc); }
+
+/* Typographie : titres en Bricolage Grotesque, sans capitales */
+.titre-1, .titre-2 { font-weight: 800; text-transform: none; letter-spacing: -0.035em; }
+.titre-1 { font-size: clamp(50px, 7.2vw, 108px); line-height: 0.92; }
+.titre-2 { font-size: clamp(36px, 4.8vw, 64px); line-height: 0.98; }
+.accroche { font-weight: 700; letter-spacing: -0.02em; }
+.surtitre { font-family: var(--mono); font-weight: 500; font-size: 13px; letter-spacing: 0.14em; color: var(--rouge-fonce); }
+.carte h3, .offre h3, .offre-fondateur h3, .cas-en-cours h3, .lancement-texte h3, .vitrine-legende strong,
+.carte-service h2, .formule h3, .etapes strong, .titre-3, .legal h2, .jauge-niveau, .poteau-tete strong, .plaque b {
+  font-weight: 700; letter-spacing: -0.015em;
+}
+.marque span, .pied-nom { font-weight: 800; text-transform: none; letter-spacing: -0.025em; }
+.marque span { font-size: 26px; }
+.offre .prix, .prix-montant, .jauge-score span { font-weight: 800; letter-spacing: -0.03em; }
+
+/* Boutons : arrondis, rouge pour agir */
+.bouton { border-radius: 999px; font-family: var(--corps); font-weight: 600; font-size: 17px; padding: 12px 26px; min-height: 52px; }
+.bouton-signal, .entete-actions .bouton-signal { background: var(--signal); color: var(--blanc); }
+.bouton-signal:hover, .entete-actions .bouton-signal:hover { background: #A8271F; color: var(--blanc); }
+.bouton-sombre:hover { background: var(--nuit-2); }
+.nav .bouton, .entete-actions .bouton { font-size: 16px; min-height: 44px; }
+.menu-bouton { border-radius: 999px; font-family: var(--corps); font-weight: 600; font-size: 16px; text-transform: none; }
+.lien-fleche { font-family: var(--corps); font-weight: 600; font-size: 17px; }
+
+/* Héros : le lac d'Annecy au crépuscule */
+.heros-fond { position: relative; background: var(--ardoise) url("photos/lac-annecy-2000.webp") center 55% / cover no-repeat; color: var(--blanc); }
+.heros-fond::before { content: ""; position: absolute; inset: 0; background: rgba(9, 18, 27, 0.5); }
+@media (max-width: 1000px) { .heros-fond { background-image: url("photos/lac-annecy-1000.webp"); } }
+.heros-fond .heros { position: relative; padding-block: clamp(64px, 9vw, 120px) clamp(96px, 10vw, 140px); }
+.heros-fond .surtitre { color: var(--rose); }
+.heros-fond .titre-1 { color: var(--blanc); }
+.heros-fond .accroche { color: var(--blanc); }
+.heros-fond .chapo { color: #DCE3EA; }
+.heros-fond .bouton-contour { border-color: rgba(255, 255, 255, 0.75); color: var(--blanc); }
+.heros-fond .bouton-contour:hover { background: rgba(255, 255, 255, 0.14); color: var(--blanc); }
+.heros-fond .heros-panneau .scene-tel { background: none; padding: 0; }
+.heros-fond .scene-tel .montagnes { display: none; }
+.heros-fond .telephone { margin-bottom: 0; box-shadow: 0 30px 60px -20px rgba(0, 0, 0, 0.7); }
+.heros-coord { position: relative; margin: 0; border-top: 1px solid rgba(255, 255, 255, 0.18); }
+.heros-coord .conteneur { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 6px 28px; padding-block: 14px; font-family: var(--mono); font-size: 12px; letter-spacing: 0.08em; color: var(--sur-sombre); text-transform: uppercase; }
+.titre-1 .balise { display: inline-flex; flex-direction: column; gap: 0.06em; margin-left: 0.12em; vertical-align: 0.06em; }
+.titre-1 .balise::before, .titre-1 .balise::after { content: ""; display: block; width: 0.6em; height: 0.11em; background: var(--blanc); }
+.titre-1 .balise::after { background: var(--signal); }
+
+/* Téléphone : rouge à la place du jaune */
+.tel-premier { background: #FBEDEA; box-shadow: inset 4px 0 0 var(--signal); }
+.tel-premier .tel-rang { background: var(--signal); color: var(--blanc); }
+.tel-actions span { border-color: var(--ardoise); color: var(--ardoise); }
+.tel-actions span:first-child { background: var(--ardoise); color: var(--blanc); }
+.tel-badge { background: var(--signal); color: var(--blanc); font-weight: 800; text-transform: none; border-radius: 999px; }
+
+/* Test gratuit : la carte chevauche le héros */
+.bandeau-test .test-panneau { position: relative; margin-top: -56px; }
+
+/* Section sombre */
+.classement b { background: var(--signal); color: var(--blanc); }
+.classement em, .classement .coupure { color: var(--rose); }
+.classement .coupure::before, .classement .coupure::after { border-top-color: var(--rose); }
+.sombre .etiquettes li::before, .vert .etiquettes li::before, .sombre .liste-balise li::before, .vert .liste-balise li::before { background: var(--signal); }
+
+/* Méthode : plaques du poteau */
+.plaque.signal { background: var(--signal); color: var(--blanc); }
+.scene .poteau::before { background: #1B2B3B; }
+
+/* Je viens vous voir : la vraie balise en photo */
+.local-photo { flex: 0 1 300px; margin: 0; display: flex; flex-direction: column; gap: 10px; }
+.local-photo img { width: 100%; height: auto; aspect-ratio: 4 / 5; object-fit: cover; border-radius: 18px; }
+.local-photo figcaption { font-family: var(--mono); font-size: 12px; letter-spacing: 0.04em; color: var(--gris); }
+@media (max-width: 760px) { .local-photo { flex-basis: 100%; max-width: 360px; } }
+
+/* Offres */
+.offre .prix small { display: block; margin-top: 8px; font-family: var(--corps); font-weight: 600; font-size: 14px; letter-spacing: 0; color: var(--rouge-fonce); }
+.bandeau-lancement { background: var(--signal); border: 0; color: var(--blanc); border-radius: 22px; }
+.lancement-texte p { color: var(--blanc); }
+.lancement-texte .lancement-badge { color: #FBE3DF; font-family: var(--mono); font-weight: 500; font-size: 13px; letter-spacing: 0.12em; }
+.bandeau-lancement .bouton-sombre { background: var(--blanc); color: var(--rouge-fonce); }
+.bandeau-lancement .bouton-sombre:hover { background: #FBE3DF; color: var(--rouge-fonce); }
+
+/* Premiers clients */
+.offre-fondateur { background: var(--ardoise); color: var(--blanc); border: 0; border-radius: 22px; }
+.offre-fondateur p { color: var(--sur-sombre); }
+.offre-fondateur .offre-badge { color: var(--rose); font-family: var(--mono); font-weight: 500; font-size: 13px; letter-spacing: 0.12em; }
+.offre-fondateur .places strong { color: var(--blanc); }
+.offre-fondateur .bouton-sombre { background: var(--signal); }
+.offre-fondateur .bouton-sombre:hover { background: #A8271F; }
+.cas-en-cours { border-radius: 22px; }
+.cas-en-cours .cas-statut { color: var(--rouge-fonce); font-family: var(--mono); font-weight: 500; font-size: 13px; letter-spacing: 0.12em; }
+
+/* Pages services */
+.prix-encart { background: var(--ardoise); color: var(--blanc); border-radius: 18px; }
+.prix-encart .prix-titre { color: var(--rose); }
+.prix-encart .prix-detail { color: var(--sur-sombre); }
+
+/* Pied de page */
+.pied a.bouton-signal, .pied a.bouton-signal:hover { color: var(--blanc); }
+.pied a.en { color: var(--rose); }
+.barre-test { background: rgba(244, 242, 237, 0.97); }
+.classement .coupure { font-family: var(--mono); font-weight: 500; font-size: 12px; letter-spacing: 0.1em; }
+.classement .coupure span { flex: 0 1 auto; text-align: center; }
+.heros-coord .conteneur { padding-bottom: 72px; }
+.offre .prix { font-size: clamp(38px, 3.6vw, 48px); }
+.formulaire .bouton-sombre { background: var(--signal); }
+.formulaire .bouton-sombre:hover { background: #A8271F; }
+.local-grille { display: grid; grid-template-columns: minmax(0, 320px) minmax(0, 1fr); gap: 28px 64px; align-items: start; }
+.local-photo { grid-row: span 2; max-width: 320px; }
+.local-intro, .local-points { flex: none; }
+@media (max-width: 760px) { .local-grille { grid-template-columns: minmax(0, 1fr); } .local-photo { grid-row: auto; max-width: 340px; } }
+@media (max-width: 640px) {
+  .heros .surtitre { font-size: 11px; letter-spacing: 0.08em; }
+  .heros-coord span { display: none; }
+  .heros-coord .conteneur { padding-block: 0 56px; }
+  .heros-fond .heros { padding-bottom: 32px; }
+}
+.service-intro .bouton-sombre, .faq-appel .bouton-sombre, .exemples-appel .bouton-sombre { background: var(--signal); }
+.service-intro .bouton-sombre:hover, .faq-appel .bouton-sombre:hover, .exemples-appel .bouton-sombre:hover { background: #A8271F; }

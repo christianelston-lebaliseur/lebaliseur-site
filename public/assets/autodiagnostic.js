@@ -97,7 +97,7 @@
     });
     aCorriger.sort(function (a, b) { return b.poids - a.poids; });
     var niveau = score >= 80 ? 2 : score >= 50 ? 1 : 0;
-    var couleurs = ['#C2410C', '#F2B23A', '#24493A'];
+    var couleurs = ['#C2410C', '#F2B23A', '#1E7A5A'];
 
     try { sessionStorage.setItem('baliseur-score', String(score)); } catch (err) {}
 
