@@ -419,4 +419,8 @@ for lang, E in EXEMPLES.items():
     made.append(page(lang, E['url'], E['other'], E['title'], E['desc'], main, [fil(lang, [home, (E['h1'], E['url'])])], current=E['url']))
 
 
+import sys; sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+from pages_tarifs_cgv import generer as generer_tarifs_cgv
+made += generer_tarifs_cgv(page, fil)
+
 print('\n'.join(made))

@@ -34,3 +34,7 @@ Le Baliseur is a web agency in Annecy (France): web design and websites, local S
 - Site : https://lebaliseur.fr
 - Profil Sortlist : https://www.sortlist.fr/agency/le-baliseur
 - LinkedIn : https://www.linkedin.com/company/lebaliseur/
+
+## Tarifs et conditions
+- [Tarifs](https://lebaliseur.fr/tarifs) : tous les prix, sites dès 490 €, suivis dès 49 €/mois ou 350 €/an, hébergement et un changement d'identité par an inclus.
+- [Conditions générales](https://lebaliseur.fr/conditions-generales)

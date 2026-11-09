@@ -693,3 +693,19 @@ a:hover { color: var(--ardoise); }
 }
 .service-intro .bouton-sombre, .faq-appel .bouton-sombre, .exemples-appel .bouton-sombre { background: var(--signal); }
 .service-intro .bouton-sombre:hover, .faq-appel .bouton-sombre:hover, .exemples-appel .bouton-sombre:hover { background: #A8271F; }
+
+/* Page Tarifs */
+.tarifs { max-width: 1040px; }
+.tarifs .chapo { margin: 20px 0; }
+.encart-lancement { background: #FBEDEA; border-left: 4px solid var(--signal); padding: 16px 20px; border-radius: 0 12px 12px 0; color: var(--ardoise) !important; }
+.tableau-prix { overflow-x: auto; margin: 8px 0 16px; }
+.tableau-prix table { width: 100%; border-collapse: collapse; font-size: 16px; min-width: 620px; }
+.tableau-prix caption { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); }
+.tableau-prix th, .tableau-prix td { text-align: left; padding: 14px 12px; border-bottom: 1px solid var(--trait); vertical-align: top; color: var(--gris); line-height: 1.5; }
+.tableau-prix thead th { font-family: var(--mono); font-weight: 500; font-size: 12px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--gris); border-bottom: 2px solid var(--ardoise); }
+.tableau-prix tbody th { color: var(--ardoise); font-weight: 600; white-space: nowrap; }
+.tableau-prix td:nth-child(3) { font-family: var(--cond); font-weight: 800; font-size: 20px; color: var(--ardoise); white-space: nowrap; }
+.tableau-prix td:nth-child(4) { white-space: nowrap; color: var(--rouge-fonce); font-weight: 600; }
+.tarifs .bouton { margin-top: 12px; }
+.tableau-prix.sans-accent td:nth-child(4) { color: var(--gris); font-weight: 400; white-space: normal; }
+.legal .titre-1 { font-size: clamp(40px, 5.2vw, 72px); }
