@@ -618,8 +618,10 @@ a:hover { color: var(--ardoise); }
 .heros-fond .telephone { margin-bottom: 0; box-shadow: 0 30px 60px -20px rgba(0, 0, 0, 0.7); }
 .heros-coord { position: relative; margin: 0; border-top: 1px solid rgba(255, 255, 255, 0.18); }
 .heros-coord .conteneur { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 6px 28px; padding-block: 14px; font-family: var(--mono); font-size: 12px; letter-spacing: 0.08em; color: var(--sur-sombre); text-transform: uppercase; }
-.titre-1 .balise { display: inline-flex; flex-direction: column; gap: 0.06em; margin-left: 0.12em; vertical-align: 0.06em; }
-.titre-1 .balise::before, .titre-1 .balise::after { content: ""; display: block; width: 0.6em; height: 0.11em; background: var(--blanc); }
+/* Deux traits obliques côte à côte (blanc cerclé de bleu nuit, puis rouge) : pas la marque GR blanc-sur-rouge de la FFRandonnée */
+.titre-1 .balise { display: inline-flex; flex-direction: row; align-items: flex-end; gap: 0.07em; margin-left: 0.16em; vertical-align: 0.02em; }
+.titre-1 .balise::before, .titre-1 .balise::after { content: ""; display: block; width: 0.11em; height: 0.56em; transform: skewX(-18deg); border-radius: 0.015em; }
+.titre-1 .balise::before { background: var(--blanc); box-shadow: 0 0 0 0.025em var(--ardoise); }
 .titre-1 .balise::after { background: var(--signal); }
 
 /* Téléphone : rouge à la place du jaune */
