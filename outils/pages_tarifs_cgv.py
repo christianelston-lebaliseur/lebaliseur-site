@@ -86,8 +86,6 @@ TARIFS = {
 </section>'''),
 }
 
-MEDIATEUR_FR = "[À COMPLÉTER : nom et site du médiateur de la consommation]"
-MEDIATEUR_EN = "[TO COMPLETE: name and website of the consumer mediator]"
 
 CGV = {
 'fr': dict(url='/conditions-generales', other='/en/terms', court='Conditions générales',
@@ -97,7 +95,7 @@ CGV = {
 <h1 class="titre-1">Conditions générales de prestation</h1>
 <p>En vigueur au 1<sup>er</sup> décembre 2026.</p>
 <h2>1. Objet</h2>
-<p>Les présentes conditions s'appliquent à toutes les prestations du Baliseur&nbsp;: création et refonte de sites internet, visibilité sur Google et dans les outils d'intelligence artificielle, réseaux sociaux, suivis mensuels et annuels, Pack Lancement. Le devis accepté et ses éventuelles conditions particulières prévalent sur les présentes conditions.</p>
+<p>Les présentes conditions s'appliquent à toutes les prestations du Baliseur&nbsp;: création et refonte de sites internet, visibilité sur Google et dans les outils d'intelligence artificielle, réseaux sociaux, suivis mensuels et annuels, Pack Lancement. Ces prestations s'adressent exclusivement aux professionnels&nbsp;: entreprises, commerçants, artisans et indépendants. Le devis accepté et ses éventuelles conditions particulières prévalent sur les présentes conditions.</p>
 <h2>2. Prestataire</h2>
 <p>Chris Elston, entrepreneur individuel (micro-entreprise), nom commercial Le Baliseur, 1 parc de Provins, 74940 Annecy-le-Vieux. SIREN 881 403 604. <a href="mailto:chris@lebaliseur.fr">chris@lebaliseur.fr</a>, 06 03 44 27 46.</p>
 <h2>3. Devis et commande</h2>
@@ -106,7 +104,7 @@ CGV = {
 <p>Les prix sont ceux de la page <a href="/tarifs">Tarifs</a> au jour du devis, en euros. TVA non applicable, art. 293 B du CGI. Le prix indiqué sur le devis accepté est ferme.</p>
 <h2>5. Paiement</h2>
 <p>Sites et prestations ponctuelles&nbsp;: 50{NB}% à la commande, 50{NB}% à la livraison. Suivis mensuels&nbsp;: chaque mois, d'avance. Suivi annuel&nbsp;: en une fois, d'avance. Les factures sont payables par virement ou prélèvement dans les 15 jours suivant leur date. Aucun escompte n'est accordé pour paiement anticipé.</p>
-<p>Tout retard de paiement entraîne des pénalités au taux de trois fois le taux d'intérêt légal, exigibles sans rappel, ainsi que, pour les clients professionnels, une indemnité forfaitaire de 40{NB}€ pour frais de recouvrement (art. L441-10 et D441-5 du Code de commerce). En cas de retard de plus de 30 jours, les prestations en cours peuvent être suspendues après relance.</p>
+<p>Tout retard de paiement entraîne des pénalités au taux de trois fois le taux d'intérêt légal, exigibles sans rappel, ainsi qu'une indemnité forfaitaire de 40{NB}€ pour frais de recouvrement (art. L441-10 et D441-5 du Code de commerce). En cas de retard de plus de 30 jours, les prestations en cours peuvent être suspendues après relance.</p>
 <h2>6. Délais et collaboration</h2>
 <p>Les délais (1 à 3 semaines pour un site selon le projet) courent à partir de la réception des contenus nécessaires&nbsp;: textes, photos, accès aux comptes. Le client s'engage à les fournir et à répondre aux propositions dans un délai raisonnable&nbsp;; un retard de sa part décale d'autant la livraison.</p>
 <h2>7. Retours et changements pendant la création</h2>
@@ -122,12 +120,10 @@ CGV = {
 <p>Le tarif de lancement (−30{NB}% sur la première prestation ponctuelle) est réservé aux dix premiers clients, en échange d'un témoignage sincère et de l'autorisation de présenter les résultats. Le Pack Lancement est accordé sur dossier, pour 24 mois&nbsp;; ses conditions de sortie anticipée figurent dans le contrat du pack. Les deux offres ne sont pas cumulables.</p>
 <h2>12. Responsabilité</h2>
 <p>Le Baliseur est tenu d'une obligation de moyens. Le classement sur Google et la mention par les outils d'intelligence artificielle dépendent de services tiers&nbsp;: aucune position ne peut être garantie. Le Baliseur n'est pas responsable des interruptions ou changements de ces services tiers.</p>
-<h2>13. Clients particuliers</h2>
-<p>Le client particulier dispose d'un délai de rétractation de quatorze jours à compter de la commande conclue à distance ou hors établissement. S'il demande expressément que la prestation commence avant la fin de ce délai, il paie la part déjà réalisée en cas de rétractation. En cas de litige, il peut recourir gratuitement au médiateur de la consommation&nbsp;: {MEDIATEUR_FR}.</p>
-<h2>14. Données personnelles</h2>
+<h2>13. Données personnelles</h2>
 <p>Voir la page <a href="/confidentialite">Confidentialité</a>.</p>
-<h2>15. Droit applicable</h2>
-<p>Les présentes conditions sont soumises au droit français. Pour les clients professionnels, tout litige relève des tribunaux d'Annecy, après une tentative de règlement amiable.</p>
+<h2>14. Droit applicable</h2>
+<p>Les présentes conditions sont soumises au droit français. Tout litige relève des tribunaux d'Annecy, après une tentative de règlement amiable.</p>
 </section>'''),
 'en': dict(url='/en/terms', other='/conditions-generales', court='Terms of service',
   title='Terms of service · Le Baliseur',
@@ -136,7 +132,7 @@ CGV = {
 <h1 class="titre-1">Terms of service</h1>
 <p>In force from 1 December 2026. The French version, <a href="/conditions-generales" lang="fr">Conditions générales de prestation</a>, is the legally binding one.</p>
 <h2>1. Scope</h2>
-<p>These terms apply to all Le Baliseur services: website design and redesign, visibility on Google and in AI tools, social media, monthly and yearly support, and the starter pack. An accepted quote and any specific terms in it take precedence over these terms.</p>
+<p>These terms apply to all Le Baliseur services: website design and redesign, visibility on Google and in AI tools, social media, monthly and yearly support, and the starter pack. These services are for businesses only: companies, shops, tradespeople and the self-employed. An accepted quote and any specific terms in it take precedence over these terms.</p>
 <h2>2. Provider</h2>
 <p>Chris Elston, sole trader (micro-entreprise), trading as Le Baliseur, 1 parc de Provins, 74940 Annecy-le-Vieux, France. SIREN 881 403 604. <a href="mailto:chris@lebaliseur.fr">chris@lebaliseur.fr</a>, +33 6 03 44 27 46.</p>
 <h2>3. Quotes and orders</h2>
@@ -145,7 +141,7 @@ CGV = {
 <p>Prices are those on the <a href="/en/pricing">Pricing</a> page on the date of the quote, in euros. VAT not applicable, art. 293 B of the French tax code. The price on an accepted quote is fixed.</p>
 <h2>5. Payment</h2>
 <p>Websites and one-off services: 50% on order, 50% on delivery. Monthly support: each month, in advance. Yearly support: once, in advance. Invoices are payable by bank transfer or direct debit within 15 days of their date. No discount is given for early payment.</p>
-<p>Late payment incurs penalties at three times the French statutory interest rate, payable without reminder, and, for business clients, a fixed €40 recovery fee (art. L441-10 and D441-5 of the French Commercial Code). If payment is more than 30 days late, ongoing work may be paused after a reminder.</p>
+<p>Late payment incurs penalties at three times the French statutory interest rate, payable without reminder, and a fixed €40 recovery fee (art. L441-10 and D441-5 of the French Commercial Code). If payment is more than 30 days late, ongoing work may be paused after a reminder.</p>
 <h2>6. Timing and cooperation</h2>
 <p>Lead times (1 to 3 weeks for a website, depending on the project) start once the necessary content is received: text, photos, account access. The client agrees to provide these and to reply to proposals within a reasonable time; any delay on their side moves delivery back accordingly.</p>
 <h2>7. Feedback and changes during the build</h2>
@@ -161,12 +157,10 @@ CGV = {
 <p>The launch price (30% off the first one-off service) is reserved for the first ten clients, in exchange for an honest testimonial and permission to publish their results. The starter pack is granted by application, for 24 months; its early-exit terms are set out in the pack contract. The two offers cannot be combined.</p>
 <h2>12. Liability</h2>
 <p>Le Baliseur has a best-efforts obligation. Rankings on Google and mentions by AI tools depend on third-party services: no position can be guaranteed. Le Baliseur is not liable for outages or changes to those third-party services.</p>
-<h2>13. Private customers</h2>
-<p>Private customers have fourteen days to withdraw from an order made at a distance or off premises. If they expressly ask for work to start before that period ends, they pay for the part already done if they withdraw. In a dispute, they can use the consumer mediator free of charge: {MEDIATEUR_EN}.</p>
-<h2>14. Personal data</h2>
+<h2>13. Personal data</h2>
 <p>See the <a href="/en/privacy">Privacy</a> page.</p>
-<h2>15. Governing law</h2>
-<p>These terms are governed by French law. For business clients, any dispute falls under the courts of Annecy, after an attempt at amicable settlement.</p>
+<h2>14. Governing law</h2>
+<p>These terms are governed by French law. Any dispute falls under the courts of Annecy, after an attempt at amicable settlement.</p>
 </section>'''),
 }
 
