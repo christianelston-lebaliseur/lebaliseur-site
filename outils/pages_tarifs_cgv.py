@@ -13,8 +13,8 @@ NB = '&nbsp;'
 
 TARIFS = {
 'fr': dict(url='/tarifs', other='/en/pricing', court='Tarifs',
-  title='Tarifs : création de site, fiche Google et suivi à Annecy · Le Baliseur',
-  desc="Tous les prix du Baliseur : sites dès 490 €, fiche Google et IA 290 €, suivi dès 49 €/mois ou 350 €/an, hébergement inclus. −30 % pour les dix premiers clients.",
+  title='Tarifs création de site et fiche Google à Annecy · Le Baliseur',
+  desc="Tous les prix du Baliseur : sites dès 490 €, fiche Google et IA 290 €, suivi dès 49 €/mois ou 350 €/an, hébergement inclus. −30 % pour dix clients.",
   body=lambda: f'''<section class="conteneur section legal tarifs">
 <h1 class="titre-1">Tarifs</h1>
 <p class="chapo">Des prix affichés, sans frais cachés. Tout est à votre nom&nbsp;: domaine, site, fiche Google et comptes. TVA non applicable, art. 293 B du CGI.</p>
@@ -49,8 +49,8 @@ TARIFS = {
 <p><a class="bouton bouton-signal" href="/#diagnostic">Demander mon diagnostic offert</a></p>
 </section>'''),
 'en': dict(url='/en/pricing', other='/tarifs', court='Pricing',
-  title='Pricing: websites, Google profile and support in Annecy · Le Baliseur',
-  desc='All Le Baliseur prices: websites from €490, Google & AI visibility €290, support from €49/month or €350/year, hosting included. 30% off for the first ten clients.',
+  title='Website and Google profile pricing, Annecy · Le Baliseur',
+  desc='All Le Baliseur prices: websites from €490, Google & AI visibility €290, support from €49/month or €350/year, hosting included. 30% off for ten clients.',
   body=lambda: f'''<section class="conteneur section legal tarifs">
 <h1 class="titre-1">Pricing</h1>
 <p class="chapo">Prices shown upfront, with no hidden fees. Everything is in your name: domain, website, Google profile and accounts. VAT not applicable, art. 293 B of the French tax code.</p>

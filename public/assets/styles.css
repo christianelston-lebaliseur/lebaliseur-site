@@ -709,3 +709,19 @@ a:hover { color: var(--ardoise); }
 .tarifs .bouton { margin-top: 12px; }
 .tableau-prix.sans-accent td:nth-child(4) { color: var(--gris); font-weight: 400; white-space: normal; }
 .legal .titre-1 { font-size: clamp(40px, 5.2vw, 72px); }
+
+/* Exemples (accueil) : grandes cartes */
+.vitrine { gap: 40px 24px; }
+.vitrine-visuel { position: relative; display: block; aspect-ratio: 4 / 5; border-radius: 20px; overflow: hidden; background: var(--ardoise); }
+.vitrine-bureau { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: left top; transition: transform 0.6s ease; }
+.vitrine-visuel::after { content: ""; position: absolute; inset: 0; background: rgba(14, 26, 38, 0.18); }
+.vitrine-tel { position: absolute; z-index: 1; right: 7%; bottom: -6%; width: 38%; background: var(--ardoise); border-radius: 18px; padding: 6px; box-shadow: 0 24px 40px -16px rgba(0, 0, 0, 0.55); transition: transform 0.4s ease; }
+.vitrine-tel img { display: block; width: 100%; height: auto; border-radius: 13px; }
+.vitrine-etiquette { position: absolute; z-index: 1; top: 16px; left: 16px; background: var(--blanc); color: var(--ardoise); padding: 7px 12px; border-radius: 999px; font-family: var(--mono); font-size: 11px; letter-spacing: 0.08em; }
+.vitrine-item:hover .vitrine-bureau { transform: scale(1.04); }
+.vitrine-item:hover .vitrine-tel { transform: translateY(-10px); }
+.vitrine-item:focus-visible .vitrine-visuel { outline: 3px solid var(--signal); outline-offset: 3px; }
+.vitrine-legende strong { font-family: var(--cond); font-weight: 700; font-size: 26px; text-transform: none; letter-spacing: -0.02em; }
+.vitrine-desc { font-size: 16px; color: var(--gris); line-height: 1.5; }
+.vitrine-legende .lien-fleche { margin-top: 4px; }
+@media (prefers-reduced-motion: reduce) { .vitrine-bureau, .vitrine-tel { transition: none; } }
