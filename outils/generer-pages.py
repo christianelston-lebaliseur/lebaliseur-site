@@ -190,7 +190,9 @@ SERV = {
 <div class="formule"><h3>Croissance</h3><p class="prix-montant">179&nbsp;€<span>/mois</span></p><ul class="liste-balise"><li>Tout Visibilité</li><li>Le kit de publications réseaux sociaux</li><li>Une nouvelle page ou un article par mois</li><li>Un point de 30 minutes et un plan pour le mois suivant</li></ul></div>
 <div class="formule"><h3>Suivi annuel</h3><p class="prix-montant">350&nbsp;€<span>/an</span></p><ul class="liste-balise"><li>Pour ceux qui ne veulent pas d'abonnement mensuel</li><li>Quatre interventions planifiées dans l'année, une par trimestre</li><li>Revue SEO et indexation Google chaque trimestre</li><li>Vérification de votre visibilité dans les IA</li></ul></div>
 </div>
-<p class="note-service">Hébergement du site inclus dans toutes les formules. Le nom de domaine reste à votre nom.</p>''',
+<p class="note-service">Hébergement du site inclus dans toutes les formules. Le nom de domaine reste à votre nom.</p>
+<h2 class="titre-3">Changement d'identité inclus</h2>
+<p>Votre image évolue&nbsp;? Une fois par an, j'applique votre nouvelle identité à votre site sans supplément&nbsp;: nouveau logo, couleurs, typographies, photos et textes des pages existantes, ainsi que votre fiche Google et vos réseaux. Une refonte complète, de nouvelles pages ou de nouvelles fonctions restent sur devis. La création d'un nouveau logo est possible en option.</p>''',
    inclus=["Votre présence Google et IA entretenue, sans que vous y pensiez", "Des chiffres chaque mois : appels, itinéraires, visites, classement", "Un interlocuteur unique, joignable en français et en anglais"],
    pour_qui=["Les entreprises qui viennent de faire leur fiche ou leur site", "Les activités saisonnières qui veulent être prêtes avant chaque saison", "Celles qui veulent des résultats mesurés, pas des promesses"],
    etapes=[("Point de départ", "Je mesure votre situation le premier mois : c'est la référence."), ("Chaque mois", "Les actions de votre formule, faites et notées."), ("Le bilan", "Un résumé clair : ce qui a été fait, ce qui a bougé, la suite.")],
@@ -208,7 +210,9 @@ SERV = {
 <div class="formule"><h3>Growth</h3><p class="prix-montant">€179<span>/month</span></p><ul class="liste-balise"><li>Everything in Visibility</li><li>The social media content kit</li><li>A new page or article every month</li><li>A 30-minute call and a plan for the next month</li></ul></div>
 <div class="formule"><h3>Yearly support</h3><p class="prix-montant">€350<span>/year</span></p><ul class="liste-balise"><li>For businesses that don't want a monthly subscription</li><li>Four planned sessions a year, one per quarter</li><li>Quarterly SEO and Google indexing review</li><li>A check on your visibility in AI tools</li></ul></div>
 </div>
-<p class="note-service">Website hosting included in every plan. Your domain name stays in your name.</p>''',
+<p class="note-service">Website hosting included in every plan. Your domain name stays in your name.</p>
+<h2 class="titre-3">Rebranding included</h2>
+<p>Has your image changed? Once a year, I apply your new brand to your site at no extra cost: new logo, colours, fonts, photos and the text on your existing pages, plus your Google profile and social media. A complete rebuild, new pages or new features are quoted separately. Designing a new logo is available as an option.</p>''',
    inclus=["Your Google and AI presence looked after, without you thinking about it", "Numbers every month: calls, direction requests, visits, ranking", "One contact, available in English and French"],
    pour_qui=["Businesses that have just set up their profile or website", "Seasonal businesses that want to be ready before each season", "Anyone who wants measured results, not promises"],
    etapes=[("Starting point", "I measure where you stand in the first month: that's the baseline."), ("Every month", "The actions in your plan, done and logged."), ("The report", "A clear summary: what was done, what moved, what's next.")],
