@@ -8,6 +8,9 @@ def gabarit(path):
     s = open(os.path.join(ROOT, path)).read()
     head = s[:s.index('<title>')]
     preload = s[s.index('<link rel="icon"'):s.index('</head>')]
+    # the template page's own canonical/hreflang/JSON-LD must not be copied into the generated pages
+    preload = re.sub(r'<link rel="(canonical|alternate)"[^>]*>\n?', '', preload)
+    preload = re.sub(r'<script type="application/ld\+json">.*?</script>\n?', '', preload, flags=re.S)
     body = s[s.index('<body>'):s.index('<main id="contenu">')]
     foot = s[s.index('</main>') + 7:]
     return head, preload, body, foot
@@ -422,5 +425,12 @@ for lang, E in EXEMPLES.items():
 import sys; sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 from pages_tarifs_cgv import generer as generer_tarifs_cgv
 made += generer_tarifs_cgv(page, fil)
+
+# Cas clients : dimensions lues sur les captures webp, pour les attributs width/height.
+from PIL import Image
+from pages_cas_clients import generer as generer_cas, IMG as CAS_IMG
+_d = os.path.join(ROOT, CAS_IMG.strip('/'))
+cas_dims = {f[:-5]: Image.open(os.path.join(_d, f)).size for f in os.listdir(_d) if f.endswith('.webp')}
+made += generer_cas(page, fil, cas_dims)
 
 print('\n'.join(made))

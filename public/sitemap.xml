@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
-<url><loc>https://lebaliseur.fr/</loc><lastmod>2026-11-01</lastmod><xhtml:link rel="alternate" hreflang="fr" href="https://lebaliseur.fr/"/><xhtml:link rel="alternate" hreflang="en" href="https://lebaliseur.fr/en/"/></url>
+<url><loc>https://lebaliseur.fr/</loc><lastmod>2026-11-10</lastmod><xhtml:link rel="alternate" hreflang="fr" href="https://lebaliseur.fr/"/><xhtml:link rel="alternate" hreflang="en" href="https://lebaliseur.fr/en/"/></url>
 <url><loc>https://lebaliseur.fr/en/</loc><lastmod>2026-11-01</lastmod><xhtml:link rel="alternate" hreflang="fr" href="https://lebaliseur.fr/"/><xhtml:link rel="alternate" hreflang="en" href="https://lebaliseur.fr/en/"/></url>
 <url><loc>https://lebaliseur.fr/services/</loc><lastmod>2026-11-01</lastmod><xhtml:link rel="alternate" hreflang="fr" href="https://lebaliseur.fr/services/"/><xhtml:link rel="alternate" hreflang="en" href="https://lebaliseur.fr/en/services/"/></url>
 <url><loc>https://lebaliseur.fr/en/services/</loc><lastmod>2026-11-01</lastmod><xhtml:link rel="alternate" hreflang="fr" href="https://lebaliseur.fr/services/"/><xhtml:link rel="alternate" hreflang="en" href="https://lebaliseur.fr/en/services/"/></url>
@@ -28,4 +28,5 @@
 <url><loc>https://lebaliseur.fr/en/pricing</loc><lastmod>2026-11-09</lastmod><xhtml:link rel="alternate" hreflang="fr" href="https://lebaliseur.fr/tarifs"/><xhtml:link rel="alternate" hreflang="en" href="https://lebaliseur.fr/en/pricing"/></url>
 <url><loc>https://lebaliseur.fr/conditions-generales</loc><lastmod>2026-11-09</lastmod><xhtml:link rel="alternate" hreflang="fr" href="https://lebaliseur.fr/conditions-generales"/><xhtml:link rel="alternate" hreflang="en" href="https://lebaliseur.fr/en/terms"/></url>
 <url><loc>https://lebaliseur.fr/en/terms</loc><lastmod>2026-11-09</lastmod><xhtml:link rel="alternate" hreflang="fr" href="https://lebaliseur.fr/conditions-generales"/><xhtml:link rel="alternate" hreflang="en" href="https://lebaliseur.fr/en/terms"/></url>
+<url><loc>https://lebaliseur.fr/cas-clients/psychologue-annecy</loc><lastmod>2026-11-10</lastmod></url>
 </urlset>

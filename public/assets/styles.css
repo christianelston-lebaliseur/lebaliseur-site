@@ -727,3 +727,47 @@ a:hover { color: var(--ardoise); }
 .vitrine-desc { font-size: 16px; color: var(--gris); line-height: 1.5; }
 .vitrine-legende .lien-fleche { margin-top: 4px; }
 @media (prefers-reduced-motion: reduce) { .vitrine-bureau, .vitrine-tel { transition: none; } }
+
+/* ---- Cas clients ---- */
+.cas-entete .titre-1 { max-width: 16ch; margin: 0 0 24px; line-height: 1.02; }
+.cas-entete .chapo { max-width: 60ch; }
+.cas-faits { margin: 36px 0 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px 32px; max-width: 860px; }
+.cas-faits dt { font-size: 13px; color: var(--gris); }
+.cas-faits dd { margin: 4px 0 0; font-weight: 600; }
+.cas-actions { margin: 36px 0 0; }
+.cas-intro { margin: 12px 0 0; font-size: 18px; line-height: 1.55; max-width: 60ch; color: var(--gris); }
+.cas-telephones { margin-top: 40px; display: grid; grid-template-columns: 1fr 1fr; gap: 16px; justify-items: center; }
+@media (min-width: 760px) { .cas-telephones { gap: 40px; } }
+@media (max-width: 759px) { .cas-tel img { border-radius: 18px; border-width: 5px; } }
+.cas-capture { margin: 0; width: 100%; }
+.cas-capture img { display: block; width: 100%; height: auto; border-radius: 10px; border: 1px solid var(--trait); }
+.cas-capture figcaption { margin-top: 12px; font-weight: 600; }
+.cas-tel { max-width: 320px; }
+.cas-tel img { border-radius: 28px; border: 8px solid var(--ardoise); }
+.cas-tel figcaption { text-align: center; }
+.cas-apres { color: var(--rouge-fonce); }
+.cas-cartes { margin-top: 36px; display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 24px; }
+.cas-carte { background: var(--blanc); border: 1px solid var(--trait); border-radius: 10px; padding: 28px; display: flex; flex-direction: column; gap: 14px; }
+.cas-carte p { margin: 0; font-size: 17px; line-height: 1.5; }
+.cas-carte .cas-libelle { font-size: 13px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.06em; color: var(--gris); }
+.cas-carte .cas-libelle.cas-apres { margin-top: 8px; color: var(--rouge-fonce); }
+.cas-ordis { margin-top: 36px; display: grid; grid-template-columns: 1fr; gap: 32px; }
+@media (min-width: 760px) { .cas-ordis { grid-template-columns: 1fr 1fr; } }
+.cas-mot .conteneur { display: block; max-width: 880px; }
+.cas-mot figure { margin: 0; }
+.cas-mot .surtitre { color: var(--rose); }
+.cas-mot blockquote { margin: 20px 0 0; font-family: var(--cond); font-weight: 700; font-size: clamp(22px, 3vw, 28px); line-height: 1.35; }
+.cas-mot figcaption { margin-top: 20px; color: var(--sur-sombre); }
+.cas-fin { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 24px; }
+.cas-fin p { margin: 10px 0 0; color: var(--gris); }
+
+/* Accueil : le vrai premier cas client */
+.cas-reel { border-style: solid; }
+.cas-reel .cas-paire { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin: 4px 0; }
+.cas-reel .cas-paire figure { margin: 0; }
+.cas-reel .cas-paire img { display: block; width: 100%; height: auto; border-radius: 18px; border: 6px solid var(--ardoise); }
+.cas-reel .cas-paire figcaption { margin-top: 8px; text-align: center; font-weight: 600; font-size: 14px; }
+.cas-reel .cas-citation { margin: 0; font-size: 19px; line-height: 1.5; color: var(--ardoise); }
+.cas-reel .cas-citation p { color: var(--ardoise) !important; }
+.cas-reel .cas-auteur { font-size: 15px !important; }
+.vitrine-etiquette.realise { background: var(--signal); color: var(--blanc); }
