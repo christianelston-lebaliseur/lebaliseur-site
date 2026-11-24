@@ -32,7 +32,9 @@ Quand un prospect laisse un e-mail, il reçoit automatiquement un accusé de ré
 
 - `public/assets/assistant.js` : la bulle et la fenêtre de discussion (FR/EN selon la page). La conversation reste dans le navigateur ; rien n'est enregistré côté serveur.
 - `src/chat.js` : `POST /api/chat`, envoie la conversation à l'IA avec les consignes. Les informations sur l'agence viennent de `public/llms.txt` : le mettre à jour met l'assistant à jour.
-- L'assistant propose deux boutons : le test gratuit (pré-rempli avec le nom et la ville) et « Être rappelé », qui passe par le même envoi que le formulaire (`/api/contact`, Brevo).
+- Accueil avec six boutons, gérés par le site (mêmes réponses à chaque fois, sans IA) : fiche Google (10 questions, score sur 100, 3 actions, offre selon le score), nouveau site (3 questions puis l'offre adaptée), visibilité dans les IA, test gratuit, tarifs, parler à Chris. Les textes et les points sont en tête de `assistant.js`.
+- L'IA ne répond qu'aux questions écrites ; elle peut afficher le test pré-rempli, le rappel ou le menu.
+- « Être rappelé » passe par le même envoi que le formulaire (`/api/contact`, Brevo).
 
 **Test sans le montrer au public** : ouvrir n'importe quelle page avec `?chat=test` (un cookie garde la bulle 30 jours sur ce navigateur), `?chat=off` pour la retirer. Pour l'afficher à tous : variable `CHAT_PUBLIC` = `on` (réglée dans `wrangler.jsonc` depuis le 24/11/2026 ; mettre `off` pour la retirer).
 
