@@ -771,3 +771,17 @@ a:hover { color: var(--ardoise); }
 .cas-reel .cas-citation p { color: var(--ardoise) !important; }
 .cas-reel .cas-auteur { font-size: 15px !important; }
 .vitrine-etiquette.realise { background: var(--signal); color: var(--blanc); }
+
+/* Téléphone animé (accueil) : voir assets/telephone-anime.js. Sans JS ou avec « réduire les animations », rien ne change. */
+.tel-anim:not(.tel-pret) .telephone .tel-recherche span { visibility: hidden; }
+.tel-anim .telephone .tel-resultats { opacity: 0; transition: opacity 0.45s ease; }
+.tel-anim.tel-resultats-visibles .telephone .tel-resultats { opacity: 1; }
+.tel-anim .telephone .tel-resultats li { transition: background-color 0.4s ease, box-shadow 0.4s ease; }
+.tel-anim .tel-badge { opacity: 0; transform: translateY(-28px) rotate(4deg); transition: opacity 0.3s ease, transform 0.55s cubic-bezier(0.3, 1.6, 0.5, 1); }
+.tel-anim.tel-badge-visible .tel-badge { opacity: 1; transform: rotate(4deg); }
+.tel-anim .telephone .tel-info { position: relative; }
+.tel-gains { position: absolute; left: 0; bottom: 0; display: flex; flex-wrap: wrap; gap: 6px; }
+.tel-gains span { background: #E3EFE6; color: #1F5A33; border-radius: 999px; padding: 3px 9px; font-size: 12px; font-weight: 600; animation: tel-pop 0.35s ease both; }
+@keyframes tel-pop { from { opacity: 0; transform: scale(0.6); } to { opacity: 1; transform: none; } }
+.tel-epingle-saut { transform-box: fill-box; transform-origin: 50% 100%; animation: tel-saut 0.7s ease 2; }
+@keyframes tel-saut { 0%, 100% { transform: none; } 45% { transform: translateY(-9px) scale(1.12); } }

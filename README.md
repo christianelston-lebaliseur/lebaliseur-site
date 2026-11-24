@@ -34,7 +34,7 @@ Quand un prospect laisse un e-mail, il reçoit automatiquement un accusé de ré
 - `src/chat.js` : `POST /api/chat`, envoie la conversation à l'IA avec les consignes. Les informations sur l'agence viennent de `public/llms.txt` : le mettre à jour met l'assistant à jour.
 - L'assistant propose deux boutons : le test gratuit (pré-rempli avec le nom et la ville) et « Être rappelé », qui passe par le même envoi que le formulaire (`/api/contact`, Brevo).
 
-**Test sans le montrer au public** : ouvrir n'importe quelle page avec `?chat=test` (un cookie garde la bulle 30 jours sur ce navigateur), `?chat=off` pour la retirer. Pour l'afficher à tous : variable `CHAT_PUBLIC` = `on`.
+**Test sans le montrer au public** : ouvrir n'importe quelle page avec `?chat=test` (un cookie garde la bulle 30 jours sur ce navigateur), `?chat=off` pour la retirer. Pour l'afficher à tous : variable `CHAT_PUBLIC` = `on` (réglée dans `wrangler.jsonc` depuis le 24/11/2026 ; mettre `off` pour la retirer).
 
 | Variable | Rôle |
 | --- | --- |
@@ -45,6 +45,10 @@ Quand un prospect laisse un e-mail, il reçoit automatiquement un accusé de ré
 | `CLAUDE_MODEL` | facultatif, défaut `claude-haiku-5-5` |
 
 Passer à Claude : acheter des crédits sur platform.claude.com (auto-reload désactivé = plafond de dépenses), créer une clé, l'ajouter en Secret `ANTHROPIC_API_KEY`, puis mettre `AI_PROVIDER` = `claude`. Rien d'autre à changer.
+
+## Téléphone animé (accueil)
+
+`public/assets/telephone-anime.js` : sur l'accueil FR et EN, « Votre entreprise » part 3e, gagne avis, photos et fiche complète, monte 1re, puis le badge tombe. Joue une fois quand le téléphone est visible. Sans JavaScript ou avec « réduire les animations », l'image finale s'affiche directement.
 
 ## Avant le lancement public
 
