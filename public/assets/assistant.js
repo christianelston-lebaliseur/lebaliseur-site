@@ -142,10 +142,10 @@
 
   // Code bouton en fin de message : [[TEST|entreprise|ville]] ou [[RAPPEL]].
   function separer(texte) {
-    var m = texte.match(/\[\[\s*(TEST|RAPPEL)\s*(?:\|([^|\]]*))?(?:\|([^\]]*))?\]\]/i);
+    var m = texte.match(/\[\[\s*(TEST|RAPPEL)\s*(?:\|([^|\]]*))?(?:\|([^|\]]*))?(?:\|([^\]]*))?\]\]/i);
     var propre = texte.replace(/\[\[[^\]]*\]\]/g, '').trim();
     if (!m) return { texte: propre };
-    return { texte: propre, bouton: m[1].toUpperCase(), entreprise: (m[2] || '').trim(), ville: (m[3] || '').trim() };
+    return { texte: propre, bouton: m[1].toUpperCase(), entreprise: (m[2] || '').trim(), ville: (m[3] || '').trim(), activite: (m[4] || '').trim() };
   }
 
   function bas() { fil.scrollTop = fil.scrollHeight; }
@@ -161,7 +161,11 @@
       var u = new URL(T.lienTest, location.origin);
       if (p.entreprise) u.searchParams.set('business', p.entreprise.slice(0, 120));
       if (p.ville) u.searchParams.set('city', p.ville.slice(0, 60));
-      fil.appendChild(el('a', { class: 'ba-cta', href: u.pathname + u.search }, T.test));
+      if (p.activite) u.searchParams.set('category', p.activite.slice(0, 60));
+      var lien = el('a', { class: 'ba-cta', href: u.pathname + u.search }, T.test);
+      // Le test prend toute la page : la discussion se referme (elle reste sauvegardée).
+      lien.addEventListener('click', function () { try { sessionStorage.removeItem(STOCKAGE + '-ouvert'); } catch (e) {} });
+      fil.appendChild(lien);
     } else if (p.bouton === 'RAPPEL' && actif) {
       var c = el('button', { class: 'ba-cta', type: 'button' }, T.rappel);
       c.addEventListener('click', function () { c.remove(); formulaireRappel(); });

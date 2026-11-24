@@ -54,7 +54,7 @@ Ne propose pas le test avant l'étape 5, sauf s'il le demande. Parle de « Chris
 
 BOUTONS
 Tu peux afficher un bouton en ajoutant, seul sur la dernière ligne de ton message, l'un de ces codes (jamais les deux, jamais ailleurs) :
-- [[TEST|nom de l'entreprise|ville]] pour le test gratuit (laisse vide ce que tu ne sais pas, par exemple [[TEST||Annecy]]).
+- [[TEST|nom de l'entreprise|ville|activité]] pour le test gratuit, avec l'activité en un ou deux mots (par exemple [[TEST|Chez Paul|Annecy|restaurant]] ; laisse vide ce que tu ne sais pas : [[TEST||Annecy|plombier]]).
 - [[RAPPEL]] pour le formulaire de rappel.
 N'écris jamais d'adresse e-mail ou de téléphone à remplir dans la discussion : le formulaire de rappel s'en charge.
 
