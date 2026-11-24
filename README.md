@@ -40,7 +40,7 @@ Quand un prospect laisse un e-mail, il reçoit automatiquement un accusé de ré
 | --- | --- |
 | `CHAT_PUBLIC` | `on` = bulle visible par tous les visiteurs |
 | `AI_PROVIDER` | `workers-ai` (défaut, gratuit dans la limite quotidienne de Cloudflare) ou `claude` |
-| `WORKERS_AI_MODEL` | facultatif, défaut `@cf/mistralai/mistral-small-3.1-24b-instruct` (secours automatique : Llama 3.1 8B) |
+| `WORKERS_AI_MODEL` | facultatif, défaut `@cf/mistralai/mistral-small-3.1-24b-instruct` (secours automatique : Llama 3.3 70B puis Llama 3.1 8B ; la réponse de /api/chat indique le modèle utilisé) |
 | `ANTHROPIC_API_KEY` (Secret) | clé API Claude, nécessaire si `AI_PROVIDER` = `claude` |
 | `CLAUDE_MODEL` | facultatif, défaut `claude-haiku-5-5` |
 

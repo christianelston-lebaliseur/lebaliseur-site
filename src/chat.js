@@ -10,8 +10,8 @@
 
 const MODELE_WORKERS_AI = '@cf/mistralai/mistral-small-3.1-24b-instruct';
 const MODELE_CLAUDE = 'claude-haiku-5-5';
-// Modèle de secours si le premier ne répond pas (petit, disponible sur le plan gratuit).
-const MODELE_SECOURS = '@cf/meta/llama-3.1-8b-instruct-fp8';
+// Modèles de secours, dans l'ordre, si le premier ne répond pas.
+const MODELES_SECOURS = ['@cf/meta/llama-3.3-70b-instruct-fp8-fast', '@cf/meta/llama-3.1-8b-instruct-fp8'];
 
 const MAX_MESSAGES = 24;      // longueur maximale d'une conversation
 const MAX_CARACTERES = 800;   // par message du visiteur
@@ -32,14 +32,24 @@ TON RÔLE
 
 LANGUE ET TON
 - Réponds en ${en ? 'anglais' : 'français'} par défaut ; si la personne écrit dans l'autre langue, passe à sa langue.
-- Vouvoiement en français. Messages courts : 2 à 4 phrases, sans jargon, sans listes longues, sans markdown (pas d'astérisques ni de titres).
+- Vouvoiement en français. Messages courts : 2 ou 3 phrases au plus, sans jargon, sans listes longues, sans markdown (pas d'astérisques ni de titres).
 - Tu es une IA : ne prétends jamais être Chris ou un humain.
 
-DÉROULÉ CONSEILLÉ
-1. Comprendre son activité et sa ville en une ou deux questions.
-2. Donner un ou deux conseils concrets et utiles pour sa fiche Google (catégorie exacte, horaires à jour, photos récentes, demander des avis et y répondre, lien vers le site et la réservation, publications régulières).
-3. Proposer le test gratuit : il analyse en une minute environ la fiche Google, la position sur la carte face aux concurrents, le site et ce que répondent les IA, avec un score sur 100 et trois priorités.
-4. Si la personne veut de l'aide ou parler à quelqu'un, proposer d'être rappelée par Chris (gratuit, sans engagement).
+DÉJÀ FAIT
+Le visiteur a déjà lu ce message d'accueil, affiché par le site : « Bonjour ! Je suis l'assistant IA du Baliseur. Posez-moi vos questions sur votre fiche Google, votre visibilité locale ou dans les IA. Quelle est votre activité, et dans quelle ville ? »
+Ne te présente donc plus, ne redis pas bonjour et ne répète pas ce message : enchaîne directement sur sa réponse.
+
+DÉROULÉ (une seule question par message, toujours une question à la fin tant que tu n'as pas fini)
+1. Activité et ville : si l'une manque, demande-la (une seule question).
+2. Puis pose ces questions, une par message, en t'adaptant à ses réponses (saute celles auxquelles il a déjà répondu) :
+   a. Avez-vous une fiche Google (Google Business Profile) ? Savez-vous à peu près combien d'avis elle a ?
+   b. Avez-vous un site internet ?
+   c. Aujourd'hui, comment vos nouveaux clients vous trouvent-ils surtout ?
+   d. Quel est votre objectif principal : plus d'appels, plus de réservations, être devant un concurrent, autre chose ?
+3. Après chaque réponse, rebondis en une phrase utile et concrète liée à ce qu'il vient de dire (par exemple : peu d'avis, alors demander un avis à chaque client satisfait ; pas de site, alors la fiche Google compte encore plus), puis pose la question suivante.
+4. Une fois ces questions posées (ou s'il demande directement), résume en deux ou trois phrases ses deux priorités, puis propose le test gratuit : il analyse en une minute environ la fiche Google, la position sur la carte face aux concurrents, le site et ce que répondent les IA, avec un score sur 100 et trois priorités.
+5. S'il veut de l'aide, un devis ou parler à quelqu'un, propose d'être rappelé par Chris (gratuit, sans engagement).
+Ne propose pas le test avant l'étape 4, sauf s'il le demande.
 
 BOUTONS
 Tu peux afficher un bouton en ajoutant, seul sur la dernière ligne de ton message, l'un de ces codes (jamais les deux, jamais ailleurs) :
@@ -84,13 +94,13 @@ function nettoyerMessages(liste) {
 async function appelWorkersAi(env, systeme, msgs) {
   if (!env.AI) throw new Error('Liaison Workers AI absente (binding AI).');
   const entree = { messages: [{ role: 'system', content: systeme }, ...msgs], max_tokens: MAX_REPONSE, temperature: 0.4 };
-  const modeles = [env.WORKERS_AI_MODEL || MODELE_WORKERS_AI, MODELE_SECOURS];
+  const modeles = [env.WORKERS_AI_MODEL || MODELE_WORKERS_AI, ...MODELES_SECOURS];
   let derniere;
   for (const modele of [...new Set(modeles)]) {
     try {
       const r = await env.AI.run(modele, entree);
       const texte = String(r?.response ?? r?.result?.response ?? r?.choices?.[0]?.message?.content ?? '').trim();
-      if (texte) return texte;
+      if (texte) return { texte, modele };
     } catch (e) {
       derniere = e;
       console.error('workers-ai', modele, String(e && e.message || e));
@@ -157,9 +167,12 @@ export async function traiterChat(request, env) {
   const systeme = consignes(await ficheAgence(env, request), en);
   const fournisseur = (env.AI_PROVIDER || 'workers-ai').toLowerCase();
   try {
-    const texte = fournisseur === 'claude' ? await appelClaude(env, systeme, msgs) : await appelWorkersAi(env, systeme, msgs);
+    const r = fournisseur === 'claude'
+      ? { texte: await appelClaude(env, systeme, msgs), modele: env.CLAUDE_MODEL || MODELE_CLAUDE }
+      : await appelWorkersAi(env, systeme, msgs);
+    const texte = r.texte;
     if (!texte) throw new Error('Réponse vide.');
-    return json({ reponse: texte.slice(0, 3000) });
+    return json({ reponse: texte.slice(0, 3000), modele: r.modele });
   } catch (e) {
     console.error('chat', fournisseur, String(e && e.message || e));
     return json({
