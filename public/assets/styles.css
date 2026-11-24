@@ -785,3 +785,27 @@ a:hover { color: var(--ardoise); }
 @keyframes tel-pop { from { opacity: 0; transform: scale(0.6); } to { opacity: 1; transform: none; } }
 .tel-epingle-saut { transform-box: fill-box; transform-origin: 50% 100%; animation: tel-saut 0.7s ease 2; }
 @keyframes tel-saut { 0%, 100% { transform: none; } 45% { transform: translateY(-9px) scale(1.12); } }
+
+/* Page « Pourquoi Le Baliseur » : tableau comparatif, colonne Le Baliseur mise en avant */
+.tableau-comparatif { overflow-x: auto; margin: 32px 0 0; border: 1px solid var(--trait); border-radius: 10px; background: var(--blanc); }
+.tableau-comparatif table { width: 100%; border-collapse: collapse; min-width: 880px; font-size: 15px; }
+.tableau-comparatif caption { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); }
+.tableau-comparatif th, .tableau-comparatif td { text-align: left; vertical-align: top; padding: 14px 14px; border-bottom: 1px solid var(--trait); line-height: 1.45; color: var(--gris); }
+.tableau-comparatif tbody tr:last-child > * { border-bottom: 0; }
+.tableau-comparatif thead th { font-family: var(--mono); font-weight: 500; font-size: 12px; letter-spacing: 0.06em; text-transform: uppercase; border-bottom: 2px solid var(--ardoise); }
+.tableau-comparatif tbody th { position: sticky; left: 0; background: var(--blanc); color: var(--ardoise); font-weight: 600; min-width: 150px; }
+.tableau-comparatif .lb { background: #FBEDEB; color: var(--ardoise); font-weight: 500; }
+.tableau-comparatif thead .lb { background: var(--signal); color: var(--blanc); border-bottom-color: var(--signal); }
+.pourquoi-pas { align-items: flex-start; }
+.pourquoi-pas > div { flex: 1 1 380px; display: flex; flex-direction: column; gap: 20px; }
+.pourquoi-pas .titre-2 { flex: 1 1 320px; }
+.pourquoi-pas .liste-balise li { color: var(--blanc); }
+.cartes-choix { grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); }
+.cartes-choix .cas-carte:last-child { border: 2px solid var(--signal); }
+.cas-fin p { font-size: 18px; }
+.astuce-glisser { display: none; margin: 16px 0 0; font-size: 14px; color: var(--gris); }
+@media (max-width: 760px) {
+  .tableau-comparatif table { min-width: 760px; font-size: 14px; }
+  .tableau-comparatif tbody th { min-width: 0; width: 104px; padding: 12px 10px; box-shadow: 2px 0 0 var(--trait); }
+  .astuce-glisser { display: block; }
+}

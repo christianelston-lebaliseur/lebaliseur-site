@@ -434,3 +434,8 @@ cas_dims = {f[:-5]: Image.open(os.path.join(_d, f)).size for f in os.listdir(_d)
 made += generer_cas(page, fil, cas_dims)
 
 print('\n'.join(made))
+
+# Page « Pourquoi Le Baliseur » : comparatif (faire soi-même, freelance, agence)
+from pages_pourquoi import generer as generer_pourquoi
+made += generer_pourquoi(page, fil)
+print('\n'.join(made[-2:]))

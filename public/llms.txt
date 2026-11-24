@@ -17,6 +17,7 @@ Le Baliseur is a web agency in Annecy (France): web design and websites, local S
 - [Diagnostic de visibilité gratuit](https://lebaliseur.fr/auto-diagnostic): score sur 100 et trois priorités, en une minute environ.
 - [Diagnostic offert et contact](https://lebaliseur.fr/#diagnostic): comparaison avec trois concurrents directs, réponse sous 24 h.
 - [Questions fréquentes](https://lebaliseur.fr/faq): prix, délais, Google et IA.
+- [Pourquoi Le Baliseur : agence, freelance ou Wix ?](https://lebaliseur.fr/pourquoi-le-baliseur): comparatif honnête des façons de créer un site (faire soi-même, freelance en ligne, agence traditionnelle), et quand Le Baliseur n'est pas le bon choix.
 - [Exemples de sites](https://lebaliseur.fr/exemples/)
 - [Cas client : création du site d'une psychologue à Annecy](https://lebaliseur.fr/cas-clients/psychologue-annecy)
 
@@ -26,6 +27,7 @@ Le Baliseur is a web agency in Annecy (France): web design and websites, local S
 - [Services](https://lebaliseur.fr/en/services/)
 - [Free visibility check](https://lebaliseur.fr/en/self-check)
 - [FAQ](https://lebaliseur.fr/en/faq)
+- [Why Le Baliseur: agency, freelancer or Wix?](https://lebaliseur.fr/en/why-le-baliseur)
 
 ## Contact
 
