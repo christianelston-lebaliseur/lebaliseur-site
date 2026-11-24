@@ -31,7 +31,7 @@ TON RÔLE
 - Amener la personne à l'une de deux actions : faire le test de visibilité gratuit, ou demander à être rappelée par Chris.
 
 LANGUE ET TON
-- Réponds en ${en ? 'anglais' : 'français'} par défaut ; si la personne écrit dans l'autre langue, passe à sa langue.
+- Réponds en ${en ? 'anglais' : 'français'}${en ? '' : ' (en anglais si la personne écrit en anglais)'}. En anglais, garde le même déroulé et les mêmes codes de boutons.
 - Vouvoiement en français. Messages courts : 2 ou 3 phrases au plus, sans jargon, sans listes longues, sans markdown (pas d'astérisques ni de titres).
 - Tu es une IA : ne prétends jamais être Chris ou un humain.
 
@@ -57,6 +57,9 @@ Tu peux afficher un bouton en ajoutant, seul sur la dernière ligne de ton messa
 - [[TEST|nom de l'entreprise|ville|activité]] pour le test gratuit, avec l'activité en un ou deux mots (par exemple [[TEST|Chez Paul|Annecy|restaurant]] ; laisse vide ce que tu ne sais pas : [[TEST||Annecy|plombier]]).
 - [[RAPPEL]] pour le formulaire de rappel.
 N'écris jamais d'adresse e-mail ou de téléphone à remplir dans la discussion : le formulaire de rappel s'en charge.
+
+ZONE COUVERTE
+Chris intervient sur place à Annecy et en Haute-Savoie, et à distance partout en France, en Europe et au Royaume-Uni. Si la personne est ailleurs (Paris, Lyon, Londres…), dis simplement que Chris peut l'accompagner à distance, puis continue le déroulé normalement. Ne dis jamais que Chris ne travaille pas dans une région ou ne connaît pas une ville. Tu es un assistant : ne parle jamais de toi comme de celui qui fait le travail (« je travaille », « je fais ») ; c'est Chris qui travaille.
 
 LIMITES
 - Utilise uniquement les informations ci-dessous sur Le Baliseur. Si tu ne sais pas, dis-le et propose le rappel. N'invente jamais de prix, de délai, de résultat ni de garantie.
@@ -138,6 +141,17 @@ async function appelClaude(env, systeme, msgs) {
   return (d.content || []).filter((b) => b.type === 'text').map((b) => b.text).join('').trim();
 }
 
+// Langue du dernier message du visiteur : 'en', 'fr' ou null si on ne peut pas savoir.
+const MOTS_EN = /\b(the|my|i|i'm|im|we|our|you|your|is|are|have|has|do|does|hello|hi|hey|yes|what|how|can|in|and|for|with|need|want|help|thanks|please|business|shop|hairdresser|plumber|electrician|builder|london|uk|england)\b/gi;
+const MOTS_FR = /\b(le|la|les|un|une|je|j'ai|nous|vous|est|et|de|des|du|bonjour|oui|non|mon|ma|mes|pour|avec|dans|sur|pas|merci|coiffeuse|coiffeur|plombier|électricien|boulangerie|restaurateur)\b/gi;
+function langueDe(texte) {
+  if (/[àâçéèêëîïôûùüœ]/i.test(texte)) return 'fr';
+  const en = (texte.match(MOTS_EN) || []).length, fr = (texte.match(MOTS_FR) || []).length;
+  if (en > fr) return 'en';
+  if (fr > en) return 'fr';
+  return null;
+}
+
 export async function traiterChat(request, env) {
   if (request.method !== 'POST') return json({ erreur: 'Méthode non autorisée.' }, 405);
 
@@ -154,9 +168,15 @@ export async function traiterChat(request, env) {
   } catch {
     return json({ erreur: 'Requête invalide.' }, 400);
   }
-  const en = corps.langue === 'en';
   const msgs = nettoyerMessages(corps.messages);
   if (!msgs) return json({ erreur: 'Requête invalide.' }, 400);
+  // Langue de réponse : celle du dernier message s'il est clair, sinon celle des messages précédents, sinon celle de la page.
+  let langue = null;
+  for (const m of [...msgs].reverse()) if (m.role === 'user' && (langue = langueDe(m.content))) break;
+  const en = (langue || (corps.langue === 'en' ? 'en' : 'fr')) === 'en';
+  // Rappel collé au dernier message : les petits modèles suivent mieux une consigne placée à la fin.
+  const dernier = msgs[msgs.length - 1];
+  dernier.content += en ? '\n\n(Reply in English.)' : '\n\n(Réponds en français.)';
   if (msgs.filter((m) => m.role === 'user').length > MAX_MESSAGES / 2) {
     return json({
       reponse: en
