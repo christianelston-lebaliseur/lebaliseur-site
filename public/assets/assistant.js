@@ -50,8 +50,11 @@
 
   // ---------- Styles (autonomes, aux couleurs du site) ----------
   var css = [
-    '.ba-bulle{position:fixed;right:20px;bottom:20px;z-index:60;display:flex;align-items:center;gap:10px;border:2px solid #fff;border-radius:999px;padding:12px 18px 12px 14px;background:var(--signal,#C8322B);color:#fff;font:600 15px/1.2 var(--corps,system-ui,sans-serif);box-shadow:0 10px 30px -8px rgba(0,0,0,.55);cursor:pointer}',
-    '.ba-bulle:hover{background:var(--rouge-fonce,#9E241E)}',
+    '.ba-bulle{position:fixed;right:20px;bottom:20px;z-index:60;display:flex;align-items:center;gap:10px;border:2px solid #fff;border-radius:999px;padding:12px 18px 12px 14px;background:var(--ardoise,#0E1A26);color:#fff;font:600 15px/1.2 var(--corps,system-ui,sans-serif);box-shadow:0 10px 30px -8px rgba(0,0,0,.55);cursor:pointer}',
+    '.ba-bulle:hover{background:var(--nuit-2,#16293A)}',
+    '.ba-bulle{opacity:0;transform:translateY(12px);pointer-events:none;transition:opacity .3s ease,transform .3s ease}',
+    '.ba-bulle.visible{opacity:1;transform:none;pointer-events:auto}',
+    '@media (prefers-reduced-motion:reduce){.ba-bulle{transition:none}}',
     '.ba-bulle svg{width:22px;height:22px;flex:none}',
     '.ba-panneau{position:fixed;right:20px;bottom:20px;z-index:61;width:min(380px,calc(100vw - 24px));height:min(600px,calc(100vh - 40px));display:none;flex-direction:column;background:var(--calcaire,#F4F2ED);color:var(--ardoise,#0E1A26);border:1px solid var(--trait,#DAD6CC);border-radius:14px;overflow:hidden;box-shadow:0 24px 60px -20px rgba(0,0,0,.55);font:400 15px/1.5 var(--corps,system-ui,sans-serif)}',
     '.ba-panneau.ouvert{display:flex}',
@@ -99,7 +102,6 @@
   var bulle = el('button', { class: 'ba-bulle', type: 'button', 'aria-label': T.ouvrir, 'aria-expanded': 'false' });
   bulle.innerHTML = '<svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><path d="M4 5h16v11H9l-5 4z"/></svg>';
   bulle.appendChild(el('span', null, T.court));
-  bulle.appendChild(el('span', { class: 'ba-long' }, T.suite));
 
   var panneau = el('section', { class: 'ba-panneau', role: 'dialog', 'aria-label': T.titre });
   var tete = el('div', { class: 'ba-tete' });
@@ -275,6 +277,7 @@
     panneau.classList.add('ouvert');
     bulle.style.display = 'none';
     bulle.setAttribute('aria-expanded', 'true');
+    bulle.classList.add('visible');
     if (!fil.childNodes.length) redessiner();
     zone.focus();
     try { sessionStorage.setItem(STOCKAGE + '-ouvert', '1'); } catch (e) {}
@@ -287,6 +290,12 @@
     try { sessionStorage.removeItem(STOCKAGE + '-ouvert'); } catch (e) {}
   }
   bulle.addEventListener('click', ouvrir);
+  // Le bouton apparaît après le premier écran (défilement) ou au bout de 10 secondes, pour laisser l'accroche respirer.
+  function montrer() { bulle.classList.add('visible'); window.removeEventListener('scroll', auDefilement); }
+  function auDefilement() { if (window.scrollY > 300) montrer(); }
+  window.addEventListener('scroll', auDefilement, { passive: true });
+  setTimeout(montrer, 10000);
+  auDefilement();
   btnFermer.addEventListener('click', fermer);
   btnNouveau.addEventListener('click', function () { messages = []; sauver(); redessiner(); zone.focus(); });
   document.addEventListener('keydown', function (e) { if (e.key === 'Escape' && panneau.classList.contains('ouvert')) fermer(); });
