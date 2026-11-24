@@ -10,6 +10,8 @@
 //
 // Adresse officielle : toutes les autres adresses (www, lebaliseur.com) redirigent vers https://lebaliseur.fr.
 
+import { traiterChat } from './chat.js';
+
 const DOMAINE = 'lebaliseur.fr';
 // Clé publique du widget Turnstile « Le Baliseur formulaire » (publique par nature : elle apparaît dans la page).
 const CLE_PUBLIQUE_TURNSTILE = '0x4AAAAAAFs0x_cTD2DB_uTU';
@@ -35,6 +37,14 @@ export default {
       if (request.method !== 'POST') return json({ erreur: 'Méthode non autorisée.' }, 405);
       return traiterContact(request, env);
     }
+    if (url.pathname === '/api/chat') return traiterChat(request, env);
+
+    // Assistant (bulle de discussion) : visible par tous si CHAT_PUBLIC = "on".
+    // Sinon, seulement en test : ouvrir une page avec ?chat=test (cookie pour 30 jours), ?chat=off pour l'enlever.
+    const choixChat = url.searchParams.get('chat');
+    const cookieChat = /(?:^|;\s*)baliseur_chat=test/.test(request.headers.get('Cookie') || '');
+    const avecChat = env.CHAT_PUBLIC === 'on' || choixChat === 'test' || (cookieChat && choixChat !== 'off');
+
     let reponse = await env.ASSETS.fetch(request);
     // Adresses de test (workers.dev) : jamais indexées, pour éviter un doublon du site.
     if (url.hostname.endsWith('.workers.dev')) {
@@ -57,6 +67,24 @@ export default {
           },
         })
         .transform(reponse);
+    }
+    // Ajout de l'assistant sur les pages du site (pas sur les sites de démonstration).
+    if (avecChat && type.includes('text/html') && !url.pathname.startsWith('/exemples/') && !url.pathname.startsWith('/en/examples/')) {
+      const cle = echapper(String(env.TURNSTILE_SITE_KEY || CLE_PUBLIQUE_TURNSTILE));
+      reponse = new HTMLRewriter()
+        .on('body', {
+          element(el) {
+            el.append(`<script src="/assets/assistant.js" defer data-turnstile="${cle}"></script>`, { html: true });
+          },
+        })
+        .transform(reponse);
+    }
+    if (choixChat === 'test' || choixChat === 'off') {
+      reponse = new Response(reponse.body, reponse);
+      reponse.headers.append('Set-Cookie', choixChat === 'test'
+        ? 'baliseur_chat=test; Path=/; Max-Age=2592000; Secure; SameSite=Lax'
+        : 'baliseur_chat=; Path=/; Max-Age=0; Secure; SameSite=Lax');
+      reponse.headers.set('Cache-Control', 'no-store');
     }
     return reponse;
   },

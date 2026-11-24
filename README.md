@@ -28,6 +28,24 @@ Sans ces variables, le formulaire affiche un message invitant à écrire par e-m
 
 Quand un prospect laisse un e-mail, il reçoit automatiquement un accusé de réception (FR ou EN selon la page), envoyé depuis `MAIL_FROM`, réponse vers `MAIL_TO`. Rien n'est envoyé s'il ne laisse qu'un téléphone.
 
+## Assistant IA (bulle de discussion)
+
+- `public/assets/assistant.js` : la bulle et la fenêtre de discussion (FR/EN selon la page). La conversation reste dans le navigateur ; rien n'est enregistré côté serveur.
+- `src/chat.js` : `POST /api/chat`, envoie la conversation à l'IA avec les consignes. Les informations sur l'agence viennent de `public/llms.txt` : le mettre à jour met l'assistant à jour.
+- L'assistant propose deux boutons : le test gratuit (pré-rempli avec le nom et la ville) et « Être rappelé », qui passe par le même envoi que le formulaire (`/api/contact`, Brevo).
+
+**Test sans le montrer au public** : ouvrir n'importe quelle page avec `?chat=test` (un cookie garde la bulle 30 jours sur ce navigateur), `?chat=off` pour la retirer. Pour l'afficher à tous : variable `CHAT_PUBLIC` = `on`.
+
+| Variable | Rôle |
+| --- | --- |
+| `CHAT_PUBLIC` | `on` = bulle visible par tous les visiteurs |
+| `AI_PROVIDER` | `workers-ai` (défaut, gratuit dans la limite quotidienne de Cloudflare) ou `claude` |
+| `WORKERS_AI_MODEL` | facultatif, défaut `@cf/mistralai/mistral-small-3.1-24b-instruct` (secours automatique : Llama 3.1 8B) |
+| `ANTHROPIC_API_KEY` (Secret) | clé API Claude, nécessaire si `AI_PROVIDER` = `claude` |
+| `CLAUDE_MODEL` | facultatif, défaut `claude-haiku-5-5` |
+
+Passer à Claude : acheter des crédits sur platform.claude.com (auto-reload désactivé = plafond de dépenses), créer une clé, l'ajouter en Secret `ANTHROPIC_API_KEY`, puis mettre `AI_PROVIDER` = `claude`. Rien d'autre à changer.
+
 ## Avant le lancement public
 
 - Témoignages fictifs retirés (offre « 5 premiers clients » à la place). Remettre une page Témoignages dès 3 vrais avis ; signaler « client fondateur » sur ceux ayant eu la remise
